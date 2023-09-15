@@ -10,6 +10,8 @@ import Ending from "../../ending/Ending";
 import Footer from "../../footer/Footer";
 import DiscussScreen from "../../discuss-screen/DiscussScreen";
 import MainScreenMobile from "../../mobile/main-screen-mobile/MainScreenMobile";
+import ServicesMobile from "../../mobile/services-mobile/ServicesMobile";
+import AdvantagesMobile from "../../mobile/advantages-mobile/AdvantagesMobile";
 
 const MainPage: FunctionComponent = () => {
     const [firstStart, setFirstStart] = useState<boolean>(true)
@@ -43,7 +45,13 @@ const MainPage: FunctionComponent = () => {
     return <div>
         {
             isMobile ?
-                <MainScreenMobile setDiscuss={setDiscuss}/>
+                <div>
+                    <MainScreenMobile setDiscuss={setDiscuss}/>
+                    <ServicesMobile/>
+                    <Photo src={'/assets/main-page-photo.png'}/>
+                    <Steps page={'main-page'}/>
+                    <AdvantagesMobile page={'main-page'}/>
+                </div>
                 :
                 <div>
                 {
