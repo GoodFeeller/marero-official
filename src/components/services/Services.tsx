@@ -5,9 +5,9 @@ const Services: FunctionComponent = () => {
     return <div className={styles.servicesBody} style={src === '' ? {background: 'black'} : {backgroundImage: 'url("' + src + '")'}}>
         <span className={styles.service}>/Услуги</span>
         <div className={styles.servicesContent}>
-            <span onMouseEnter={() => setSrc('./public/assets/backMatrix.png')} onMouseLeave={() => setSrc('')}>РАЗРАБОТКА</span>
-            <span onMouseEnter={() => setSrc('./public/assets/designBack.png')} onMouseLeave={() => setSrc('')}>WEB-DESIGN</span>
-            <span onMouseEnter={() => setSrc('./public/assets/backBranding.png')} onMouseLeave={() => setSrc('')}>БРЕНДИНГ</span>
+            <span onMouseEnter={() => setSrc('/assets/backMatrix.png')} onMouseLeave={() => setSrc('')}>РАЗРАБОТКА</span>
+            <span onMouseEnter={() => setSrc('/assets/designBack.png')} onMouseLeave={() => setSrc('')}>WEB-DESIGN</span>
+            <span onMouseEnter={() => setSrc('/assets/backBranding.png')} onMouseLeave={() => setSrc('')}>БРЕНДИНГ</span>
         </div>
     </div>
 }

@@ -18,12 +18,12 @@ const KeyDesign: FunctionComponent<{page: string, setDiscuss: setDiscussType}> =
         {/*Верхний блок фотографий*/}
         <div className={page == 'branding' ? styles.topImagesBoxBranding : styles.topImagesBox}>
             <div><img src={ page == 'branding' ?
-                './../../../public/assets/keyDesign8.png' : './../../../public/assets/keyDesign.png'}/></div>
+                '/assets/keyDesign8.png' : '/assets/keyDesign.png'}/></div>
             <div><img src={ page == 'branding' ?
-                './../../../public/assets/keyDesign9.png' : './../../../public/assets/keyDesign2.png'}/></div>
+                '/assets/keyDesign9.png' : '/assets/keyDesign2.png'}/></div>
             <div>
-                { page == 'branding' ? <img src={'./../../../public/assets/keyDesign10.png'}/> : page == 'design' ?
-                    <img src={'./../../../public/assets/keyDesign3.png'}/> : <div/> }
+                { page == 'branding' ? <img src={'/assets/keyDesign10.png'}/> : page == 'design' ?
+                    <img src={'/assets/keyDesign3.png'}/> : <div/> }
             </div>
         </div>
 
@@ -58,9 +58,9 @@ const KeyDesign: FunctionComponent<{page: string, setDiscuss: setDiscussType}> =
         <div style={{position: 'relative'}}>
             <div className={styles.keyDesignBottomPhotos}>
                 <div><img src={page === 'main-page' || page == 'branding'
-                    ? './../../../public/assets/keyDesign4.png' : './../../../public/assets/keyDesign6.svg'}/></div>
+                    ? '/assets/keyDesign4.png' : '/assets/keyDesign6.svg'}/></div>
                 <div><img src={page === 'main-page' || page == 'branding'
-                    ? './../../../public/assets/keyDesign5.png' : './../../../public/assets/keyDesign7.svg'}/>
+                    ? '/assets/keyDesign5.png' : '/assets/keyDesign7.svg'}/>
                     {page == 'branding' ? <div><DiscussButton setDiscuss={setDiscuss}/></div> : <div/>}
                 </div>
             </div>

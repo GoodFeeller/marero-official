@@ -7,7 +7,7 @@ type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => 
 
 const Header:FunctionComponent<{page: string, setDiscuss: setDiscussType}> = ({page, setDiscuss}) => {
     return <header className={styles.header}>
-        <img className={styles.imgMarsero} src='../../../public/assets/MARSERO.svg'/>
+        <img className={styles.imgMarsero} src='/assets/MARSERO.svg'/>
         <Links page={page}/>
         <span className={styles.phone}>{phoneNumber}</span>
         <DiscussButton setDiscuss={setDiscuss}/>

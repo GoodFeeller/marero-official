@@ -5,7 +5,7 @@ import styles from './Footer.module.sass'
 const Footer: FunctionComponent = () => {
     return<div className={styles.footerBody}>
         <div className={styles.leftContent}>
-            <div><img src={'./../../../public/assets/MARSERO.svg'}/></div>
+            <div><img src={'/assets/MARSERO.svg'}/></div>
             <div><span className={styles.officialText}>{officialText}</span></div>
         </div>
         <div className={styles.rightContent}>

@@ -18,10 +18,10 @@ const Value: FunctionComponent = () => {
         <span className={styles.littleText}>Мы прислушиваемся ко всем вашим пожеланиям и адаптируем процессы в соответствии с запросами вашего бизнеса.</span>
         <div className={styles.firstLine}/>
         <div className={styles.secondLine}/>
-        <img className={styles.firstDot} src={'../../../public/assets/whiteDot.svg'}/>
-        <img className={styles.secondDot} src={'../../../public/assets/whiteDot.svg'}/>
-        <img className={styles.thirdDot} src={'../../../public/assets/whiteDot.svg'}/>
-        <img className={styles.fourthDot} src={'../../../public/assets/whiteDot.svg'}/>
+        <img className={styles.firstDot} src={'/assets/whiteDot.svg'}/>
+        <img className={styles.secondDot} src={'/assets/whiteDot.svg'}/>
+        <img className={styles.thirdDot} src={'/assets/whiteDot.svg'}/>
+        <img className={styles.fourthDot} src={'/assets/whiteDot.svg'}/>
     </div>
 }
 export default Value
