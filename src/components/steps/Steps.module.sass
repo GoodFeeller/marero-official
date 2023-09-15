@@ -1,0 +1,71 @@
+@import "src/index"
+.stepsBody
+  margin: 29.629vh 5.208vw 31.296vh
+
+
+.stepsTitle
+  display: flex
+  flex-direction: row
+  width: 100%
+  margin-bottom: 80px
+
+
+.titleBig
+  @include text(66.5px, white)
+  flex: 1
+
+
+.titleLittle
+  @include text(20px, white)
+  flex: 1
+
+
+.stepScrollBox
+  &::-webkit-scrollbar
+    height: 1px
+    background-color: #333333
+  &::-webkit-scrollbar-thumb
+    background-color: $main-green-color
+  padding-bottom: 100px
+  transform: rotateX(180deg)
+  display: flex
+  flex-direction: row
+  width: 100%
+  overflow-x: scroll
+
+
+
+
+.step
+  &:not(&:first-child)
+    margin-left: 345px
+  display: flex
+  transform: rotateX(180deg)
+  flex-direction: column
+  justify-content: center
+  align-items: start
+
+  & span:nth-child(1)
+    @include text(20px, white)
+    margin-bottom: 50px
+  & span:nth-child(2)
+    @include text(55px, white)
+    margin-bottom: 30px
+  & span:nth-child(3)
+    @include text(18, #B0B0B0)
+    display: block
+
+@media (max-width: 1000px)
+  .titleBig
+    font-size: 40px
+  .step
+    &:not(&:first-child)
+      margin-left: 200px
+    & span:nth-child(1)
+      @include text(16px, white)
+      margin-bottom: 30px
+    & span:nth-child(2)
+      @include text(40px, white)
+      margin-bottom: 15px
+    & span:nth-child(3)
+      @include text(14, #B0B0B0)

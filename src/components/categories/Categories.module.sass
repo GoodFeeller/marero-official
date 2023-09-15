@@ -1,0 +1,132 @@
+@import "src/index"
+.categoriesBody
+  margin: 0 5.208vw 721px 5.208vw
+  display: flex
+  flex-direction: column
+
+.categoryTopBody
+  display: flex
+  flex-direction: row
+  margin-bottom: 60px
+  & div
+    flex: 1
+    width: 100%
+
+
+.categoryBottomBody
+  display: flex
+  flex-direction: row
+  & div
+    width: 100%
+    flex: 1
+
+
+.categoriesLittleTitle
+  @include text(18px, rgba(255, 255, 255, 1))
+
+
+.categoriesBigTitle
+  @include text(70px, rgba(255, 255, 255, 1))
+
+
+@mixin categoryButtonTemplate($color)
+  @include text(18px, $color)
+  padding-left: 58px
+  padding-right: 58px
+  height: 60px
+  border-radius: 100px
+  border: solid 1px $color
+  background-color: #000000
+  transition: all ease 0.25s
+  margin-right: 30px
+
+.categoryButton
+  @include categoryButtonTemplate(rgba(176, 176, 176, 1))
+  &:hover
+    color: $main-green-color
+    border-color: $main-green-color
+
+
+.categoryButtonChosen
+  @include categoryButtonTemplate($main-green-color)
+
+
+.categoryBlockTitle
+  @include text(55px, rgba(255, 255, 255, 1))
+
+
+.categoryBlockText
+  @include text(18px, rgba(176, 176, 176, 1))
+
+
+.categoryBlockId
+  @include text(20px, rgba(255, 255, 255, 1))
+
+
+.categoryBlock
+  position: relative
+  min-height: 20px
+
+
+
+.categoryContent
+  position: absolute
+  transition: all ease 0.5s
+  min-height: 270px
+  & div
+    position: absolute
+    &:nth-child(1)
+      top: 70px
+    &:nth-child(2)
+      margin-top: 140px
+    &:nth-child(3)
+      & span
+        position: absolute
+        bottom: 0
+
+
+
+
+.categoryRightBottom
+  display: flex
+  flex-direction: column
+  & div
+    flex: 1
+    height: 100%
+
+
+.buttonsBox
+  display: flex
+  flex-wrap: wrap
+  & button
+    margin-right: 30px
+    margin-bottom: 15px
+    &:nth-child(3n)
+      flex: 1.1
+    &:nth-child(3n - 2)
+      flex: 1.4
+    &:nth-child(3n - 1)
+      flex: 2
+
+
+.categoryImg
+  position: absolute
+  transition: all 0.5s ease
+  opacity: 0
+
+
+
+.buttonsBoxWorkingPage
+  display: flex
+  flex-wrap: wrap
+  & button
+    margin-right: 30px
+    margin-bottom: 15px
+    &:nth-child(1)
+      flex: 0.8
+    &:nth-child(2)
+      flex: 1
+    &:nth-child(3)
+      flex: 0.4
+    &:nth-child(4), &:nth-child(5)
+      flex: 1

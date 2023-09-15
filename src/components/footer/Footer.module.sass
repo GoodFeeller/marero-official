@@ -1,0 +1,96 @@
+@import "src/index"
+.footerBody
+  display: flex
+  margin-top: 200px
+  margin-bottom: 60px
+  width: 100%
+
+
+.leftContent
+  display: flex
+  width: 100%
+  flex-direction: column
+  margin-left: 5.208vw
+  align-items: flex-start
+  & div
+    height: 100%
+    &:nth-child(2)
+      display: flex
+      align-items: end
+
+.officialText
+  @include text(11px, white)
+
+
+.rightContent
+  display: flex
+  width: 100%
+  flex-direction: row
+  & div
+    display: flex
+    flex-direction: column
+    &:not(&:first-child)
+      margin-left: 200px
+    & span
+      display: block
+      &:not(&:first-child)
+        @include text(18px, #B0B0B0)
+        margin-bottom: 15px
+      &:first-child
+        @include text(18px, white)
+        margin-bottom: 25px
+
+
+.link
+  @include text(18px, #B0B0B0)
+  text-decoration: none
+
+@media (max-width: 1700px)
+  .rightContent
+    & div
+      &:not(&:first-child)
+        margin-left: 100px
+
+
+@media (max-width: 1200px)
+  .link
+    @include text(14px, #B0B0B0)
+  .rightContent
+    & div
+      & span
+        &:not(&:first-child)
+          @include text(14px, #B0B0B0)
+        &:first-child
+          @include text(14px, white)
+      &:not(&:first-child)
+        margin-left: 50px
+
+@media (max-width: 950px)
+  .link
+    @include text(12px, #B0B0B0)
+  .rightContent
+    & div
+      & span
+        &:not(&:first-child)
+          @include text(12px, #B0B0B0)
+          margin-bottom: 10px
+        &:first-child
+          @include text(12px, white)
+          margin-bottom: 20px
+      &:not(&:first-child)
+        margin-left: 30px
+
+@media (max-width: 720px)
+  .link
+    @include text(10px, #B0B0B0)
+  .rightContent
+    & div
+      & span
+        &:not(&:first-child)
+          @include text(10px, #B0B0B0)
+          margin-bottom: 10px
+        &:first-child
+          @include text(10px, white)
+          margin-bottom: 20px
+      &:not(&:first-child)
+        margin-left: 30px

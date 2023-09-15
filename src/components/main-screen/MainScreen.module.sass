@@ -1,0 +1,107 @@
+@import "../../index"
+.mainBody
+  min-width: 100%
+
+
+
+.titleBox
+  height: 1080px
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-image: url("../../../public/assets/backkk 1.png")
+  background-size: 100% 100%
+
+
+.title
+  margin-top: 13vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+
+.titleGreen
+  color: $main-green-color
+  font-family: 'Muller'
+  filter: brightness(80%)
+  font-size: 237.5px
+  letter-spacing: 10px
+  font-weight: 300
+  text-align: center
+  margin-bottom: -50px
+
+
+.titleWhite
+  font:
+    size: 114px
+    family: Muller
+    weight: 200
+  letter-spacing: 5px
+  word-spacing: 0
+  color: white
+
+
+
+
+
+.dotsList
+  margin-top: 75px
+  list-style: none
+  width: 780px
+  padding: 0
+  & li
+    display: inline-block
+    &:not(&:first-child)
+      margin-left: 4%
+    @include text(18px, white)
+    &:before
+      content: url("../../../public/assets/dot.png")
+      display: inline-block
+      margin-right: 25px
+      transform: translateY(-3.5px)
+
+
+
+@media (max-width: 1300px)
+  .titleBox
+    height: 800px
+  .titleGreen
+    font-size: 150px
+  .titleWhite
+    font-size: 90px
+
+@media (max-width: 900px)
+  .titleBox
+    height: 600px
+  .titleGreen
+    font-size: 100px
+    margin-bottom: -20px
+  .titleWhite
+    font-size: 60px
+  .dotsList
+    display: flex
+    justify-content: center
+    align-items: center
+    & li
+      margin-left: 0
+      font-size: 12px
+    &:before
+      margin-right: 6px
+
+@media (max-width: 700px)
+  .titleGreen
+    font-size: 100px
+    margin-bottom: -20px
+  .titleWhite
+    font-size: 60px
+  .dotsList
+    display: flex
+    justify-content: center
+    align-items: center
+    & li
+      margin-left: 0
+      font-size: 8px
+    &:before
+      margin-right: 6px

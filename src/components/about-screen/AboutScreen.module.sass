@@ -1,0 +1,43 @@
+@import "../../index"
+.mainBody
+  min-width: 100%
+
+
+
+
+
+.titleBody
+  height: 100vh
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-image: url("../../../public/assets/aboutBack.png")
+  background-size: 100% 100%
+
+
+.title
+  margin-top: 150px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+
+.titleBig
+  @include text(200px, rgba(255, 255, 255, 1))
+  letter-spacing: 10px
+  margin-bottom: 30px
+
+
+.titleLittle
+  @include text(22px, rgba(255, 255, 255, 1))
+  &:first-child
+    margin-bottom: 8px
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+@import "src/index"
+.techBody
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  margin: 0 5.208vw 21.3vh 5.208vw
+
+
+.techTitle
+  @include text(70px, rgba(255, 255, 255, 1))
+  margin-bottom: 30px
+
+
+.techContent
+  display: grid
+  width: 100%
+  grid-template-rows: repeat(3, 1fr)
+  grid-template-columns: repeat(5, 1fr)
+  & div
+    width: 100%
+    & img
+      width: 100%
+
+@media (max-width: 1200px)
+  .techTitle
+    font-size: 50px
+
+
+@media (max-width: 950px)
+  .techTitle
+    font-size: 30px

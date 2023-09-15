@@ -1,0 +1,194 @@
+@import "src/index"
+.advantagesBody
+  display: flex
+  flex-direction: column
+  margin: 0 5.208vw 311px 5.208vw
+
+
+.advantagesTitleBox
+  display: flex
+  flex-direction: row
+  & div
+    flex: 1
+
+
+.advantagesBigTitle
+  @include text(70px, white)
+  margin-bottom: 20px
+
+
+.advantagesLittleTitle
+  @include text(18px, #B0B0B0)
+
+.green
+  color: $main-green-color
+
+
+.advantagesTitleContent
+  display: flex
+  flex-direction: column
+
+
+.advantageBlock
+  background: linear-gradient(rgba(47, 47, 47, 0.2), rgba(91, 91, 91, 0.2))
+  border: 1px rgba(47, 47, 47, 1) solid
+  display: flex
+  justify-content: start
+  width: 100%
+  border-radius: 19px
+  transition: 0.25s ease all
+  &:hover
+    & div img
+      &:nth-child(1)
+        opacity: 0
+      &:nth-child(2)
+        opacity: 1
+  & div img
+      transition: 0.25s ease
+      position: absolute
+      &:nth-child(2)
+        opacity: 0
+
+
+
+.advantageBlockText
+  @include text(30px, white)
+
+.advantageText
+  @include text(20px, rgba(176, 176, 176, 1))
+
+.advantagesBox
+  margin-top: 50px
+  display: grid
+  width: 100%
+  height: 90vh
+  grid-column-gap: 40px
+  grid-row-gap: 30px
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: repeat(2, 1fr)
+  grid-template-areas: 'a b c d' 'e f g h'
+
+
+@mixin imageStyle($area, $direction, $padding, $height, $margin-left, $img-width, $text-width )
+  grid-area: $area
+  flex-direction: $direction
+  & div
+    height: $height
+    margin-left: $margin-left
+    & img
+      width: $img-width
+  & span
+    padding: $padding
+    width: $text-width
+
+
+.mainPageStyle
+  & div
+    &:nth-child(1)
+      @include imageStyle(a, column, 0 0 30px 30px, 300px, 30%, 14vw, 80%)
+    &:nth-child(2)
+      @include imageStyle(c, column-reverse, 30px 0 0 30px, 0, 30%, 15vw, 80%)
+    &:nth-child(3)
+      @include imageStyle(d, column-reverse, 30px 0 0 30px, 0, 30%, 14vw, 90%)
+    &:nth-child(4)
+      @include imageStyle(e, column, 0 0 30px 30px, 300px, 10%, 19vw, 80%)
+    &:nth-child(5)
+      @include imageStyle(f, column-reverse, 30px 0 0 30px, 340px, 30%, 15vw, 80%)
+    &:nth-child(6)
+      grid-area: h
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+
+
+.brandingPageStyle
+  & div
+    position: relative
+    &:nth-child(1)
+      @include imageStyle(c, column-reverse, 30px 0 0 30px, 0, 30%, 14vw, 80%)
+    &:nth-child(2)
+      @include imageStyle(d, column-reverse, 30px 0 0 30px, 0, 30%, 12vw, 90%)
+    &:nth-child(3)
+      @include imageStyle(e, column, 0 0 30px 30px, 340px, 25%, 16vw, 80%)
+      & div img
+        top: 50px
+    &:nth-child(4)
+      @include imageStyle(f, column-reverse, 30px 0 0 30px, 340px, 30%, 14vw, 80%)
+
+
+@media (max-width: 1500px)
+  .advantageBlockText
+    font-size: 20px
+  .mainPageStyle
+    & div
+      &:nth-child(1)
+        @include imageStyle(a, column, 0 0 30px 30px, 320px, 30%, 15vw, 80%)
+      &:nth-child(4)
+        @include imageStyle(e, column, 0 0 30px 30px, 320px, 10%, 19vw, 80%)
+      &:nth-child(5)
+        @include imageStyle(f, column-reverse, 30px 0 0 30px, 300px, 30%, 15vw, 80%)
+
+
+@media (max-width: 1300px)
+  .advantagesBox
+    height: 75vh
+  .advantageBlockText
+    font-size: 16px
+  .mainPageStyle
+    & div
+      &:nth-child(1)
+        @include imageStyle(a, column, 0 0 30px 30px, 200px, 30%, 15vw, 80%)
+      &:nth-child(4)
+        @include imageStyle(e, column, 0 0 30px 30px, 200px, 10%, 19vw, 80%)
+      &:nth-child(5)
+        @include imageStyle(f, column-reverse, 30px 0 0 30px, 200px, 30%, 15vw, 80%)
+
+
+
+@media (max-width: 950px)
+  .advantagesBigTitle
+    @include text(30px, white)
+  .advantagesLittleTitle
+    @include text(12px, #B0B0B0)
+  .advantageText
+    font-size: 12px
+  .advantagesBox
+    height: 60vh
+  .advantageBlockText
+    font-size: 16px
+  .mainPageStyle
+    & div
+      &:nth-child(1)
+        @include imageStyle(a, column, 0 0 30px 30px, 160px, 30%, 13vw, 80%)
+      &:nth-child(2)
+        @include imageStyle(c, column-reverse, 30px 0 0 30px, 0, 30%, 14vw, 80%)
+      &:nth-child(3)
+        @include imageStyle(d, column-reverse, 30px 0 0 30px, 0, 30%, 14vw, 90%)
+      &:nth-child(4)
+        @include imageStyle(e, column, 0 0 30px 30px, 160px, 10%, 17vw, 80%)
+      &:nth-child(5)
+        @include imageStyle(f, column-reverse, 30px 0 0 30px, 160px, 30%, 13vw, 80%)
+
+
+@media (max-width: 850px)
+  .advantagesBox
+    height: 50vh
+  .advantageBlockText
+    font-size: 12px
+  .mainPageStyle
+    & div
+      &:nth-child(1)
+        @include imageStyle(a, column, 0 0 30px 30px, 160px, 30%, 13vw, 80%)
+      &:nth-child(2)
+        @include imageStyle(c, column-reverse, 30px 0 0 30px, 0, 30%, 14vw, 80%)
+      &:nth-child(3)
+        @include imageStyle(d, column-reverse, 30px 20px 0 30px, 0, 30%, 14vw, 80%)
+      &:nth-child(4)
+        @include imageStyle(e, column, 0 0 30px 30px, 160px, 10%, 17vw, 80%)
+      &:nth-child(5)
+        @include imageStyle(f, column-reverse, 30px 0 0 30px, 160px, 30%, 13vw, 80%)
+
+@media (max-height: 720px)
+  .advantagesBody
+    margin-bottom: 600px

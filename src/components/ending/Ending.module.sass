@@ -1,0 +1,105 @@
+@import "src/index"
+.endingBody
+  display: flex
+  justify-content: center
+  flex-direction: column
+  align-items: center
+
+
+.endingContent
+  height: 80vh
+  width: 100%
+
+.back
+  width: 100%
+  position: absolute
+  height: 80vh
+  & span
+    @include text(18px, rgba(171, 171, 171, 1))
+  & div
+    position: absolute
+
+
+.firstLine
+  width: 1px
+  height: 100%
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+  right: 50%
+  opacity: 50%
+
+
+
+.secondLine
+  height: 1px
+  width: 50%
+  background: linear-gradient(-90deg ,rgba(167, 167, 167, 1), rgba(167, 167, 167, 1), rgba(255, 255, 255, 0))
+  top: 25%
+  opacity: 50%
+
+
+.thirdLine
+  height: 1px
+  width: 50%
+  background: linear-gradient(90deg ,rgba(167, 167, 167, 1), rgba(167, 167, 167, 1), rgba(255, 255, 255, 0))
+  top: 75%
+  left: 50%
+  opacity: 50%
+
+
+.firstDot, .secondDot
+  width: 6px
+  height: 1%
+  border-radius: 3px
+  background-color: rgba(217, 217, 217, 1)
+  left: 0
+  right: 0
+  margin: 0 auto
+
+
+.firstDot
+  top: 24.5%
+
+.secondDot
+  top: 74.5%
+
+.firstSpan
+  top: 20%
+  right: 51%
+  position: absolute
+
+
+.secondSpan
+  top: 70%
+  left: 51%
+  position: absolute
+
+
+.titleBox
+  margin: 0 5.208vw 18.51vh 5.208vw
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  height: 100%
+
+
+.titleText
+  @include text(80px, rgba(255, 255, 255, 1))
+
+.titleTextAboutPage
+  @include text(66px, rgba(255, 255, 255, 1))
+
+.titleGreen
+  color: $main-green-color
+
+
+@media (max-width: 1520px)
+  .titleText
+    font-size: 50px
+
+
+@media (max-width: 1000px)
+  .titleText
+    font-size: 30px
+  .back span
+    font-size: 12px

@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('Muller Light'), local('Muller-Light'),
+  url('./public/fonts/Muller/MullerLight.woff2') format('woff2'),
+  url('./public/fonts/Muller/MullerLight.woff') format('woff'),
+  url('./public/fonts/Muller/MullerLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('Muller Ultra Light'), local('Muller-Ultra-Light'),
+  url('./public/fonts/Muller/MullerUltraLight.woff2') format('woff2'),
+  url('./public/fonts/Muller/MullerUltraLight.woff') format('woff'),
+  url('./public/fonts/Muller/MullerUltraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+$main-green-color: #00FF0A;
+$main-gray-color: #B3B3B3;
+
+@mixin text($size, $color) {
+  color: $color;
+  font-family: "Muller", sans-serif;
+  font-weight: 300;
+  font-size: $size;
+}
+
+.changed {
+  animation: closeScreen 3s
+}
+
+@keyframes closeScreen {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
