@@ -9,6 +9,7 @@ import Technologies from "../../technologies/Technologies";
 import Ending from "../../ending/Ending";
 import Footer from "../../footer/Footer";
 import DiscussScreen from "../../discuss-screen/DiscussScreen";
+import MainScreenMobile from "../../mobile/main-screen-mobile/MainScreenMobile";
 
 const MainPage: FunctionComponent = () => {
     const [firstStart, setFirstStart] = useState<boolean>(true)
@@ -38,20 +39,30 @@ const MainPage: FunctionComponent = () => {
         }
 
     }, [discuss])
-    return <div> {
-        change ? <DiscussScreen setDiscuss={setDiscuss}/> :
-            <div>
-                <MainScreen setDiscuss={setDiscuss}/>
-                <Services/>
-                <Photo src={'/assets/Group.png'}/>
-                <Steps page={'main-page'}/>
-                <KeyDesign setDiscuss={setDiscuss} page={'main-page'}/>
-                <MarseroAdvantages page={'main-page'}/>
-                <Technologies/>
-                <Ending setDiscuss={setDiscuss} page={'main-page'}/>
-                <Footer/>
-            </div>
-    }
+    const isMobile = window.screen.availWidth <= 560
+    return <div>
+        {
+            isMobile ?
+                <MainScreenMobile setDiscuss={setDiscuss}/>
+                :
+                <div>
+                {
+                    change ? <DiscussScreen setDiscuss={setDiscuss}/> :
+                        <div>
+                            <MainScreen setDiscuss={setDiscuss}/>
+                            <Services/>
+                            <Photo src={'/assets/Group.png'}/>
+                            <Steps page={'main-page'}/>
+                            <KeyDesign setDiscuss={setDiscuss} page={'main-page'}/>
+                            <MarseroAdvantages page={'main-page'}/>
+                            <Technologies/>
+                            <Ending setDiscuss={setDiscuss} page={'main-page'}/>
+                            <Footer/>
+                        </div>
+                }
+                </div>
+        }
+
     </div>
 }
 export default MainPage;

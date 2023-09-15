@@ -1,0 +1,31 @@
+.headerBody
+  position: relative
+  height: 18px
+  margin: 0 20px
+  display: flex
+  & img
+    height: 13px
+    width: 120px
+  & div
+    flex: 1
+    position: relative
+    width: 33px
+    display: inline-block
+    height: 18px
+    & div
+      position: absolute
+      height: 2px
+      background: rgba(0, 255, 10, 1)
+      right: 0
+      &:nth-child(1)
+        top: 0
+        width: 18px
+      &:nth-child(2)
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 33px
+      &:nth-child(3)
+        bottom: 0
+        width: 25px
+
