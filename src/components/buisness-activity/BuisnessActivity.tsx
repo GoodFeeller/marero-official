@@ -34,9 +34,9 @@ const BuisnessActivity: FunctionComponent = () => {
                 <div className={styles.firstLine}/>
                 <div className={styles.secondLine}/>
                 <div className={styles.thirdLine}/>
-                <img src={'./../../public/assets/whiteDot.svg'} className={styles.firstDot}/>
-                <img src={'./../../public/assets/whiteDot.svg'} className={styles.secondDot}/>
-                <img src={'./../../public/assets/whiteDot.svg'} className={styles.thirdDot}/>
+                <img src={'/assets/whiteDot.svg'} className={styles.firstDot}/>
+                <img src={'/assets/whiteDot.svg'} className={styles.secondDot}/>
+                <img src={'/assets/whiteDot.svg'} className={styles.thirdDot}/>
             </div>
         </div>
     </div>

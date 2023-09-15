@@ -5,13 +5,13 @@ const Circles: FunctionComponent<{page: string}> = ({ page }) => {
     return <div className={styles.circleBody}>
         {page == 'design' ? circlesList.map( (elem, index) =>
             <div key={index} className={styles.circleBox}>
-                <img src={'../../../public/assets/Circle.svg'} className={styles.circle}/>
+                <img src={'/assets/Circle.svg'} className={styles.circle}/>
                 <div className={styles.imageBox}><img src={elem}/></div>
             </div>
         ) :
             circleListWorkingPage.map( (elem, index) =>
                 <div key={index} className={styles.circleBox}>
-                    <img src={'./../../../public/assets/Circle.svg'} className={styles.circle}/>
+                    <img src={'/assets/Circle.svg'} className={styles.circle}/>
                     <div className={styles.imageBox}><img src={elem}/></div>
                 </div>
             )}

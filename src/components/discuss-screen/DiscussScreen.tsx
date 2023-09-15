@@ -5,7 +5,7 @@ type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => 
 
 const DiscussScreen: FunctionComponent<{setDiscuss: setDiscussType}> = ({setDiscuss}) => {
     return <div className={styles.body}>
-        <img className={styles.marseroImg} src={'../../../public/assets/MARSERO.svg'}/>
+        <img className={styles.marseroImg} src={'/assets/MARSERO.svg'}/>
         <span className={styles.officialText}>{officialText}</span>
         <button className={styles.backBtn} onClick={ () => setDiscuss(false)}/>
         <div className={styles.callBox}>
