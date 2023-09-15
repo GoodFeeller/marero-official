@@ -7,8 +7,8 @@ type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => 
 
 const MainScreen: FunctionComponent<{setDiscuss: setDiscussType}> = ({setDiscuss}) => {
     return <div className={styles.mainBody}>
-        <div style={{margin: '0 5.208vw'}}>
-            <Header setDiscuss={setDiscuss} page={'main'}/>
+        <div style={{margin: '-30px 5.208vw'}}>
+            <Header  setDiscuss={setDiscuss} page={'main'}/>
         </div>
 
         <div className={styles.titleBox}>
