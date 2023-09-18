@@ -1,9 +1,17 @@
-import {FunctionComponent, useState} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import styles from './AdvantagesMobile.module.sass';
 import {advantagesListMobile, advantageTypeMobile} from "../../../../public/staticInfo";
 
 const AdvantagesMobile: FunctionComponent = () => {
     const [advantages, setAdvantages] = useState<advantageTypeMobile[]>(advantagesListMobile)
+    useEffect( () => {
+        advantagesListMobile.forEach((image) => {
+            const img = new Image()
+            const hoverImage = new Image()
+            hoverImage.src = image.hoverSrc
+            img.src = image.src
+        })
+    })
     return <div className={styles.advantagesBody}>
         {/*Верхний текст*/}
         <div className={styles.advantagesTitleContent}>
