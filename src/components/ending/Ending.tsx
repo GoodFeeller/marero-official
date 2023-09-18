@@ -1,7 +1,10 @@
 import {FunctionComponent} from "react";
 import styles from './Ending.module.sass'
 import DiscussButton from "../header/discussButton/DiscussButton";
+import DiscussMobileButton from "../mobile/discussButtonMobile/DiscussMobileButton";
 type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => void
+const isMobile = window.screen.availWidth <= 560
+
 const Ending: FunctionComponent<{page: string, setDiscuss: setDiscussType}> = ({ page , setDiscuss}) => {
     return <div className={styles.endingBody}>
         <div className={styles.endingContent}>
@@ -12,9 +15,15 @@ const Ending: FunctionComponent<{page: string, setDiscuss: setDiscussType}> = ({
             <div className={styles.firstDot}/>
             <div className={styles.secondDot}/>
             <span className={styles.firstSpan}>Уникальный дизайн</span>
-            <span className={styles.secondSpan}>Техподдержка и консультация</span>
+            <span className={styles.secondSpan}>{ isMobile ? 'Техподдержка' : 'Техподдержка и консультация'}</span>
         </div>
-            {page == 'about'
+            {   isMobile
+                ?
+                <div  className={styles.titleBox}>
+                    <span className={styles.titleText}>ВЫВЕДИТЕ<br/>БИЗНЕС<br/>НА <span className={styles.titleGreen}>НОВЫЙ<br/></span> УРОВЕНЬ</span>
+                </div>
+                :
+                page == 'about'
                 ?
                 <div  className={styles.titleBox}>
                     <span className={styles.titleTextAboutPage}>МЫ ЗАБЕРЕМ ВАШУ БОЛЬ И ТРАНСФОРМИРУЕМ</span>
@@ -27,7 +36,8 @@ const Ending: FunctionComponent<{page: string, setDiscuss: setDiscussType}> = ({
                 </div>
             }
         </div>
-        <DiscussButton setDiscuss={setDiscuss}/>
+        {isMobile ? <DiscussMobileButton setDiscuss={setDiscuss}/> : <DiscussButton setDiscuss={setDiscuss}/>}
+
     </div>
 }
 export default Ending

@@ -70,6 +70,8 @@
       @include text(14, #B0B0B0)
 
 @media (max-width: 560px)
+  .stepScrollBox
+    padding-bottom: 50px
   .stepsBody
     display: flex
     flex-direction: column
@@ -114,13 +116,27 @@
       @include text(14px, #B0B0B0)
       display: block
 
-@media (max-width: 340px)
+@media (max-width: 359px)
   .titleBig
     text-align: center
-    @include text(25px, white)
-    line-height: 28px
+    @include text(10.5vw, white)
+    line-height: 10vw
     margin-bottom: 30px
   .titleLittle
     text-align: center
-    @include text(13px, white)
+    @include text(3.611vw, white)
     margin-bottom: 50px
+  .step
+    min-width: 50vw
+    &:not(&:first-child)
+      margin-left: 15vw
+    transform: rotateX(0)
+    & span:nth-child(1)
+      @include text(3.611vw, white)
+      margin-bottom: 25px
+    & span:nth-child(2)
+      @include text(5.55vw, white)
+      margin-bottom: 15px
+    & span:nth-child(3)
+      @include text(3.888vw, #B0B0B0)
+      display: block

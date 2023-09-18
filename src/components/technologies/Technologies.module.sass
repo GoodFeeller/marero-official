@@ -4,7 +4,6 @@
   justify-content: center
   align-items: center
   flex-direction: column
-  margin: 0 5.208vw 21.3vh 5.208vw
 
 
 .techTitle
@@ -13,6 +12,7 @@
 
 
 .techContent
+  margin: 0 5.208vw 21.3vh 5.208vw
   display: grid
   width: 100%
   grid-template-rows: repeat(3, 1fr)
@@ -30,3 +30,37 @@
 @media (max-width: 950px)
   .techTitle
     font-size: 30px
+
+
+@media (max-width: 560px)
+  .techBody
+    height: 1072px
+    background: url("/assets/techMobileBack.png")
+    background-size: 100% 168vw
+  .techTitle
+    margin-bottom: 36px
+    font-size: 30px
+    line-height: 28.5px
+    text-align: center
+  .techContent
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(7, 1fr)
+    margin: 0 20px
+    grid-template-areas: 'a b' 'c d' 'e f' 'g h' 'i j' 'k l' 'm n'
+    & div
+      &:nth-child(5)
+        grid-area: f
+      &:nth-child(7)
+        grid-area: h
+      &:nth-child(10)
+        grid-area: g
+      &:nth-child(12)
+        grid-area: j
+      &:nth-child(13)
+        grid-area: n
+
+
+@media (max-width: 360px)
+  .techTitle
+    font-size: 8.33vw
+    line-height: 7.91vw

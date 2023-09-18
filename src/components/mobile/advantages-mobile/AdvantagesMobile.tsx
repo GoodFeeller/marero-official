@@ -1,11 +1,10 @@
 import {FunctionComponent, useState} from "react";
 import styles from './AdvantagesMobile.module.sass';
-import {advantagesList, advantageType} from "../../../../public/staticInfo";
+import {advantagesListMobile, advantageTypeMobile} from "../../../../public/staticInfo";
 
 const AdvantagesMobile: FunctionComponent = () => {
-    const [advantages, setAdvantages] = useState<advantageType[]>(advantagesList)
+    const [advantages, setAdvantages] = useState<advantageTypeMobile[]>(advantagesListMobile)
     return <div className={styles.advantagesBody}>
-
         {/*Верхний текст*/}
         <div className={styles.advantagesTitleContent}>
             <span className={styles.advantagesSlash}>/Преимущества</span>
@@ -15,8 +14,6 @@ const AdvantagesMobile: FunctionComponent = () => {
                 <span className={styles.green}>Уникальная</span> эффективность.
             </span>
         </div>
-
-
         <div className={styles.advantagesBox}>
 
             {/*Вывод кнопок*/}
@@ -27,12 +24,11 @@ const AdvantagesMobile: FunctionComponent = () => {
                         <img src={a.hoverSrc}/>
                     </div>
                     else return <div key={index}
-                                     className={styles.advantageBlock}
+                                     className={a.style == 'common' ? styles.advantageBlock + ' ' + styles.common : styles.advantageBlock + ' ' + styles.reverse}
                                      onClick={() => {
-                                         const temp: advantageType = a
                                          advantages[index] = advantages[0]
-                                         advantages[0] = temp
-                                         console.log(advantages)
+                                         advantages[0] = a
+                                         setAdvantages([...advantages])
 
                                      }}>
                         <div><img src={a.src}/></div>

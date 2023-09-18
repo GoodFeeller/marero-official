@@ -50,7 +50,9 @@ const MainPage: FunctionComponent = () => {
                     <ServicesMobile/>
                     <Photo src={'/assets/main-page-photo.png'}/>
                     <Steps page={'main-page'}/>
-                    <AdvantagesMobile page={'main-page'}/>
+                    <AdvantagesMobile/>
+                    <Technologies/>
+                    <Ending page={'main-page'} setDiscuss={setDiscuss}/>
                 </div>
                 :
                 <div>

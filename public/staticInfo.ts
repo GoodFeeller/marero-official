@@ -1,5 +1,6 @@
 export const phoneNumber: string = "+375(29)111-11-11"
 export const officialText: string = "© NM / 2023. MINSK / BELARUS"
+export const marseroMail: string = 'marsero@gmail.com'
 
 export type workType = {
     id: string
@@ -83,6 +84,14 @@ export type advantageTypeWorkingPage = {
     src: string
     hoverSrc: string
 }
+
+export type advantageTypeMobile = {
+    title: string
+    text: string
+    src: string
+    hoverSrc: string
+    style: 'common' | 'reverse'
+}
 export const advantagesList: advantageType[] = [
     {
         title: 'РАБОТАЕМ ОНЛАЙН ПО ВСЕМУ МИРУ',
@@ -116,6 +125,47 @@ export const advantagesList: advantageType[] = [
         text: 'Все, кто работает в MARSERO, проходят жесточайшие условия отбора. В приоритете качество - остальное детали.',
         src: '/assets/magnifying_glass_front.svg',
         hoverSrc: '/assets/magnifying_glass_front_hover.svg'
+    }
+]
+
+export const advantagesListMobile: advantageTypeMobile[] = [
+    {
+        title: 'РАБОТАЕМ ОНЛАЙН ПО ВСЕМУ МИРУ',
+        text: 'Нащи специалисты готовы решать любые задачи 24/7 из любой точки мира.',
+        src: '/assets/marker_front.svg',
+        hoverSrc: '/assets/marker_front_hover.svg',
+        style: 'common'
+    },
+    {
+        title: 'ПОЖИЗНЕННАЯ ТЕХПОДДЕРЖКА',
+        text: 'Наши клиенты получают эксклюзивные условия дальнейшего сопровождения.',
+        src: '/assets/headphone_front.svg',
+        hoverSrc: '/assets/headphone_front_hover.svg',
+        style: 'reverse'
+    },
+    {
+        title: 'ФОКУС НА ФОРМУЛЕ "ЦЕНА-КАЧЕСТВО"',
+        text: 'Клиенты MARSERO четко понимают за что они платят.',
+        src: '/assets/badge_front.svg',
+        hoverSrc: '/assets/badge_front_hover.svg',
+        style: 'common'
+    }
+    ,
+    {
+        title: 'УНИКАЛЬНЫЕ ПРОДУКТЫ ДЛЯ БИЗНЕСА',
+        text: 'Мы выявляем слабые стороны ЦА \n' +
+            'и делаем ваш продукт неотъемлемой частью их жизни.',
+        src: '/assets/dart_board_front.svg',
+        hoverSrc: '/assets/dart_board_front_hover.svg',
+        style: 'reverse'
+    }
+    ,
+    {
+        title: 'ПРОВЕРЕННЫЕ СПЕЦИАЛИСТЫ',
+        text: 'Все, кто работает в MARSERO, проходят жесточайшие условия отбора.',
+        src: '/assets/magnifying_glass_front.svg',
+        hoverSrc: '/assets/magnifying_glass_front_hover.svg',
+        style: 'common'
     }
 ]
 export const advantagesListWorkingPage: advantageTypeWorkingPage[] = [

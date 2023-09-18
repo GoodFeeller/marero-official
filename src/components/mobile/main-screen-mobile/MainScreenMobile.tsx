@@ -16,10 +16,13 @@ const MainScreenMobile: FunctionComponent<{setDiscuss: setDiscussType}> = ({setD
             <span className={styles.titleWhite}>УЛУЧШЕНИЙ</span>
         </div>
         <div className={styles.linesBox}>
-            <span>Разработка игр</span>
-            <span>Визуальная решения</span>
-            <span>Web-desgin</span>
-            <span>Разработка ПО</span>
+            <div className={styles.linesBoxContent}>
+                <span>Разработка игр</span>
+                <span>Визуальная решения</span>
+                <span>Web-desgin</span>
+                <span>Разработка ПО</span>
+
+            </div>
             <div className={styles.horizLine}/>
             <div className={styles.vertLine}/>
             <div className={styles.dot}/>

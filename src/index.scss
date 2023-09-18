@@ -30,7 +30,7 @@ $main-gray-color: #B3B3B3;
 @mixin text($size, $color) {
   color: $color;
   font-family: "Muller", sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-size: $size;
 }
 
