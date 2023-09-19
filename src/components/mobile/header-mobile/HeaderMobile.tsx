@@ -1,12 +1,16 @@
 import {FunctionComponent} from "react";
 import styles from './HeaderMobile.module.sass'
-type setPageChangerType = (value: (((prevState: boolean) => boolean) | boolean)) => void
+import {setNowPageType} from "../../../../public/staticInfo";
 
-const HeaderMobile: FunctionComponent<{setPageChanger: setPageChangerType}> = ({setPageChanger}) => {
+
+const HeaderMobile: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
     return <div className={styles.headerBody}>
 
         <img src={'/assets/MARSERO.svg'}/>
-        <button onClick={() => setPageChanger(true)}>
+        <button onClick={() => {
+            setNowPage('none')
+            setTimeout(() => setNowPage('pageChanger'), 500)
+        }}>
             <div/>
             <div/>
             <div/>

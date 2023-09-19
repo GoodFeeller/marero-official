@@ -2,15 +2,14 @@ import {FunctionComponent} from "react";
 import styles from './MainScreenMobile.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
-type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => void
-type setPageChangerType = (value: (((prevState: boolean) => boolean) | boolean)) => void
+import {setNowPageType} from "../../../../public/staticInfo";
 
 
-const MainScreenMobile: FunctionComponent<{setDiscuss: setDiscussType, setPageChanger: setPageChangerType}>
-    = ({setDiscuss, setPageChanger}) => {
+const MainScreenMobile: FunctionComponent<{setNowPage: setNowPageType}>
+    = ({setNowPage}) => {
     return <div className={styles.mainScreenBody}>
         <div className={styles.headerBox}>
-            <HeaderMobile setPageChanger={setPageChanger}/>
+            <HeaderMobile setNowPage={setNowPage}/>
         </div>
         <div className={styles.titleBox}>
             <span className={styles.titleGreen}>ЯРКИЕ</span>
@@ -30,7 +29,7 @@ const MainScreenMobile: FunctionComponent<{setDiscuss: setDiscussType, setPageCh
             <div className={styles.dot}/>
         </div>
         <div className={styles.discussBtnBox}>
-            <DiscussMobileButton setDiscuss={setDiscuss}/>
+            <DiscussMobileButton setNowPage={setNowPage}/>
         </div>
     </div>
 }

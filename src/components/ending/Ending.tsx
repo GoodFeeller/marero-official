@@ -1,11 +1,10 @@
 import {FunctionComponent} from "react";
 import styles from './Ending.module.sass'
-import DiscussButton from "../header/discussButton/DiscussButton";
 import DiscussMobileButton from "../mobile/discussButtonMobile/DiscussMobileButton";
-type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => void
+import {setNowPageType} from "../../../public/staticInfo";
 const isMobile = window.screen.availWidth <= 560
 
-const Ending: FunctionComponent<{page: string, setDiscuss: setDiscussType}> = ({ page , setDiscuss}) => {
+const Ending: FunctionComponent<{page: string, setNowPage: setNowPageType}> = ({ page , setNowPage}) => {
     return <div className={styles.endingBody}>
         <div className={styles.endingContent}>
         <div className={styles.back}>
@@ -36,7 +35,7 @@ const Ending: FunctionComponent<{page: string, setDiscuss: setDiscussType}> = ({
                 </div>
             }
         </div>
-        {isMobile ? <DiscussMobileButton setDiscuss={setDiscuss}/> : <DiscussButton setDiscuss={setDiscuss}/>}
+        <DiscussMobileButton setNowPage={setNowPage}/>
 
     </div>
 }

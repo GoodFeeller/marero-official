@@ -3,11 +3,11 @@ import Header from "../header/Header";
 import styles from "./AboutScreen.module.sass"
 import Dots from "../main-screen/dots/Dots";
 import AboutTitle from "./about-title/AboutTitle";
-type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => void
-const AboutScreen: FunctionComponent<{setDiscuss: setDiscussType}> = ({setDiscuss}) => {
+import {setNowPageType} from "../../../public/staticInfo";
+const AboutScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
     return <div className={styles.mainBody}>
         <div style={{margin: '0 5.208vw'}}>
-            <Header setDiscuss={setDiscuss} page={'about'}/>
+            <Header setNowPage={setNowPage} page={'about'}/>
         </div>
 
         <div className={styles.titleBody}>

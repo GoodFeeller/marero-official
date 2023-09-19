@@ -54,22 +54,20 @@ $main-gray-color: #B3B3B3;
 
 .mobilePageChanger-enter{
   opacity: 0;
-  transition: all ease 0.25s;
 }
 
 .mobilePageChanger-active {
   opacity: 1;
-  transition: all ease 0.25s;
+  transition: all ease 0.5s;
 
 }
 
 .mobilePageChanger-exit {
   opacity: 1;
-  transition: all ease 0.25s;
+  transition: all ease 0.5s;
+
 
 }
 .mobilePageChanger-exit-active {
   opacity: 0;
-  transition: all ease 0.25s;
-
 }

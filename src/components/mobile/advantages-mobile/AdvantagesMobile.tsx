@@ -26,7 +26,7 @@ const AdvantagesMobile: FunctionComponent = () => {
 
             {/*Вывод кнопок*/}
             {advantages.map( (a, index) => {
-                    if (index == 0) return <div className={styles.advantageBlockChosen}>
+                    if (index == 0) return <div key={index} className={styles.advantageBlockChosen}>
                         <span>{a.title}</span>
                         <span>{a.text}</span>
                         <img src={a.hoverSrc}/>

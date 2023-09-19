@@ -3,12 +3,12 @@ import Header from "../header/Header";
 import styles from './MainScreen.module.sass'
 import TitileMain from "./title-main/TitileMain";
 import Dots from "./dots/Dots";
-type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => void
+import {setNowPageType} from "../../../public/staticInfo";
 
-const MainScreen: FunctionComponent<{setDiscuss: setDiscussType}> = ({setDiscuss}) => {
+const MainScreen: FunctionComponent<{setNowPge: setNowPageType}> = ({setNowPge}) => {
     return <div className={styles.mainBody}>
         <div style={{margin: '-30px 5.208vw'}}>
-            <Header  setDiscuss={setDiscuss} page={'main'}/>
+            <Header  setNowPage={setNowPge} page={'main'}/>
         </div>
 
         <div className={styles.titleBox}>

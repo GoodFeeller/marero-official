@@ -317,3 +317,6 @@ export const circleListWorkingPage: string[] = [
     '/assets/Ellipse_7.svg',
     '/assets/Ellipse_8.svg'
 ]
+
+export type nowPageType = 'common' | 'callPage' | 'pageChanger' | 'none'
+export type setNowPageType = (value: (((prevState: ("common" | "callPage" | "pageChanger" | "none")) => ("common" | "callPage" | "pageChanger" | "none")) | "common" | "callPage" | "pageChanger" | "none")) => void

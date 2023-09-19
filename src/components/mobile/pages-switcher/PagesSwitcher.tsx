@@ -1,14 +1,17 @@
 import {FunctionComponent} from "react";
 import {Link} from "react-router-dom";
 import styles from './PageSwitcher.module.sass'
-type setPageChangerType = (value: (((prevState: boolean) => boolean) | boolean)) => void
+import { setNowPageType } from "../../../../public/staticInfo";
 
-const PagesSwitcher: FunctionComponent<{page: string, setPageChanger: setPageChangerType}> =
-    ({page, setPageChanger}) => {
+const PagesSwitcher: FunctionComponent<{page: string, setNowPage: setNowPageType}> =
+    ({page, setNowPage}) => {
     return <div className={styles.switcherBody}>
         <div className={styles.header}>
             <img className={styles.marseroImg} src={'/assets/MARSERO.svg'}/>
-            <button className={styles.closeBtn} onClick={() => setPageChanger(false)}>
+            <button className={styles.closeBtn} onClick={() => {
+                setNowPage('none')
+                setTimeout(() => setNowPage('common'), 500)
+            }}>
                 <div/>
                 <div/>
             </button>

@@ -1,8 +1,8 @@
 import styles from './KeyDesign.module.sass'
 import {FunctionComponent} from "react";
 import DiscussButton from "../header/discussButton/DiscussButton";
-type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => void
-const KeyDesign: FunctionComponent<{page: string, setDiscuss: setDiscussType}> = ({page, setDiscuss}) => {
+import {setNowPageType} from "../../../public/staticInfo";
+const KeyDesign: FunctionComponent<{page: string, setNowPage: setNowPageType}> = ({page, setNowPage}) => {
     return <div className={styles.keyDesignBody}>
 
         {/*Верхний текст*/}
@@ -61,7 +61,7 @@ const KeyDesign: FunctionComponent<{page: string, setDiscuss: setDiscussType}> =
                     ? '/assets/keyDesign4.png' : '/assets/keyDesign6.svg'}/></div>
                 <div><img src={page === 'main-page' || page == 'branding'
                     ? '/assets/keyDesign5.png' : '/assets/keyDesign7.svg'}/>
-                    {page == 'branding' ? <div><DiscussButton setDiscuss={setDiscuss}/></div> : <div/>}
+                    {page == 'branding' ? <div><DiscussButton setNowPage={setNowPage}/></div> : <div/>}
                 </div>
             </div>
         </div>

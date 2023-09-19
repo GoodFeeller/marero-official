@@ -1,8 +1,12 @@
 import {FunctionComponent} from "react";
 import styles from './DiscussMobileButton.module.sass'
-type setDiscussType = (value: (((prevState: boolean) => boolean) | boolean)) => void
-const DiscussMobileButton:FunctionComponent<{setDiscuss: setDiscussType}> = ({setDiscuss}) => {
-    return <button className={styles.discussButtonMobile} onClick={() => setDiscuss(true)}>
+import {setNowPageType} from "../../../../public/staticInfo";
+
+const DiscussMobileButton:FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
+    return <button className={styles.discussButtonMobile} onClick={() => {
+        setNowPage('none')
+        setTimeout(() => setNowPage('callPage'), 500)
+    }}>
         Обсудить проект
     </button>
 }
