@@ -12,9 +12,14 @@ import DiscussScreen from "../../discuss-screen/DiscussScreen";
 import MainScreenMobile from "../../mobile/main-screen-mobile/MainScreenMobile";
 import ServicesMobile from "../../mobile/services-mobile/ServicesMobile";
 import AdvantagesMobile from "../../mobile/advantages-mobile/AdvantagesMobile";
+import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
+import PagesSwitcher from "../../mobile/pages-switcher/PagesSwitcher";
+import { CSSTransition } from  'react-transition-group'
+import './../../../index.scss'
 
 const MainPage: FunctionComponent = () => {
     const [firstStart, setFirstStart] = useState<boolean>(true)
+    const [pageChanger, setPageChange] = useState<boolean>(false)
     const [discuss, setDiscuss] = useState<boolean>(false)
     const [change, setChange] = useState<boolean>(false)
     useEffect(() => {
@@ -42,17 +47,26 @@ const MainPage: FunctionComponent = () => {
 
     }, [discuss])
     const isMobile = window.screen.availWidth <= 560
+    console.log(pageChanger)
     return <div>
         {
             isMobile ?
                 <div>
-                    <MainScreenMobile setDiscuss={setDiscuss}/>
-                    <ServicesMobile/>
-                    <Photo src={'/assets/main-page-photo.png'}/>
-                    <Steps page={'main-page'}/>
-                    <AdvantagesMobile/>
-                    <Technologies/>
-                    <Ending page={'main-page'} setDiscuss={setDiscuss}/>
+                    <CSSTransition in={pageChanger} timeout={250} classNames='mobilePageChanger'  unmountOnExit>
+                        <PagesSwitcher page={'main'} setPageChanger={setPageChange}/>
+                    </CSSTransition>
+                    <CSSTransition in={!pageChanger} timeout={250} classNames='mobilePageChanger' unmountOnExit>
+                        <div>
+                            <MainScreenMobile setPageChanger={setPageChange} setDiscuss={setDiscuss}/>
+                            <ServicesMobile/>
+                            <Photo src={'/assets/main-page-photo.png'}/>
+                            <Steps page={'main-page'}/>
+                            <AdvantagesMobile/>
+                            <Technologies/>
+                            <Ending page={'main-page'} setDiscuss={setDiscuss}/>
+                            <FooterMobile/>
+                        </div>
+                    </CSSTransition>
                 </div>
                 :
                 <div>

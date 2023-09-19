@@ -2,25 +2,25 @@
 .advantagesBody
   display: flex
   flex-direction: column
-  margin: 0 20px 92px 20px
+  margin: 0 5.555vw 25.555vw 5.555vw
 
 
 .advantagesSlash
-  margin-bottom: 50px
-  @include text(13px, white)
+  margin-bottom: 12.88vw
+  @include text(3.611vw, white)
   text-align: center
 
 .advantagesBigTitle
   text-align: center
-  @include text(38px, white)
-  margin-bottom: 20px
-  line-height: 36px
+  @include text(10.55vw, white)
+  margin-bottom: 5.55vw
+  line-height: 10vw
 
 
 .advantagesLittleTitle
   text-align: center
-  @include text(13px, #B0B0B0)
-  margin-bottom: 20px
+  @include text(3.611vw, #B0B0B0)
+  margin-bottom: 5.55vw
 
 .green
   color: $main-green-color
@@ -30,50 +30,38 @@
   display: flex
   flex-direction: column
 
-@media (max-width: 360px)
-  .advantagesSlash
-    font-size: 3.611vw
-  .advantagesLittleTitle
-    font-size: 3.611vw
-  .advantagesBigTitle
-    font-size: 10.555vw
-    line-height: 10vw
-@media (max-width: 270px)
-  .advantagesLittleTitle
-    font-size: 3vw
-
 
 .advantageBlock
   background: linear-gradient(rgba(47, 47, 47, 0.2), rgba(91, 91, 91, 0.2))
   border: 1px rgba(47, 47, 47, 1) solid
   display: flex
   width: 100%
-  border-radius: 19px
+  border-radius: 5.277vw
   & img
-    width: 100px
-    height: 100px
+    width: 27.77vw
+    height: 27.77vw
     float: right
 
 .common
   flex-direction: column
   & span
-    padding: 0 0 12px 12px
+    padding: 0 0 3.333vw 3.333vw
 
 .reverse
   flex-direction: column-reverse
   & span
-    padding: 12px 0 0 12px
+    padding: 3.333vw 0 0 3.333vw
 
 .advantageBlockText
-  @include text(13px, white)
-  line-height: 14.3px
+  @include text(3.333vw, white)
+  line-height: 3.972vw
 
 
 .advantagesBox
   display: grid
   width: 100%
-  grid-column-gap: 10px
-  grid-row-gap: 10px
+  grid-column-gap: 2.777vw
+  grid-row-gap: 2.777vw
   grid-template-columns: repeat(2, 1fr)
   grid-template-rows: auto 1fr 1fr
   grid-template-areas: 'a a' 'b c' 'd e'
@@ -86,49 +74,21 @@
   grid-template-rows: repeat(2, auto)
   grid-template-columns: 2fr 1fr
   grid-template-areas: 'title i' 'text i'
-  border-radius: 19px
+  border-radius: 5.277vw
   width: 100%
   grid-area: a
   & span:nth-child(1)
     grid-area: title
-    @include text(16px, white)
-    padding: 31px 0 0 15px
+    @include text(4.444vw, white)
+    padding: 8.611vw 0 0 4.166vw
   & span:nth-child(2)
     grid-area: text
-    @include text(12px, rgba(176, 176, 176, 1))
-    padding: 10px 0 30px 15px
-    line-height: 15.6px
+    @include text(3.333vw, rgba(176, 176, 176, 1))
+    padding: 2.777vw 0 8.333vw 4.1666vw
+    line-height: 4.3333vw
   & img
     grid-area: i
-    margin-left: -20px
-    width: 160px
-    height: 161px
+    width: 44.444vw
+    height: 44.444vw
     transform: rotateZ(20deg)
 
-
-@media (max-width: 359px)
-  .advantageBlockChosen
-    & span:nth-child(1)
-      @include text(4.44vw, white)
-      padding: 31px 0 0 4.166vw
-    & span:nth-child(2)
-      @include text(3.333vw, rgba(176, 176, 176, 1))
-      padding: 10px 0 30px 4.166vw
-      line-height: 4.333vw
-    & img
-      margin-left: -5.555vw
-      width: 44.444vw
-      height: 44.444vw
-  .advantageBlockText
-    @include text(3.611vw, white)
-    line-height: 3.872vw
-  .advantageBlock
-    & img
-      width: 27.777vw
-      height: 27.777vw
-  .common
-    & span
-      padding: 0 0 12px 3.333vw
-  .reverse
-    & span
-      padding: 12px 0 0 3.333vw

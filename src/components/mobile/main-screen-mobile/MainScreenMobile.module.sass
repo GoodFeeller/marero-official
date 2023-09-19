@@ -2,7 +2,7 @@
 
 .mainScreenBody
   width: 100%
-  height: 743px
+  height: 206.388vw
   background-image: url("/assets/MobileMainScreen.png")
   background-size: 100% 100%
 
@@ -15,28 +15,19 @@
 
 
 .titleGreen
-  @include text(95px, $main-green-color)
-  line-height: 90px
+  @include text(26.388vw, $main-green-color)
+  line-height: 25vw
 
 
 .titleWhite
-  @include text(42px, white)
-  line-height: 40px
-
-
-@media (max-width: 359px)
-  .titleGreen
-    @include text(26.388vw, $main-green-color)
-    line-height: 90px
-  .titleWhite
-    @include text(11.666vw, white)
-    line-height: 40px
+  @include text(11.66vw, white)
+  line-height: 11.111vw
 
 
 
 .linesBox
-  margin: 25px 20px 50px 20px
-  height: 120px
+  margin: 6.944vw 5.555vw 13.888vw 5.555vw
+  height: 33.3333vw
   position: relative
 
 .horizLine
@@ -66,9 +57,9 @@
   top: 0
   bottom: 0
   margin: auto
-  width: 4px
-  height: 4px
-  border-radius: 2px
+  width: 1.111vw
+  height: 1.111vw
+  border-radius: 0.555vw
   background: rgba(0, 255, 10, 1)
 
 .linesBoxContent
@@ -81,11 +72,7 @@
   justify-items: center
 
 .linesBoxContent span
-  @include text(13px, rgba(255, 255, 255, 1))
-
-@media (max-width: 350px)
-  .linesBoxContent span
-    font-size: 3.714vw
+  @include text(3.6111vw, rgba(255, 255, 255, 1))
 
 
 .discussBtnBox
@@ -95,5 +82,5 @@
   align-items: center
 
 .headerBox
-  padding-top: 63px
-  margin-bottom: 147px
+  padding-top: 17.5vw
+  margin-bottom: 40.83vw
