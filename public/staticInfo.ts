@@ -72,6 +72,20 @@ export const workStepsDesignPage: workType[] = [
         text: 'Научим ваших сотрудников пользоваться инструментами и администрировать продукт.'
     }
 ]
+export const valuesList: workType[] = [
+    {
+        id: '01',
+        title: 'НАДЕЖНОСТЬ',
+        text: 'Строгое соблюдение контракта и внутренний контроль качества продукта является гарантом своевременной поставки.'
+    },
+    {
+        id: '02',
+        title: 'ЛОЯЛЬНОСТЬ',
+        text: 'Мы прислушиваемся ко всем вашим пожеланиям и адаптируем процессы в соответствии с запросами вашего бизнеса.'
+
+    }
+]
+
 
 export type advantageType = {
     title: string
@@ -303,6 +317,43 @@ export const categoriesListWorkingPage: categoryType[] = [
         text: 'Удивляйте простотой и красотой приложения на IOs и Android'
     }
 ]
+export const categoriesListWorkingPageMobile: categoryType[] = [
+    {
+        btnText: 'Мобильные приложения',
+        src: '/assets/categories_7.png',
+        id: '01',
+        title: 'МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ',
+        text: 'Откройте собственный онлайн-магазин или полноценный маркетплейс'
+    },
+    {
+        btnText: 'Платежные системы',
+        src: '/assets/categories_8.png',
+        id: '02',
+        title: 'ПЛАТЕЖНЫЕ СИСТЕМЫ',
+        text: 'Создайте лицо вашего бизнеса в интернете'
+    },
+    {
+        btnText: 'Прочее ПО',
+        src: '/assets/categories_9.png',
+        id: '03',
+        title: 'ПРОЧЕЕ ПО',
+        text: 'Выгодный способ продавать товары или услуги'
+    },
+    {
+        btnText: 'Сервисы для парсинга данных',
+        src: '/assets/categories_10.png',
+        id: '04',
+        title: 'СЕРВИСЫ ДЛЯ ПАРСИНГА ДАННЫХ',
+        text: 'Публикуйте контент и создавайте сообщество клиентов и партнеров'
+    },
+    {
+        btnText: 'Сервисы для моделирования',
+        src: '/assets/categories_11.png',
+        id: '05',
+        title: 'СЕРВИСЫ ДЛЯ МОДЕЛИРОВАНИЯ',
+        text: 'Удивляйте простотой и красотой приложения на IOs и Android'
+    }
+]
 
 export const circlesList: string[] = [
     '/assets/Ellipse_1.svg',
@@ -320,3 +371,4 @@ export const circleListWorkingPage: string[] = [
 
 export type nowPageType = 'common' | 'callPage' | 'pageChanger' | 'none'
 export type setNowPageType = (value: (((prevState: ("common" | "callPage" | "pageChanger" | "none")) => ("common" | "callPage" | "pageChanger" | "none")) | "common" | "callPage" | "pageChanger" | "none")) => void
+

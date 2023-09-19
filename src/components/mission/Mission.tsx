@@ -1,16 +1,24 @@
 import {FunctionComponent} from "react";
 import styles from './Mission.module.sass'
 
-const Mission: FunctionComponent = () => {
+const Mission: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     return <div className={styles.missionBody}>
         <div className={styles.littleTitle}>
-            <span>/Миссия</span>
+            <span>{ isMobile ? 'МИССИЯ' : '/Миссия'}</span>
         </div>
         <div className={styles.text}>
-            <span>
-                Обеспечить наших клиентов <span className={styles.green}>лучшими решениями</span> в сфере информационных
-                технологий, путем создания уникальных, ярких и продуманных до мелочей продающих продуктов.
-            </span>
+            {
+                isMobile ?
+                    <span>
+                        Обеспечить наших клиентов лучшими<br/>решениями в сфере информационных
+                        технологий, путем создания уникальных,<br/>ярких и продуманных до мелочей<br/>продающих продуктов.
+                    </span>
+                    :
+                    <span>
+                        Обеспечить наших клиентов <span className={styles.green}>лучшими решениями</span> в сфере информационных
+                        технологий, путем создания уникальных, ярких и продуманных до мелочей продающих продуктов.
+                    </span>
+            }
         </div>
     </div>
 }

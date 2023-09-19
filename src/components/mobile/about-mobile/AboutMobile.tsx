@@ -1,20 +1,19 @@
 import {FunctionComponent} from "react";
-import styles from './MainScreenMobile.module.sass'
+import styles from './AboutMobile.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
-import {setNowPageType} from "../../../../public/staticInfo";
+import {officialText, setNowPageType} from "../../../../public/staticInfo";
 
 
-const MainScreenMobile: FunctionComponent<{setNowPage: setNowPageType}>
+const AboutMobile: FunctionComponent<{setNowPage: setNowPageType}>
     = ({setNowPage}) => {
-    return <div className={styles.mainScreenBody}>
+    return <div className={styles.aboutScreenBody}>
         <div className={styles.headerBox}>
             <HeaderMobile setNowPage={setNowPage}/>
         </div>
         <div className={styles.titleBox}>
-            <span className={styles.titleGreen}>ЯРКИЕ</span>
-            <span className={styles.titleWhite}>РЕШЕНИЯ ДЛЯ</span>
-            <span className={styles.titleWhite}>УЛУЧШЕНИЙ</span>
+            <span className={styles.titleBig}>О НАС</span>
+            <span className={styles.titleLittle}>Разрабатываем сайты,которые помогут<br/>вам продавать больше</span>
         </div>
         <div className={styles.linesBox}>
             <div className={styles.linesBoxContent}>
@@ -31,6 +30,9 @@ const MainScreenMobile: FunctionComponent<{setNowPage: setNowPageType}>
         <div className={styles.discussBtnBox}>
             <DiscussMobileButton setNowPage={setNowPage}/>
         </div>
+        <div className={styles.officialText}>
+            {officialText}
+        </div>
     </div>
 }
-export default MainScreenMobile
+export default AboutMobile

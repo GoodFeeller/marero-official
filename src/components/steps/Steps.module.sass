@@ -43,7 +43,6 @@
   flex-direction: column
   justify-content: center
   align-items: start
-
   & span:nth-child(1)
     @include text(20px, white)
     margin-bottom: 50px
@@ -54,6 +53,31 @@
     @include text(18, #B0B0B0)
     display: block
 
+.stepAbout
+  &:nth-child(1)
+    min-width: 61vw
+  &:nth-child(2)
+    min-width: 66.94vw
+  height: 43.333vw
+  display: flex
+  flex-direction: column
+  &:not(&:first-child)
+    margin-left: 13.888vw
+  transform: rotateX(0)
+  & span
+    line-height: 5.444vw
+  & span:nth-child(1)
+    @include text(3.611vw, white)
+    margin-bottom: 6.9444vw
+  & span:nth-child(2)
+    @include text(5.555vw, white)
+    margin-bottom: 4.166vw
+  & span:nth-child(3)
+    @include text(3.888vw, #B0B0B0)
+    display: block
+
+
+
 @media (max-width: 1000px)
   .titleBig
     font-size: 40px
@@ -63,10 +87,13 @@
     & span:nth-child(1)
       @include text(16px, white)
       margin-bottom: 30px
+      display: block
     & span:nth-child(2)
       @include text(40px, white)
       margin-bottom: 15px
+      display: block
     & span:nth-child(3)
+      display: block
       @include text(14, #B0B0B0)
 
 @media (max-width: 560px)
@@ -83,6 +110,11 @@
     height: 247.5vw
     background-size: 100% 100%
   .stepsTitle
+    & div
+      display: flex
+      flex-direction: column
+      width: 100%
+      margin-bottom: 0
     display: flex
     flex-direction: column
     width: 100%
@@ -102,7 +134,10 @@
     margin-right: 5.555vw
     transform: rotateX(0)
   .step
+    height: 32.222vw
     min-width: 50.55vw
+    justify-content: normal
+    align-items: normal
     &:not(&:first-child)
       margin-left: 15vw
     transform: rotateX(0)
@@ -115,3 +150,7 @@
     & span:nth-child(3)
       @include text(3.888vw, #B0B0B0)
       display: block
+
+.workingBack
+  background: url("/assets/workingStepsBackMobile.png")
+  background-size: 100% 100%

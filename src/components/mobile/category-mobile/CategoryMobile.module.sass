@@ -1,0 +1,130 @@
+@import "src/index"
+.categoriesBody
+  margin: 0
+  padding: 37.22vw 5.555vw 39.16vw 5.555vw
+  display: flex
+  height: 231.11vw
+  flex-direction: column
+  background: url("/assets/categoriesMobileBack.png")
+  background-size: 100% 191.94vw
+
+
+.categoryTopBody
+  grid-area: title
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-bottom: 11.388vw
+  & span
+    text-align: center
+
+
+.categoriesLittleTitle
+  @include text(3.611vw, rgba(255, 255, 255, 1))
+  text-align: center
+  line-height: 3.972vw
+  margin-bottom: 13.88vw
+
+
+.categoriesBigTitle
+  @include text(10.555vw, rgba(255, 255, 255, 1))
+  line-height: 10vw
+  text-align: center
+  margin-bottom: 11.38vw
+
+
+.categoryBottomBody
+  display: flex
+  flex-direction: row
+  & div
+    width: 100%
+    flex: 1
+
+.categoryBlockTitle
+  @include text(5.555vw, rgba(255, 255, 255, 1))
+  line-height: 6.11vw
+  text-align: center
+
+
+.categoryBlockText
+  @include text(3.888vw, rgba(176, 176, 176, 1))
+  line-height: 5.444vw
+  text-align: center
+
+
+.categoryBlockId
+  @include text(3.333vw, rgba(255, 255, 255, 1))
+
+
+.categoryBlock
+  position: relative
+  min-height: 36vw
+
+.categoryContent
+  position: absolute
+  display: grid
+  grid-template-rows: 1fr auto
+  grid-template-columns: 1fr 8fr 1fr
+  grid-template-areas: 'num title .' '. text .'
+  transition: all ease 0.5s
+  -ms-grid-column-align: end
+  -ms-grid-row-align: end
+  grid-row-gap: 2.777vw
+  & div
+    &:nth-child(1)
+      grid-area: num
+    &:nth-child(2)
+      grid-area: title
+    &:nth-child(3)
+      grid-area: text
+
+.categoryImg
+  position: absolute
+  transition: all 0.5s ease
+  opacity: 0
+  width: 88.333vw
+  height: 48.88vw
+
+.imagesBox
+  height: 48.88vw
+
+.categoryRightBottom
+  width: 100%
+
+
+
+
+.buttonsBox
+  display: flex
+  flex-wrap: wrap
+  & button
+    margin-right: 30px
+    margin-bottom: 15px
+    &:nth-child(3n)
+      flex: 1.1
+    &:nth-child(3n - 2)
+      flex: 1.4
+    &:nth-child(3n - 1)
+      flex: 2
+
+
+.buttonsBoxWorkingPage
+  margin-top: 11.11vw
+  display: grid
+  grid-template-rows: repeat(4, 1fr)
+  grid-template-columns: 1fr 1fr
+  grid-template-areas: 'a a' 'b b' 'c c' 'd e'
+  grid-row-gap: 2.777vw
+  grid-column-gap: 2.777vw
+  flex-direction: column
+  & button
+    &:nth-child(1)
+      grid-area: a
+    &:nth-child(2)
+      grid-area: d
+    &:nth-child(3)
+      grid-area: e
+    &:nth-child(4)
+      grid-area: b
+    &:nth-child(5)
+      grid-area: c

@@ -35,7 +35,7 @@ const MainPage: FunctionComponent = () => {
                             <AdvantagesMobile/>
                             <Technologies/>
                             <Ending page={'main-page'} setNowPage={setNowPage}/>
-                            <FooterMobile/>
+                            <FooterMobile page={'main-mobile'}/>
                         </div>
                     </CSSTransition>
                     <CSSTransition in={nowPage == 'pageChanger'} timeout={500} classNames='mobilePageChanger'  unmountOnExit>

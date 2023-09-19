@@ -2,8 +2,8 @@ import {FunctionComponent} from "react";
 import {phoneNumber, marseroMail, officialText} from '../../../../public/staticInfo'
 import styles from './FooterMobile.module.sass'
 
-const FooterMobile: FunctionComponent = () => {
-    return <div className={styles.footerBody}>
+const FooterMobile: FunctionComponent<{page: string}> = ({page}) => {
+    return <div className={page == 'about-mobile' ? styles.footerMoved : styles.footerBody}>
         <div className={styles.line}/>
         <img className={styles.image} src={'/assets/MARSERO.svg'}/>
         <div className={styles.textBox}>

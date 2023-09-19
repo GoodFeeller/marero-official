@@ -23,15 +23,15 @@ const Categories: FunctionComponent<{page: string}> = ( {page} ) => {
 
             {/*Блок картинок*/}
             <div>
-                {
-                    page == 'design'
-                    ?
-                        categoriesList.map( e =>
-                            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
-                        :
-                        categoriesListWorkingPage.map( e =>
-                            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
-                }
+                {/*{*/}
+                {/*    page == 'design'*/}
+                {/*    ?*/}
+                {/*        categoriesList.map( e =>*/}
+                {/*            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)*/}
+                {/*        :*/}
+                {/*        categoriesListWorkingPage.map( e =>*/}
+                {/*            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)*/}
+                {/*}*/}
             </div>
 
 

@@ -130,3 +130,30 @@
       flex: 0.4
     &:nth-child(4), &:nth-child(5)
       flex: 1
+
+@media (max-width: 560px)
+  .categoryButton
+    @include text(3.888vw, rgba(176, 176, 176, 1))
+    text-align: center
+    height: 12.5vw
+    border-radius: 27.777vw
+    width: auto
+    border: solid 1px rgba(176, 176, 176, 1)
+    background-color: #000000
+    transition: all ease 0.25s
+    padding: 0
+    margin: 0
+    &:hover
+      color: rgba(176, 176, 176, 1)
+      border-color: rgba(176, 176, 176, 1)
+  .categoryButtonChosen
+    padding: 0
+    margin: 0
+    @include text(3.888vw, $main-green-color)
+    text-align: center
+    height: 12.5vw
+    border-radius: 27.777vw
+    width: auto
+    border: solid 1px $main-green-color
+    background-color: #000000
+    transition: all ease 0.25s
