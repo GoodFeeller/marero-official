@@ -9,24 +9,55 @@ import Steps from "../../steps/Steps";
 import DiscussScreen from "../../discuss-screen/DiscussScreen";
 import {nowPageType} from "../../../../public/staticInfo";
 import {CSSTransition} from "react-transition-group";
+import PagesSwitcher from "../../mobile/pages-switcher/PagesSwitcher";
+import CallPage from "../../mobile/callPage/CallPage";
+import WebDesignMobileScreen from "../../mobile/web-design-mobile-screen/WebDesignMobileScreen";
+import CategoriesMobile from "../../mobile/category-mobile/CategoryMobile";
+import KeyDesignMobile from "../../mobile/keyDesignMobile/KeyDesignMobile";
+import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
 
 const WebDesignPage: FunctionComponent = () => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
+    const isMobile = window.screen.availWidth <= 560
     return <div>
-        <CSSTransition in={nowPage == 'common'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
+        { isMobile
+            ?
             <div>
-                <WebDesignScreen setNowPage={setNowPage}/>
-                <Categories page={'design'}/>
-                <Circles page={'design'}/>
-                <KeyDesign setNowPage={setNowPage} page={'design'}/>
-                <Steps page={'design'}/>
-                <Ending setNowPage={setNowPage} page={'design'}/>
-                <Footer/>
+                <CSSTransition in={nowPage == 'common'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
+                    <div>
+                        <WebDesignMobileScreen setNowPage={setNowPage}/>
+                        <CategoriesMobile page={'design'}/>
+                        <KeyDesignMobile page={'design'}/>
+                        <Steps page={'design'}/>
+                        <Ending setNowPage={setNowPage} page={'design'}/>
+                        <FooterMobile page={'design'}/>
+                    </div>
+                </CSSTransition>
+                <CSSTransition in={nowPage == 'pageChanger'} timeout={500} classNames='mobilePageChanger'  unmountOnExit>
+                    <PagesSwitcher page={'design'} setNowPage={setNowPage}/>
+                </CSSTransition>
+                <CSSTransition in={nowPage == 'callPage'} timeout={500} classNames='mobilePageChanger'  unmountOnExit>
+                    <CallPage setNowPage={setNowPage}/>
+                </CSSTransition>
             </div>
-        </CSSTransition>
-        <CSSTransition in={nowPage == 'callPage'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
-            <DiscussScreen setNowPage={setNowPage}/>
-        </CSSTransition>
+            :
+            <div>
+                <CSSTransition in={nowPage == 'common'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
+                    <div>
+                        <WebDesignScreen setNowPage={setNowPage}/>
+                        <Categories page={'design'}/>
+                        <Circles page={'design'}/>
+                        <KeyDesign setNowPage={setNowPage} page={'design'}/>
+                        <Steps page={'design'}/>
+                        <Ending setNowPage={setNowPage} page={'design'}/>
+                        <Footer/>
+                    </div>
+                </CSSTransition>
+                <CSSTransition in={nowPage == 'callPage'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
+                    <DiscussScreen setNowPage={setNowPage}/>
+                </CSSTransition>
+            </div>
+        }
     </div>
 }
 export default WebDesignPage

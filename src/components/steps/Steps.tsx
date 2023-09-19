@@ -2,7 +2,7 @@ import {FunctionComponent} from "react";
 import styles from './Steps.module.sass'
 import {valuesList, workSteps, workStepsDesignPage} from '../../../public/staticInfo'
 const Steps: FunctionComponent<{page: string}> = ({page}) => {
-    return <div className={page == 'working-mobile' ? styles.stepsBody + ' ' + styles.workingBack : styles.stepsBody }>
+    return <div className={page == 'working-mobile' || page == 'design' ? styles.stepsBody + ' ' + styles.workingBack : styles.stepsBody }>
         <div className={styles.stepsTitle}>
             {
                 page == 'about-mobile'

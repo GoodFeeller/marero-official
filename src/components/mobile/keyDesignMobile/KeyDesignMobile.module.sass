@@ -1,0 +1,71 @@
+@import "src/index"
+.keyDesignBody
+  display: flex
+  flex-direction: column
+  margin: 0 5.555vw 22.77vw 5.555vw
+
+
+.keyDesignTitleBody
+  display: flex
+  flex-direction: column
+  width: 100%
+
+
+.keyDesignLittleTitle
+  @include text(3.611vw, white)
+  line-height: 3.972vw
+  margin-bottom: 13.888vw
+  text-align: center
+
+
+.keyDesignBigTitle
+  @include text(10.555vw, white)
+  line-height: 10vw
+  margin-bottom: 5.555vw
+  text-align: center
+
+
+.topImagesBox
+  display: flex
+  flex-direction: column
+  & div
+    width: 100%
+    height: 61.3vw
+    margin-bottom: 2.77vw
+    & img
+      width: 100%
+      height: 100%
+
+
+.topImagesBoxBranding
+  display: flex
+  margin-top: 76px
+  margin-bottom: 50px
+  & div
+    & img
+      width: 100%
+    &:not(&:first-child)
+      flex: 2
+      margin-left: 14px
+    &:first-child
+      flex: 1
+
+.keyDesignTextDesignPage
+  display: flex
+  justify-content: center
+  & span
+    @include text(3.888vw, rgba(176, 176, 176, 1))
+    line-height: 5.444vw
+    text-align: center
+    margin-bottom: 8.333vw
+
+
+.keyDesignTextMainPage
+  flex: 1
+  display: flex
+  flex-direction: column
+  margin-top: 340px
+  & span
+    @include text(70px, white)
+    margin-bottom: 7px
+
