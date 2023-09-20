@@ -109,7 +109,7 @@ export type advantageTypeMobile = {
 export const advantagesList: advantageType[] = [
     {
         title: 'РАБОТАЕМ ОНЛАЙН ПО ВСЕМУ МИРУ',
-        text: 'Нащи специалисты готовы решать любые задачи 24/7 из любой точки мира.',
+        text: 'Наши специалисты готовы решать любые задачи 24/7 из любой точки мира.',
         src: '/assets/marker_front.svg',
         hoverSrc: '/assets/marker_front_hover.svg'
     },
@@ -120,7 +120,7 @@ export const advantagesList: advantageType[] = [
         hoverSrc: '/assets/headphone_front_hover.svg'
     },
     {
-        title: 'ФОКУС НА ФОРМУЛЕ "ЦЕНА-КАЧЕСТВО"',
+        title: 'ФОКУС НА ФОРМУЛЕ «ЦЕНА-КАЧЕСТВО»',
         text: 'Клиенты MARSERO четко понимают за что они платят.',
         src: '/assets/badge_front.svg',
         hoverSrc: '/assets/badge_front_hover.svg'
@@ -145,7 +145,7 @@ export const advantagesList: advantageType[] = [
 export const advantagesListMobile: advantageTypeMobile[] = [
     {
         title: 'РАБОТАЕМ ОНЛАЙН ПО ВСЕМУ МИРУ',
-        text: 'Нащи специалисты готовы решать любые задачи 24/7 из любой точки мира.',
+        text: 'Наши специалисты готовы решать любые задачи 24/7 из любой точки мира.',
         src: '/assets/marker_front.svg',
         hoverSrc: '/assets/marker_front_hover.svg',
         style: 'common'
@@ -158,7 +158,7 @@ export const advantagesListMobile: advantageTypeMobile[] = [
         style: 'reverse'
     },
     {
-        title: 'ФОКУС НА ФОРМУЛЕ "ЦЕНА-КАЧЕСТВО"',
+        title: 'ФОКУС НА ФОРМУЛЕ «ЦЕНА-КАЧЕСТВО»',
         text: 'Клиенты MARSERO четко понимают за что они платят.',
         src: '/assets/badge_front.svg',
         hoverSrc: '/assets/badge_front_hover.svg',
