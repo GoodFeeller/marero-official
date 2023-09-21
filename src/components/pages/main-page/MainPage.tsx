@@ -52,11 +52,17 @@ const MainPage: FunctionComponent = () => {
                                 <MainScreen setNowPge={setNowPage}/>
                                 <Services/>
                                 <Photo src={'/assets/Group.png'}/>
-                                <Steps page={'main-page'}/>
+                                <div style={{margin: '16.66vw 0 17.604vw 0'}}>
+                                    <Steps page={'main-page'}/>
+                                </div>
                                 <KeyDesign setNowPage={setNowPage} page={'main-page'}/>
-                                <MarseroAdvantages page={'main-page'}/>
+                                <div style={{margin: '17.6vw 0 16.19vw 0'}}>
+                                    <MarseroAdvantages page={'main-page'}/>
+                                </div>
                                 <Technologies/>
-                                <Ending setNowPage={setNowPage} page={'main-page'}/>
+                                <div style={{margin: '12.03vw 0 10.41vw 0'}}>
+                                    <Ending setNowPage={setNowPage} page={'main-page'}/>
+                                </div>
                                 <Footer/>
                             </div>
                         </CSSTransition>

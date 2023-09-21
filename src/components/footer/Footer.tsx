@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import styles from './Footer.module.sass'
 const Footer: FunctionComponent = () => {
     return<div className={styles.footerBody}>
+        <div className={styles.line}/>
         <div className={styles.leftContent}>
             <div><img src={'/assets/MARSERO.svg'}/></div>
             <div><span className={styles.officialText}>{officialText}</span></div>

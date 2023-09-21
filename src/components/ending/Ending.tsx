@@ -1,7 +1,8 @@
 import {FunctionComponent} from "react";
 import styles from './Ending.module.sass'
-import DiscussMobileButton from "../mobile/discussButtonMobile/DiscussMobileButton";
 import {setNowPageType} from "../../../public/staticInfo";
+import DiscussButton from "../header/discussButton/DiscussButton";
+import DiscussMobileButton from "../mobile/discussButtonMobile/DiscussMobileButton";
 const isMobile = window.screen.availWidth <= 560
 
 const Ending: FunctionComponent<{page: string, setNowPage: setNowPageType}> = ({ page , setNowPage}) => {
@@ -35,7 +36,12 @@ const Ending: FunctionComponent<{page: string, setNowPage: setNowPageType}> = ({
                 </div>
             }
         </div>
-        <DiscussMobileButton setNowPage={setNowPage}/>
+        { isMobile
+            ?
+            <DiscussMobileButton setNowPage={setNowPage}/>
+            :
+        <DiscussButton setNowPage={setNowPage}/>
+        }
 
     </div>
 }

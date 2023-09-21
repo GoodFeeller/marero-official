@@ -7,24 +7,29 @@
 
 
 .techTitle
-  @include text(70px, rgba(255, 255, 255, 1))
-  margin-bottom: 30px
+  @include text(3.645vw, rgba(255, 255, 255, 1))
+  margin-bottom: 1.5625vw
+  user-select: none
+  text-align: center
 
 
 .techContent
-  margin: 0 5.208vw 21.3vh 5.208vw
+  margin: 0 5.208vw
   display: grid
-  width: 100%
   grid-template-rows: repeat(3, 1fr)
   grid-template-columns: repeat(5, 1fr)
+  grid-gap: 1.5625vw
   & div
     width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
     & img
-      width: 100%
+      user-select: none
+      width: 16.66vw
+      height: 7.812vw
 
-@media (max-width: 1200px)
-  .techTitle
-    font-size: 50px
+
 
 
 
@@ -43,7 +48,15 @@
     grid-template-rows: repeat(7, 1fr)
     margin: 0 5.55vw
     grid-template-areas: 'a b' 'c d' 'e f' 'g h' 'i j' 'k l' 'm n'
+    grid-column-gap: 1.66vw
+    grid-row-gap: 0
     & div
+      display: flex
+      justify-content: center
+      align-items: center
+      & img
+        width: 44.16vw
+        height: 20.55vw
       &:nth-child(5)
         grid-area: f
       &:nth-child(7)

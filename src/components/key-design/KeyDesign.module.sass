@@ -2,7 +2,7 @@
 .keyDesignBody
   display: flex
   flex-direction: column
-  margin: 0 5.208vw 31.296vh 5.208vw
+  margin: 0 5.208vw
 
 
 .keyDesignTitleBody
@@ -12,25 +12,27 @@
 
 
 .keyDesignLittleTitle
-  @include text(18px, white)
+  @include text(0.9375vw, white)
   flex: 1
+  user-select: none
 
 
 .keyDesignBigTitle
-  @include text(70px, white)
+  @include text(3.645vw, white)
   flex: 1
+  user-select: none
 
 
 .topImagesBox
   display: flex
   flex-direction: row
-  margin-top: 76px
-  margin-bottom: 50px
+  margin-top: 3.95vw
   & div
     flex: 1
     &:not(&:first-child)
-      margin-left: 14px
+      margin-left: 0.729vw
     & img
+      user-select: none
       width: 100%
       height: 100%
 
@@ -52,7 +54,7 @@
 .keyDesignTextBlock
   display: flex
   width: 100%
-  margin-bottom: 50px
+  margin-bottom: 3.95vw
   & div
     width: 100%
     flex: 1
@@ -71,15 +73,16 @@
   flex: 1
   display: flex
   flex-direction: column
-  margin-top: 340px
+  margin-top: 17.6vw
   & span
-    @include text(70px, white)
-    margin-bottom: 7px
+    user-select: none
+    @include text(3.64vw, white)
 
 
 .brandingText
-  @include text(18px, rgba(255, 255, 255, 1))
-  margin-top: 340px
+  @include text(0.9375vw, rgba(255, 255, 255, 1))
+  margin-top: 17.6vw
+  user-select: none
 
 
 
@@ -87,9 +90,10 @@
   display: flex
   & div
     & img
+      user-select: none
       width: 100%
     &:nth-child(1)
-      margin-right: 14px
+      margin-right: 0.729vw
       flex: 2 auto
     &:nth-child(2)
       display: flex
@@ -106,35 +110,3 @@
         width: 100%
         & button
           width: 100%
-
-
-@media (max-width: 1600px)
-  .keyDesignBigTitle
-    @include text(55px, white)
-  .keyDesignTextMainPage
-    & span
-      font-size: 55px
-    margin-top: 270px
-  .brandingText
-    margin-top: 270px
-
-@media (max-width: 1300px)
-  .keyDesignBigTitle
-    @include text(40px, white)
-  .keyDesignTextMainPage
-    & span
-      font-size: 40px
-    margin-top: 150px
-  .brandingText
-    margin-top: 150px
-
-
-@media (max-width: 900px)
-  .keyDesignBigTitle
-    @include text(30px, white)
-  .keyDesignTextMainPage
-    & span
-      font-size: 30px
-    margin-top: 100px
-  .brandingText
-    margin-top: 100px

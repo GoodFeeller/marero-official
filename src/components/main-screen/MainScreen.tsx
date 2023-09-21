@@ -7,7 +7,7 @@ import {setNowPageType} from "../../../public/staticInfo";
 
 const MainScreen: FunctionComponent<{setNowPge: setNowPageType}> = ({setNowPge}) => {
     return <div className={styles.mainBody}>
-        <div style={{margin: '-30px 5.208vw'}}>
+        <div>
             <Header  setNowPage={setNowPge} page={'main'}/>
         </div>
 

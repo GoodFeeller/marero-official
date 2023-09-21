@@ -1,5 +1,5 @@
 import {FunctionComponent} from "react";
-import { techSrcList } from './../../../public/staticInfo'
+import { techSrcList } from '../../../public/staticInfo'
 import styles from './Technologies.module.sass'
 const isMobile = window.screen.availWidth <= 560
 

@@ -7,15 +7,16 @@
 
 
 .endingContent
-  height: 80vh
+  height: 45.46875vw
   width: 100%
 
 .back
   width: 100%
   position: absolute
-  height: 80vh
+  height: 45.46875vw
   & span
-    @include text(18px, rgba(171, 171, 171, 1))
+    user-select: none
+    @include text(0.9375vw, rgba(171, 171, 171, 1))
   & div
     position: absolute
 
@@ -33,7 +34,7 @@
   height: 1px
   width: 50%
   background: linear-gradient(-90deg ,rgba(167, 167, 167, 1), rgba(167, 167, 167, 1), rgba(255, 255, 255, 0))
-  top: 25%
+  top: 14.42vw
   opacity: 50%
 
 
@@ -41,15 +42,15 @@
   height: 1px
   width: 50%
   background: linear-gradient(90deg ,rgba(167, 167, 167, 1), rgba(167, 167, 167, 1), rgba(255, 255, 255, 0))
-  top: 75%
+  top: 32vw
   left: 50%
   opacity: 50%
 
 
 .firstDot, .secondDot
-  width: 6px
-  height: 6px
-  border-radius: 3px
+  width: 0.3125vw
+  height: 0.3125vw
+  border-radius: 0.15625vw
   background-color: rgba(217, 217, 217, 1)
   left: 0
   right: 0
@@ -57,25 +58,25 @@
 
 
 .firstDot
-  top: 24.5%
+  top: 14.27vw
 
 .secondDot
-  top: 74.5%
+  top: 31.85vw
 
 .firstSpan
-  top: 20%
-  right: 51%
+  top: 13.125vw
+  right: 50.46vw
   position: absolute
 
 
 .secondSpan
-  top: 70%
-  left: 51%
+  top: 30.72vw
+  left: 50.46vw
   position: absolute
 
 
 .titleBox
-  margin: 0 5.208vw 18.51vh 5.208vw
+  margin: 0 5.208vw
   display: flex
   align-items: center
   justify-content: center
@@ -84,25 +85,17 @@
 
 
 .titleText
-  @include text(80px, rgba(255, 255, 255, 1))
+  @include text(4.16vw, rgba(255, 255, 255, 1))
+  line-height: 4.5833vw
+  user-select: none
 
 .titleTextAboutPage
   @include text(66px, rgba(255, 255, 255, 1))
+  user-select: none
 
 .titleGreen
   color: $main-green-color
 
-
-@media (max-width: 1520px)
-  .titleText
-    font-size: 50px
-
-
-@media (max-width: 1000px)
-  .titleText
-    font-size: 30px
-  .back span
-    font-size: 12px
 
 
 @media (max-width: 560px)
@@ -113,17 +106,23 @@
     text-align: center
   .back span
     font-size: 3.333vw
+  .secondDot, .firstDot
+    width: 1.666vw
+    height: 1.666vw
+    border-radius: 0.8333vw
   .secondLine
     top: 42.777vw
   .thirdLine
-    bottom: 23.333vw
+    top: 123.22vw
   .firstDot
     top: 41.944vw
   .secondDot
-    bottom: 22.5vw
+    top: 122.5vw
   .firstSpan
     top: 37.5vw
+    right: 51.66vw
   .secondSpan
+    left: 51.66vw
     top: 118vw
   .endingContent
     height: 164.72vw

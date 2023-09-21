@@ -1,23 +1,26 @@
 @import "src/index"
 .stepsBody
-  margin: 29.629vh 5.208vw 31.296vh
+  margin: 0 5.208vw
 
 
 .stepsTitle
-  display: flex
-  flex-direction: row
-  width: 100%
-  margin-bottom: 80px
+  margin-bottom: 4.166vw
+  & div
+    display: flex
+
 
 
 .titleBig
-  @include text(66.5px, white)
+  @include text(3.645vw, white)
+  line-height: 3.46vw
   flex: 1
+  user-select: none
 
 
 .titleLittle
-  @include text(20px, white)
+  @include text(1.04vw, white)
   flex: 1
+  user-select: none
 
 
 .stepScrollBox
@@ -26,7 +29,7 @@
     background-color: #333333
   &::-webkit-scrollbar-thumb
     background-color: $main-green-color
-  padding-bottom: 100px
+  padding-bottom: 5.2vw
   transform: rotateX(180deg)
   display: flex
   flex-direction: row
@@ -37,20 +40,22 @@
 
 .step
   &:not(&:first-child)
-    margin-left: 345px
+    margin-left: 17.91vw
   display: flex
   transform: rotateX(180deg)
   flex-direction: column
-  justify-content: center
-  align-items: start
   & span:nth-child(1)
-    @include text(20px, white)
-    margin-bottom: 50px
+    @include text(1.04vw, white)
+    margin-bottom: 2.6vw
+    user-select: none
   & span:nth-child(2)
-    @include text(55px, white)
-    margin-bottom: 30px
+    @include text(2.86vw, white)
+    margin-bottom: 1.822vw
+    user-select: none
   & span:nth-child(3)
-    @include text(18, #B0B0B0)
+    user-select: none
+    @include text(1.04vw, #B0B0B0)
+    line-height: 1.31vw
     display: block
 
 .stepAbout
@@ -77,25 +82,6 @@
     display: block
 
 
-
-@media (max-width: 1000px)
-  .titleBig
-    font-size: 40px
-  .step
-    &:not(&:first-child)
-      margin-left: 200px
-    & span:nth-child(1)
-      @include text(16px, white)
-      margin-bottom: 30px
-      display: block
-    & span:nth-child(2)
-      @include text(40px, white)
-      margin-bottom: 15px
-      display: block
-    & span:nth-child(3)
-      display: block
-      @include text(14, #B0B0B0)
-
 @media (max-width: 560px)
   .stepScrollBox
     padding-bottom: 13.88vw
@@ -115,8 +101,6 @@
       flex-direction: column
       width: 100%
       margin-bottom: 0
-    display: flex
-    flex-direction: column
     width: 100%
     margin-bottom: 0
   .titleBig
@@ -149,6 +133,7 @@
       margin-bottom: 4.166vw
     & span:nth-child(3)
       @include text(3.888vw, #B0B0B0)
+      line-height: 5.44vw
       display: block
 
 .workingBack

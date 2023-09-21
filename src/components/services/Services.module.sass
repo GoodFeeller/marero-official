@@ -1,48 +1,31 @@
 @import "src/index"
 
 .servicesBody
-  height: 900px
+  height: 48.28vw
   display: flex
-  align-items: center
   justify-content: center
   background-size: 100% 100%
 
 
 .servicesContent
   cursor: default
-  @include text(120px, #404040)
+  @include text(6.25vw, #404040)
   display: flex
-  justify-content: center
   align-items: center
   flex-direction: column
+  margin-top: 8.64vw
   & span
     transition: all 0.5s ease
+    user-select: none
     &:hover
       color: $main-green-color
     &:not(&:first-child)
-      margin-top: 50px
+      margin-top: 2.604vw
 
 
 
 .service
   position: absolute
   left: 7.8125vw
-  transform: translateY(-220px)
-  @include text(20px, white)
-
-@media (max-width: 1300px)
-  .servicesBody
-    height: 700px
-  .servicesContent
-    font-size: 80px
-  .service
-    transform: translateY(-155px)
-
-@media (max-width: 900px)
-  .servicesBody
-    height: 500px
-  .servicesContent
-    font-size: 50px
-  .service
-    transform: translateY(-120px)
-    font-size: 11px
+  transform: translateY(8.64vw)
+  @include text(0.9375vw, white)

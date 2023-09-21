@@ -5,49 +5,42 @@
   align-items: center
   justify-content: center
   width: 100%
-  margin-top: 2.962vh
+  padding-top: 1.66vw
 
 
-
-.phone
-  @include text(18px, $main-green-color)
-  margin-right: 3.802vw
-
-
-.discussButton
-  width: 251px
-  height: 60px
-  background-color: #0000
-  border: 1px $main-green-color solid
-  border-radius: 30px
-  @include text(18px, $main-green-color)
-  offset: none
+.imgMarsero
+  width: 11.35vw
+  height: 1.19vw
+  user-select: none
 
 
 
 .linkBox
-  margin-left: 7.072vw
-  margin-right: 12.729vw
+  margin-left: 8.072vw
+  margin-right: 15.729vw
   display: inline-flex
+  transform: translateY(0.781vw)
 
 
 @mixin MLink
   &:not(&:first-child)
-    margin-left: 45px
+    margin-left: 2.343vw
   text-decoration: none
   transition: all ease 0.25s
   &:after
     content: ''
-    margin-top: 10px
+    margin-top: 0.781vw
     display: block
     height: 1px
     width: 100%
     transform: scaleX(0)
     transition: all ease 0.25s
     background-color: $main-green-color
+    user-select: none
+
 
 .link
-  @include text(18px, $main-gray-color)
+  @include text(0.9375vw, $main-gray-color)
   @include MLink
   &:hover
     color: $main-green-color
@@ -57,76 +50,32 @@
 
 .lightLink
   @include MLink
-  @include text(18px, $main-green-color)
+  @include text(0.9375vw, $main-green-color)
   &:after
     transform: scaleX(1)
 
-.imgMarsero
-   width: auto
+
+.phone
+  @include text(0.9375vw, $main-green-color)
+  margin-right: 3.802vw
 
 
-@media (max-width: 1850px)
-  .linkBox
-    margin-left: 7vw
-    margin-right: 8vw
-    display: inline-flex
 
-@media (max-width: 1700px)
-  .phone
-    font-size: 15px
-  .discussButton
-    width: 200px
-  .link, .lightLink
-    font-size: 15px
+.discussButton
+  width: 13.07vw
+  height: 3.125vw
+  background-color: #0000
+  border: 1px $main-green-color solid
+  border-radius: 5.208vw
+  @include text(0.9375vw, $main-green-color)
+  text-align: center
+  offset: none
+  transition: all ease 0.25s
+  &:hover
+    background: $main-green-color
+    font-weight: 400
+    color: black
 
-@media (max-width: 1550px)
-  .phone
-    font-size: 12px
-  .discussButton
-    width: 200px
-    height: 40px
-  .link, .lightLink
-    font-size: 12px
-  .discussButton
-    @include text(12px, $main-green-color)
-  .imgMarsero
-    width: 10%
-  .linkBox
-    margin-left: 5vw
-    margin-right: 4vw
-    display: inline-flex
 
-@media (max-width: 1100px)
-  .phone
-    font-size: 10px
-  .discussButton
-    width: 100px
-    height: 40px
-  .link, .lightLink
-    font-size: 10px
-  .discussButton
-    @include text(10px, $main-green-color)
-  .imgMarsero
-    width: 10%
-  .linkBox
-    margin-left: 3vw
-    margin-right: 3vw
-    display: inline-flex
 
-@media (max-width: 860px)
-  .phone
-    font-size: 8px
-  .discussButton
-    width: 100px
-    height: 40px
-  .link, .lightLink
-    font-size: 8px
-  .discussButton
-    @include text(8px, $main-green-color)
-  .imgMarsero
-    width: 8%
-  .linkBox
-    margin-left: 3vw
-    margin-right: 3vw
-    display: inline-flex
 

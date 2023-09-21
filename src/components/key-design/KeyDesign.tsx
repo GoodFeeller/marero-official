@@ -7,10 +7,14 @@ const KeyDesign: FunctionComponent<{page: string, setNowPage: setNowPageType}> =
 
         {/*Верхний текст*/}
         <div className={styles.keyDesignTitleBody}>
-            <span className={styles.keyDesignLittleTitle}>{ page == 'branding' ? '/Разработка брендинга' : '/Разработка дизайна сайта'}</span>
+            <span className={styles.keyDesignLittleTitle}>{ page == 'branding' ? '/Разработка брендинга' :
+                page == 'main-page' ? '/Дизайн сайта' :'/Разработка дизайна сайта'}</span>
             { page == 'branding' ?
                 <span className={styles.keyDesignBigTitle}>МЫ ВЕРИМ<br/>В ВАШ БРЕНД</span>
                 :
+                page == 'main-page' ?
+                    <span className={styles.keyDesignBigTitle}>САЙТЫ КОТОРЫЕ<br/>ПРИНОСЯТ КЛИЕНТОВ</span>
+                    :
                 <span className={styles.keyDesignBigTitle}>РАЗРАБОТАЕМ<br/>ДИЗАЙН ПОД КЛЮЧ</span>
             }
         </div>
