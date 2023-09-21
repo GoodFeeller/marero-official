@@ -16,9 +16,8 @@ import CategoriesMobile from "../../mobile/category-mobile/CategoryMobile";
 import KeyDesignMobile from "../../mobile/keyDesignMobile/KeyDesignMobile";
 import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
 
-const WebDesignPage: FunctionComponent = () => {
+const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
-    const isMobile = window.screen.availWidth <= 560
     return <div>
         { isMobile
             ?
@@ -29,7 +28,7 @@ const WebDesignPage: FunctionComponent = () => {
                         <CategoriesMobile page={'design'}/>
                         <KeyDesignMobile page={'design'}/>
                         <Steps page={'design'}/>
-                        <Ending setNowPage={setNowPage} page={'design'}/>
+                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
                         <FooterMobile page={'design'}/>
                     </div>
                 </CSSTransition>
@@ -49,7 +48,7 @@ const WebDesignPage: FunctionComponent = () => {
                         <Circles page={'design'}/>
                         <KeyDesign setNowPage={setNowPage} page={'design'}/>
                         <Steps page={'design'}/>
-                        <Ending setNowPage={setNowPage} page={'design'}/>
+                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
                         <Footer/>
                     </div>
                 </CSSTransition>

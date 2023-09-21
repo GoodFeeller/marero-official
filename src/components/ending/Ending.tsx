@@ -3,9 +3,8 @@ import styles from './Ending.module.sass'
 import {setNowPageType} from "../../../public/staticInfo";
 import DiscussButton from "../header/discussButton/DiscussButton";
 import DiscussMobileButton from "../mobile/discussButtonMobile/DiscussMobileButton";
-const isMobile = window.screen.availWidth <= 560
 
-const Ending: FunctionComponent<{page: string, setNowPage: setNowPageType}> = ({ page , setNowPage}) => {
+const Ending: FunctionComponent<{isMobile: boolean, page: string, setNowPage: setNowPageType}> = ({ page , setNowPage, isMobile}) => {
     return <div className={styles.endingBody}>
         <div className={styles.endingContent}>
         <div className={styles.back}>
@@ -15,8 +14,12 @@ const Ending: FunctionComponent<{page: string, setNowPage: setNowPageType}> = ({
             <div className={styles.firstDot}/>
             <div className={styles.secondDot}/>
             <span className={styles.firstSpan}>Уникальный дизайн</span>
-            <span className={styles.secondSpan}>{ isMobile ? 'Техподдержка' : 'Техподдержка и консультация'}</span>
-        </div>
+            { isMobile ?
+                <span className={styles.secondSpan}>Техподдержка</span>
+                :
+                <span className={styles.secondSpan}>Техподдержка и консультация</span>
+            }
+            </div>
             {   isMobile
                 ?
                 <div  className={styles.titleBox}>
@@ -40,7 +43,7 @@ const Ending: FunctionComponent<{page: string, setNowPage: setNowPageType}> = ({
             ?
             <DiscussMobileButton setNowPage={setNowPage}/>
             :
-        <DiscussButton setNowPage={setNowPage}/>
+            <DiscussButton setNowPage={setNowPage}/>
         }
 
     </div>

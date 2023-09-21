@@ -16,9 +16,8 @@ import CallPage from "../../mobile/callPage/CallPage";
 import BrandingMobileScreen from "../../mobile/branding-mobile-page/BrandingMobilePage";
 import AdvantagesMobile from "../../mobile/advantages-mobile/AdvantagesMobile";
 
-const BrandingPage: FunctionComponent = () => {
+const BrandingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
-    const isMobile = window.screen.availWidth <= 560
     return <div>
         { isMobile
             ?
@@ -30,7 +29,7 @@ const BrandingPage: FunctionComponent = () => {
                         <AdvantagesMobile/>
                         <KeyDesignMobile page={'branding'}/>
                         <Steps page={'branding'}/>
-                        <Ending setNowPage={setNowPage} page={'branding'}/>
+                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
                         <FooterMobile page={'branding'}/>
                     </div>
                 </CSSTransition>
@@ -49,7 +48,7 @@ const BrandingPage: FunctionComponent = () => {
                         <BuisnessActivity isMobile={isMobile}/>
                         <MarseroAdvantages page={'branding'}/>
                         <KeyDesign setNowPage={setNowPage} page={'branding'}/>
-                        <Ending setNowPage={setNowPage} page={'branding'}/>
+                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
                         <Footer/>
                     </div>
                 </CSSTransition>

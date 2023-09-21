@@ -14,9 +14,8 @@ import AboutMobile from "../../mobile/about-mobile/AboutMobile";
 import Steps from "../../steps/Steps";
 import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
 
-const AboutPage: FunctionComponent = () => {
+const AboutPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
-    const isMobile = window.screen.availWidth <= 560
     return <div>
         {
             isMobile ?
@@ -28,7 +27,7 @@ const AboutPage: FunctionComponent = () => {
                             <Photo src={'/assets/aboutMobilePhoto.png'}/>
                             <Steps page={'about-mobile'}/>
                             <div style={{transform: 'translateY(-64.6vw)'}}>
-                                <Ending setNowPage={setNowPage} page={'about'}/>
+                                <Ending isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
                             </div>
                             <FooterMobile page={'about-mobile'}/>
                         </div>
@@ -48,7 +47,7 @@ const AboutPage: FunctionComponent = () => {
                             <Mission isMobile={isMobile}/>
                             <Photo src={'/assets/Group.png'}/>
                             <Value/>
-                            <Ending setNowPage={setNowPage} page={'about'}/>
+                            <Ending isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
                             <Footer/>
                         </div>
                     </CSSTransition>

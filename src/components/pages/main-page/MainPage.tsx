@@ -19,9 +19,9 @@ import './../../../index.scss'
 import CallPage from "../../mobile/callPage/CallPage";
 import { nowPageType } from './../../../../public/staticInfo'
 
-const MainPage: FunctionComponent = () => {
+const MainPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
-    const isMobile = window.screen.availWidth <= 560
+
     return <div>
         {
             isMobile ?
@@ -33,8 +33,8 @@ const MainPage: FunctionComponent = () => {
                             <Photo src={'/assets/main-page-photo.png'}/>
                             <Steps page={'main-page'}/>
                             <AdvantagesMobile/>
-                            <Technologies/>
-                            <Ending page={'main-page'} setNowPage={setNowPage}/>
+                            <Technologies isMobile={isMobile}/>
+                            <Ending isMobile={isMobile} page={'main-page'} setNowPage={setNowPage}/>
                             <FooterMobile page={'main-mobile'}/>
                         </div>
                     </CSSTransition>
@@ -59,9 +59,9 @@ const MainPage: FunctionComponent = () => {
                                 <div style={{margin: '17.6vw 0 16.19vw 0'}}>
                                     <MarseroAdvantages page={'main-page'}/>
                                 </div>
-                                <Technologies/>
+                                <Technologies isMobile={isMobile}/>
                                 <div style={{margin: '12.03vw 0 10.41vw 0'}}>
-                                    <Ending setNowPage={setNowPage} page={'main-page'}/>
+                                    <Ending isMobile={isMobile} setNowPage={setNowPage} page={'main-page'}/>
                                 </div>
                                 <Footer/>
                             </div>

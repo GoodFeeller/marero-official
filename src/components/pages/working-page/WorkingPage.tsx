@@ -18,9 +18,8 @@ import CategoriesMobile from "../../mobile/category-mobile/CategoryMobile";
 import AdvantagesMobile from "../../mobile/advantages-mobile/AdvantagesMobile";
 import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
 
-const WorkingPage: FunctionComponent = () => {
+const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
-    const isMobile = window.screen.availWidth <= 560
     return <div>
         { isMobile
             ?
@@ -32,8 +31,8 @@ const WorkingPage: FunctionComponent = () => {
                         <Photo src={'/assets/workingPagePhotoMobile.png'}/>
                         <Steps page={'working-mobile'}/>
                         <AdvantagesMobile/>
-                        <Technologies/>
-                        <Ending setNowPage={setNowPage} page={'working'}/>
+                        <Technologies isMobile={isMobile}/>
+                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
                         <FooterMobile page={'working'}/>
                     </div>
                 </CSSTransition>
@@ -54,8 +53,8 @@ const WorkingPage: FunctionComponent = () => {
                         <MarseroAdvantages page={'working'}/>
                         <Photo src={'/assets/workingPhoto.svg'}/>
                         <Steps page={'working'}/>
-                        <Technologies/>
-                        <Ending setNowPage={setNowPage} page={'working'}/>
+                        <Technologies isMobile={isMobile}/>
+                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
                         <Footer/>
                     </div>
                 </CSSTransition>
