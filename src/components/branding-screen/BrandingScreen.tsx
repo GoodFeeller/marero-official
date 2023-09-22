@@ -5,8 +5,10 @@ import {officialText, setNowPageType} from '../../../public/staticInfo'
 import DiscussButton from "../header/discussButton/DiscussButton";
 const BrandingScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
     return <div className={styles.screenBody}>
-        <div className={styles.screenContent}>
+        <div>
             <Header setNowPage={setNowPage} page={'branding'}/>
+        </div>
+        <div className={styles.screenContent}>
             <div className={styles.screenTitle}>
                 <span className={styles.webDesignTitle}>БРЕНДИНГ</span>
                 <span className={styles.webDesignText}>Разрабатываем сайты,которые помогут вам продавать больше</span>

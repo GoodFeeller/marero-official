@@ -23,15 +23,15 @@ const Categories: FunctionComponent<{page: string}> = ( {page} ) => {
 
             {/*Блок картинок*/}
             <div>
-                {/*{*/}
-                {/*    page == 'design'*/}
-                {/*    ?*/}
-                {/*        categoriesList.map( e =>*/}
-                {/*            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)*/}
-                {/*        :*/}
-                {/*        categoriesListWorkingPage.map( e =>*/}
-                {/*            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)*/}
-                {/*}*/}
+                {
+                    page == 'design'
+                    ?
+                        categoriesList.map( e =>
+                            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
+                        :
+                        categoriesListWorkingPage.map( e =>
+                            <img className={styles.categoryImgWorkingPage} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
+                }
             </div>
 
 
@@ -48,22 +48,30 @@ const Categories: FunctionComponent<{page: string}> = ( {page} ) => {
                 </div>
 
                 {/*Блок текста*/}
-                <div className={styles.categoryBlock}>
+                <div className={styles.categoryBlock} style={page == 'working' ? {minHeight: '15vw'} : {minHeight: '11.09vw'}}>
                     {
                         page == 'design'
                         ?
                             categoriesList.map( e => <div style={ category.src == e.src ? {opacity: '1'} : {opacity: '0'}}
-                            className={styles.categoryContent}>
-                                <div className={styles.categoryBlockId}><span>{e.id}</span></div>
-                                <div className={styles.categoryBlockTitle}><span>{e.title}</span></div>
-                                <div className={styles.categoryBlockText}><span>{e.text}</span></div>
+                            className={styles.categoryContent + ' ' + styles.webDesignTextStyle}>
+                                <span className={styles.categoryBlockId}>{e.id}</span>
+                                <span className={styles.categoryBlockTitle}>{e.title}</span>
+                                <span className={styles.categoryBlockText}>{e.text}</span>
                             </div>)
                             :
                             categoriesListWorkingPage.map( e => <div style={ category.src == e.src ? {opacity: '1'} : {opacity: '0'} }
-                            className={styles.categoryContent}>
-                                <div className={styles.categoryBlockId}><span>{e.id}</span></div>
-                                <div className={styles.categoryBlockTitle}><span>{e.title}</span></div>
-                                <div className={styles.categoryBlockText}><span>{e.text}</span></div>
+                            className={styles.categoryContent + ' ' + styles.workingTextStyle}>
+                                <span className={styles.categoryBlockId}>{e.id}</span>
+                                <span className={styles.categoryBlockTitle}>{e.title}</span>
+                                {
+                                    typeof e.text != 'string'
+                                    ?
+                                        <div className={styles.categoryBlockText}>
+                                            {e.text.map( s => <span>{s}</span>)}
+                                        </div>
+                                        :
+                                        <span className={styles.categoryBlockText}>{e.text}</span>
+                                }
                             </div>)
                     }
                 </div>

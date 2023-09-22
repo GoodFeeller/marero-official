@@ -29,7 +29,8 @@ const AdvantagesMobile: FunctionComponent = () => {
                     if (index == 0) return <div key={index} className={styles.advantageBlockChosen}>
                         <span>{a.title}</span>
                         <span>{a.text}</span>
-                        <img src={a.hoverSrc}/>
+                        <img style={{width: a.positions[0], height: a.positions[1], left: a.positions[2], top: a.positions[3],
+                        transform: a.positions[4] + 'rotateZ(10deg)'}} src={a.hoverSrc}/>
                     </div>
                     else return <div key={index}
                                      className={a.style == 'common' ? styles.advantageBlock + ' ' + styles.common : styles.advantageBlock + ' ' + styles.reverse}

@@ -5,8 +5,8 @@ import DiscussButton from "../header/discussButton/DiscussButton";
 import {setNowPageType} from "../../../public/staticInfo";
 const WorkingPageScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
     return <div className={styles.screenBody}>
+        <Header setNowPage={setNowPage} page={'working'}/>
         <div className={styles.screenContent}>
-            <Header setNowPage={setNowPage} page={'working'}/>
             <div className={styles.screenTitle}>
                 <span className={styles.webDesignTitle}>РАЗРАБОТКА<br/>ПРОГРАММНОГО<br/>ОБЕСПЕЧЕНИЯ</span>
                 <span className={styles.webDesignText}>Создаем уникальные программные решения для бизнеса</span>

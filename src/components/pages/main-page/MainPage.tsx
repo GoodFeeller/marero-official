@@ -31,7 +31,7 @@ const MainPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                             <MainScreenMobile setNowPage={setNowPage}/>
                             <ServicesMobile/>
                             <Photo src={'/assets/main-page-photo.png'}/>
-                            <Steps page={'main-page'}/>
+                            <Steps isMobile={isMobile} page={'main-page'}/>
                             <AdvantagesMobile/>
                             <Technologies isMobile={isMobile}/>
                             <Ending isMobile={isMobile} page={'main-page'} setNowPage={setNowPage}/>
@@ -53,7 +53,7 @@ const MainPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                                 <Services/>
                                 <Photo src={'/assets/Group.png'}/>
                                 <div style={{margin: '16.66vw 0 17.604vw 0'}}>
-                                    <Steps page={'main-page'}/>
+                                    <Steps isMobile={isMobile} page={'main-page'}/>
                                 </div>
                                 <KeyDesign setNowPage={setNowPage} page={'main-page'}/>
                                 <div style={{margin: '17.6vw 0 16.19vw 0'}}>

@@ -27,7 +27,7 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <WebDesignMobileScreen setNowPage={setNowPage}/>
                         <CategoriesMobile page={'design'}/>
                         <KeyDesignMobile page={'design'}/>
-                        <Steps page={'design'}/>
+                        <Steps isMobile={isMobile} page={'design'}/>
                         <Ending isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
                         <FooterMobile page={'design'}/>
                     </div>
@@ -44,11 +44,17 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                 <CSSTransition in={nowPage == 'common'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
                     <div>
                         <WebDesignScreen setNowPage={setNowPage}/>
+                        <div style={{margin: '10.41vw 0 24.53vw 0'}}>
                         <Categories page={'design'}/>
+                        </div>
                         <Circles page={'design'}/>
+                        <div style={{margin: '19.27vw 0'}}>
                         <KeyDesign setNowPage={setNowPage} page={'design'}/>
-                        <Steps page={'design'}/>
+                        </div>
+                        <Steps isMobile={isMobile} page={'design'}/>
+                        <div style={{margin: '13.33vw 0 10.41vw 0'}}>
                         <Ending isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
+                        </div>
                         <Footer/>
                     </div>
                 </CSSTransition>

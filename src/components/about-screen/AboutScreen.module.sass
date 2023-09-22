@@ -1,23 +1,19 @@
 @import "../../index"
 .mainBody
   min-width: 100%
-
-
-
-
-
-.titleBody
-  height: 100vh
-  width: 100%
-  display: flex
-  flex-direction: column
-  align-items: center
+  height: 56.25vw
   background-image: url("../../../public/assets/aboutBack.png")
   background-size: 100% 100%
 
 
+.titleBody
+  width: 100%
+  display: flex
+  flex-direction: column
+
+
 .title
-  margin-top: 150px
+  margin-top: 7.968vw
   display: flex
   flex-direction: column
   justify-content: center
@@ -25,16 +21,16 @@
 
 
 .titleBig
-  @include text(200px, rgba(255, 255, 255, 1))
-  letter-spacing: 10px
-  margin-bottom: 30px
+  @include text(10.41vw, rgba(255, 255, 255, 1))
+  line-height: 9.89vw
+  margin-bottom: 1.56vw
+  user-select: none
 
 
 .titleLittle
-  @include text(22px, rgba(255, 255, 255, 1))
-  &:first-child
-    margin-bottom: 8px
-
+  @include text(1.145vw, rgba(255, 255, 255, 1))
+  line-height: 1.6vw
+  user-select: none
 
 
 

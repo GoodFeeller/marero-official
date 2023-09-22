@@ -30,7 +30,7 @@ const Ending: FunctionComponent<{isMobile: boolean, page: string, setNowPage: se
                 ?
                 <div  className={styles.titleBox}>
                     <span className={styles.titleTextAboutPage}>МЫ ЗАБЕРЕМ ВАШУ БОЛЬ И ТРАНСФОРМИРУЕМ</span>
-                    <span className={styles.titleText}>ЕЕ В <span className={styles.titleGreen}>ВЫГОДУ</span> ДЛЯ ВАШЕГО БИЗНЕСА!</span>
+                    <span className={styles.titleTextAboutPage}>ЕЕ В <span className={styles.titleGreen}>ВЫГОДУ</span> ДЛЯ ВАШЕГО БИЗНЕСА!</span>
                 </div>
                 :
                 <div  className={styles.titleBox}>

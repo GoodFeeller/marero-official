@@ -5,8 +5,10 @@ import DiscussButton from "../header/discussButton/DiscussButton";
 import {setNowPageType} from "../../../public/staticInfo";
 const WebDesignScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
     return <div className={styles.screenBody}>
-        <div className={styles.screenContent}>
+        <div>
             <Header setNowPage={setNowPage} page={'design'}/>
+        </div>
+        <div className={styles.screenContent}>
             <div className={styles.screenTitle}>
                 <span className={styles.webDesignTitle}>ВЕБ-ДИЗАЙН</span>
                 <span className={styles.webDesignText}>Разрабатываем сайты,которые помогут вам продавать больше</span>

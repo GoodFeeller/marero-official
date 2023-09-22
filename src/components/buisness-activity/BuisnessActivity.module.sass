@@ -2,59 +2,62 @@
 .buisnessBody
   display: flex
   flex-direction: column
-  height: 247.5vw
+  height: 42.91vw
+
 
 .buisnessContent
-  margin: 0 5.208vw 0 5.208vw
-
+  width: 100%
 
 
 .titleBody
+  margin: 0 5.208vw
   display: flex
-  width: 100%
   & span
     width: 100%
     flex: 1
 
 
 .littleTitle
-  @include text(18px, rgba(255, 255, 255, 1))
+  @include text(0.9375vw, rgba(255, 255, 255, 1))
+  user-select: none
 
 
 .bigTitle
-  @include text(70px, rgba(255, 255, 255, 1))
+  @include text(3.64vw, rgba(255, 255, 255, 1))
+  user-select: none
 
 
 .infoBlock
   display: flex
   flex-direction: column
-  &:nth-child(2)
-    margin: 0 13vw
+  height: 9.322vw
   & span
-    @include text(24px,rgba(255, 255, 255, 1))
-    margin-bottom: 25px
+    @include text(1.25vw,rgba(255, 255, 255, 1))
+    margin-bottom: 1.25vw
+    user-select: none
+    display: flex
+    align-items: center
     &:before
-      content: url("/assets/whiteDot.svg")
-      display: inline-block
-      transform: translateY(-4px)
-      margin-right: 20px
-      transform: scale(0.5)
-
-
+      content: ''
+      display: block
+      width: 0.15625vw
+      height: 0.15625vw
+      border-radius: 0.078vw
+      background: white
+      margin-right: 1.04vw
 
 
 .infoBox
-  margin-top: 60px
+  margin-top: 3.125vw
   display: flex
   width: 100%
-  justify-content: center
-
+  justify-content: space-around
 
 
 .linesBlock
   position: relative
   width: 100%
-  height: 390px
+  height: 22.55vw
 
 
 .firstLine
@@ -63,7 +66,7 @@
   height: 1px
   background: linear-gradient(-90deg, rgba(167, 167, 167, 1), rgba(167, 167, 167, 1), rgba(255, 255, 255, 0))
   opacity: 50%
-  top: 40px
+  top: 4.32vw
 
 
 .secondLine
@@ -72,17 +75,17 @@
   height: 1px
   background: linear-gradient(90deg, rgba(167, 167, 167, 1), rgba(167, 167, 167, 1), rgba(255, 255, 255, 0))
   opacity: 50%
-  top: 40px
+  top: 4.32vw
   left: 50%
 
 
 .thirdLine
   position: absolute
   width: 1px
-  height: 350px
+  height: 18.22vw
   background: linear-gradient(rgba(167, 167, 167, 1), rgba(167, 167, 167, 1), rgba(255, 255, 255, 0))
   opacity: 50%
-  top: 40px
+  top: 4.32vw
   left: 0
   right: 0
   margin: 0 auto
@@ -90,18 +93,21 @@
 
 @mixin dot
   position: absolute
-  background: url("/public/assets/whiteDot.svg")
-  top: 37px
+  width: 0.3125vw
+  height: 0.3125vw
+  border-radius: 0.3125vw
+  background: white
+  top: 4.166vw
 
 
 .firstDot
   @include dot
-  left: 15%
+  left: 12.91vw
 
 
 .secondDot
   @include dot
-  right: 15%
+  right: 12.91vw
 
 
 .thirdDot
@@ -125,6 +131,7 @@
     width: 100%
     margin-top: 37.222vw
   .titleBody
+    margin: 0
     display: flex
     flex-direction: column
     width: 100%
@@ -151,11 +158,15 @@
       @include text(3.888vw,rgba(255, 255, 255, 1))
       margin-bottom: 5.555vw
       display: flex
+      align-items: center
       &:before
-        content: url("/assets/whiteDot.svg")
+        content: ''
         display: block
+        width: 0.833vw
+        height: 0.833vw
+        background: white
+        border-radius: 0.555vw
         margin-right: 2.777vw
-        transform: scale(0.5)
   .infoBox
     margin-top: 0
     display: flex
@@ -193,16 +204,25 @@
     margin: 0 auto
   .firstDot
     @include dot
+    width: 1.11vw
+    height: 1.11vw
+    border-radius: 1.11vw
     left: 24.44vw
     top: 0
     transform: scale(0.666)
   .secondDot
     @include dot
+    width: 1.11vw
+    height: 1.11vw
+    border-radius: 1.11vw
     right: 24.44vw
     top: 0
     transform: scale(0.666)
   .thirdDot
     @include dot
+    width: 1.11vw
+    height: 1.11vw
+    border-radius: 1.11vw
     left: 0
     right: 0
     margin: 0 auto

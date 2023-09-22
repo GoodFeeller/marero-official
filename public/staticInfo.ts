@@ -58,30 +58,75 @@ export const workStepsDesignPage: workType[] = [
     },
     {
         id: '04',
-        title: 'ТЕСТИРУЕМ',
+        title: 'РЕАЛИЗАЦИЯ ПРОЕКТА',
         text: 'Создаём полноценный проект, подключаем модули и презентуем вам.'
     },
     {
         id: '05',
-        title: 'ОБУЧАЕМ',
+        title: 'ТЕСТИРОВАНИЕ И ЗАПУСК',
         text: 'Окончательно проверяем продукт на наличие багов и ошибок, и запускаем проект.'
     },
     {
         id: '06',
-        title: 'ЗАПУСКАЕМ',
+        title: 'ОБУЧЕНИЕ СОТРУДНИКОВ',
         text: 'Научим ваших сотрудников пользоваться инструментами и администрировать продукт.'
+    }
+]
+export const workStepsWorkingPage: workType[] = [
+    {
+        id: '01',
+        title: 'АНАЛИЗИРУЕМ РЫНОК',
+        text: 'Изучаем ваши потребности, исследуем рынок и конкурентную среду'
+    },
+    {
+        id: '02',
+        title: 'МОДЕЛИРУЕМ ПРОЦЕССЫ',
+        text: 'Изучаем бизнес-процессы и устраняем «подводные камни» для начала разработки эффективного ПО'
+    },
+    {
+        id: '03',
+        title: 'СОЗДАЕМ ПРОТОТИП',
+        text: 'Проектируем интерактивную схему всех экранов будущего продукта — вы сможете попробовать программу и легко внести изменения.'
+    },
+    {
+        id: '04',
+        title: 'РАЗРАБАТЫВАЕМ ПРОДУКТ',
+        text: 'Создаём ПО с помощью лучших систем и проверенных специалистов.'
+    },
+    {
+        id: '05',
+        title: 'ТЕСТИРУЕМ\n' +
+            'ПРОДУКТ',
+        text: 'Оптимизируем продукт для получения наиболее точного и эффективного результата.'
+    },
+    {
+        id: '06',
+        title: 'ОБУЧЕНИЕ СОТРУДНИКОВ',
+        text: 'Научим ваших сотрудников пользоваться продуктом'
     }
 ]
 export const valuesList: workType[] = [
     {
         id: '01',
-        title: 'НАДЕЖНОСТЬ',
-        text: 'Строгое соблюдение контракта и внутренний контроль качества продукта является гарантом своевременной поставки.'
+        title: 'РЕПУТАЦИЯ',
+        text: 'Каждый сотрудник компании осознает долю своей личной ответственности, поэтому делает все для наилучшего результата.'
     },
     {
         id: '02',
+        title: 'НАДЕЖНОСТЬ',
+        text: 'Строгое соблюдение контракта \n' +
+            'и внутренний контроль качества продукта является гарантом своевременной поставки.'
+    },
+    {
+        id: '03',
+        title: 'БЕРЕЖЛИВОСТЬ',
+        text: 'Мы заботимся о росте бизнеса наших клиентов, так как это залог роста и нашей компании.'
+    },
+    {
+        id: '04',
         title: 'ЛОЯЛЬНОСТЬ',
-        text: 'Мы прислушиваемся ко всем вашим пожеланиям и адаптируем процессы в соответствии с запросами вашего бизнеса.'
+        text: 'Мы прислушиваемся ко всем пожеланиям и адаптируем процессы в соответствии \n' +
+            'с запросами вашего бизнеса.'
 
     }
 ]
@@ -105,6 +150,7 @@ export type advantageTypeMobile = {
     src: string
     hoverSrc: string
     style: 'common' | 'reverse'
+    positions: string[]
 }
 export const advantagesList: advantageType[] = [
     {
@@ -148,21 +194,24 @@ export const advantagesListMobile: advantageTypeMobile[] = [
         text: 'Наши специалисты готовы решать любые задачи 24/7 из любой точки мира.',
         src: '/assets/marker_front.svg',
         hoverSrc: '/assets/marker_front_hover.svg',
-        style: 'common'
+        style: 'common',
+        positions: ['110%', '110%', '-5vw', '-10%', 'scaleY(1)']
     },
     {
         title: 'ПОЖИЗНЕННАЯ ТЕХПОДДЕРЖКА',
         text: 'Наши клиенты получают эксклюзивные условия дальнейшего сопровождения.',
         src: '/assets/headphone_front.svg',
         hoverSrc: '/assets/headphone_front_hover.svg',
-        style: 'reverse'
+        style: 'reverse',
+        positions: ['120%', '110%', '-10vw', '-10%', 'scaleY(1)']
     },
     {
         title: 'ФОКУС НА ФОРМУЛЕ «ЦЕНА-КАЧЕСТВО»',
         text: 'Клиенты MARSERO четко понимают за что они платят.',
         src: '/assets/badge_front.svg',
         hoverSrc: '/assets/badge_front_hover.svg',
-        style: 'common'
+        style: 'common',
+        positions: ['110%', '110%', '-5vw', '-10%', 'scaleY(1)']
     }
     ,
     {
@@ -171,7 +220,8 @@ export const advantagesListMobile: advantageTypeMobile[] = [
             'и делаем ваш продукт неотъемлемой частью их жизни.',
         src: '/assets/dart_board_front.svg',
         hoverSrc: '/assets/dart_board_front_hover.svg',
-        style: 'reverse'
+        style: 'reverse',
+        positions: ['40vw', '65vw', '-10vw', '-18%', 'scaleY(1.4)']
     }
     ,
     {
@@ -179,7 +229,8 @@ export const advantagesListMobile: advantageTypeMobile[] = [
         text: 'Все, кто работает в MARSERO, проходят жесточайшие условия отбора.',
         src: '/assets/magnifying_glass_front.svg',
         hoverSrc: '/assets/magnifying_glass_front_hover.svg',
-        style: 'common'
+        style: 'common',
+        positions: ['110%', '110%', '-5vw', '-10%', 'scaleY(1)']
     }
 ]
 export const advantagesListWorkingPage: advantageTypeWorkingPage[] = [
@@ -189,7 +240,7 @@ export const advantagesListWorkingPage: advantageTypeWorkingPage[] = [
         hoverSrc: '/assets/headphone_front_hover.svg'
     },
     {
-        title: 'ФОКУС НА ФОРМУЛЕ "ЦЕНА-КАЧЕСТВО"',
+        title: 'ФОКУС НА ФОРМУЛЕ «ЦЕНА-КАЧЕСТВО»',
         src: '/assets/badge_front.svg',
         hoverSrc: '/assets/badge_front_hover.svg'
     }
@@ -233,7 +284,7 @@ export type categoryType = {
     src: string
     id: string
     title: string
-    text: string
+    text: string | string[]
 }
 export const categoriesList: categoryType[] = [
     {
@@ -286,35 +337,39 @@ export const categoriesListWorkingPage: categoryType[] = [
         src: '/assets/categories_7.png',
         id: '01',
         title: 'МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ',
-        text: 'Откройте собственный онлайн-магазин или полноценный маркетплейс'
+        text: 'Сделайте свой бизнес доступным в один клик.'
     },
     {
         btnText: 'Платежные банковские системы',
         src: '/assets/categories_8.png',
         id: '02',
         title: 'ПЛАТЕЖНЫЕ БАНКОВСКИЕ СИСТЕМЫ',
-        text: 'Создайте лицо вашего бизнеса в интернете'
+        text: 'Сделаем вашу систему самой быстрой, удобной и безопасной'
     },
     {
         btnText: 'Прочее ПО',
         src: '/assets/categories_9.png',
         id: '03',
         title: 'ПРОЧЕЕ ПО',
-        text: 'Выгодный способ продавать товары или услуги'
+        text: ['Сервисы автоматизации процессов;',
+            'Операционные системы;',
+            'Программные оболочки операционных систем;',
+            'Сервисы для моделирования;',
+            'CRM-системы;']
     },
     {
         btnText: 'Сервисы для парсинга данных',
         src: '/assets/categories_10.png',
         id: '04',
         title: 'СЕРВИСЫ ДЛЯ ПАРСИНГА ДАННЫХ',
-        text: 'Публикуйте контент и создавайте сообщество клиентов и партнеров'
+        text: 'Напишем программы для автоматического сбора данных под ваш запрос.'
     },
     {
         btnText: 'Сервисы для моделирования',
         src: '/assets/categories_11.png',
         id: '05',
         title: 'СЕРВИСЫ ДЛЯ МОДЕЛИРОВАНИЯ',
-        text: 'Удивляйте простотой и красотой приложения на IOs и Android'
+        text: 'Многоуровневая система безопасности, оперативность обработки информации и простота в использовании - то что мы гарантируем.'
     }
 ]
 export const categoriesListWorkingPageMobile: categoryType[] = [

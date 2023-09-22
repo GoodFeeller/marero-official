@@ -1,5 +1,6 @@
 @import "../../index"
 
+
 .header
   display: flex
   align-items: center
@@ -12,7 +13,6 @@
   width: 11.35vw
   height: 1.19vw
   user-select: none
-
 
 
 .linkBox
@@ -42,6 +42,7 @@
 .link
   @include text(0.9375vw, $main-gray-color)
   @include MLink
+  user-select: none
   &:hover
     color: $main-green-color
     &:after
@@ -50,6 +51,7 @@
 
 .lightLink
   @include MLink
+  user-select: none
   @include text(0.9375vw, $main-green-color)
   &:after
     transform: scaleX(1)
@@ -70,7 +72,8 @@
   @include text(0.9375vw, $main-green-color)
   text-align: center
   offset: none
-  transition: all ease 0.25s
+  user-select: none
+  transition: background-color ease 0.25s, color ease 0.25s, font-weight 10s ease
   &:hover
     background: $main-green-color
     font-weight: 400

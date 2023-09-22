@@ -12,7 +12,7 @@
 
 .advantagesBigTitle
   text-align: center
-  @include text(10.55vw, white)
+  @include text(10vw, white)
   margin-bottom: 5.55vw
   line-height: 10vw
 
@@ -36,6 +36,7 @@
   border: 1px rgba(47, 47, 47, 1) solid
   display: flex
   width: 100%
+  height: 43vw
   border-radius: 5.277vw
   & img
     width: 27.77vw
@@ -59,7 +60,6 @@
 
 .advantagesBox
   display: grid
-  width: 100%
   grid-column-gap: 2.777vw
   grid-row-gap: 2.777vw
   grid-template-columns: repeat(2, 1fr)
@@ -71,11 +71,12 @@
   background: linear-gradient(rgba(47, 47, 47, 0.2), rgba(91, 91, 91, 0.2))
   border: 1px rgba(47, 47, 47, 1) solid
   display: grid
+  position: relative
+  height: 43vw
   grid-template-rows: repeat(2, auto)
-  grid-template-columns: 2fr 1fr
+  grid-template-columns: 1.8fr 1fr
   grid-template-areas: 'title i' 'text i'
   border-radius: 5.277vw
-  width: 100%
   grid-area: a
   & span:nth-child(1)
     grid-area: title
@@ -86,9 +87,9 @@
     @include text(3.333vw, rgba(176, 176, 176, 1))
     padding: 2.777vw 0 8.333vw 4.1666vw
     line-height: 4.3333vw
+    width: 50vw
   & img
     grid-area: i
-    width: 44.444vw
-    height: 44.444vw
-    transform: rotateZ(20deg)
+    position: absolute
+
 

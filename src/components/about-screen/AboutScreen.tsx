@@ -6,7 +6,7 @@ import AboutTitle from "./about-title/AboutTitle";
 import {setNowPageType} from "../../../public/staticInfo";
 const AboutScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
     return <div className={styles.mainBody}>
-        <div style={{margin: '0 5.208vw'}}>
+        <div>
             <Header setNowPage={setNowPage} page={'about'}/>
         </div>
 

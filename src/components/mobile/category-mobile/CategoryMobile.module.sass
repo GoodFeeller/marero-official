@@ -30,7 +30,7 @@
   @include text(10.555vw, rgba(255, 255, 255, 1))
   line-height: 10vw
   text-align: center
-  margin-bottom: 11.38vw
+  margin-bottom: 12.22vw
 
 
 .categoryBottomBody
@@ -62,20 +62,20 @@
 
 .categoryContent
   position: absolute
-  display: grid
-  grid-template-rows: 1fr auto
-  grid-template-columns: 1fr 8fr 1fr
-  grid-template-areas: 'num title .' '. text .'
+  display: flex
+  flex-direction: column
   transition: all ease 0.5s
-  -ms-grid-column-align: end
-  -ms-grid-row-align: end
-  grid-row-gap: 2.777vw
+  justify-content: center
+  align-items: center
+  width: 100%
   & div
+    width: 100%
+    & span
+      text-align: center
     &:nth-child(1)
-      grid-area: num
-    &:nth-child(2)
+      margin-bottom: 2.777vw
       grid-area: title
-    &:nth-child(3)
+    &:nth-child(2)
       grid-area: text
 
 .categoryImg

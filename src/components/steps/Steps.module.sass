@@ -36,7 +36,43 @@
   overflow-x: scroll
 
 
-
+.workingStep
+  &:not(&:first-child)
+    margin-left: 17.91vw
+  display: flex
+  transform: rotateX(180deg)
+  flex-direction: column
+  &:nth-child(1)
+    & span:nth-child(3)
+      width: 20vw
+  &:nth-child(2)
+    & span:nth-child(3)
+      width: 20vw
+  &:nth-child(3)
+    & span:nth-child(3)
+      width: 22vw
+  &:nth-child(4)
+    & span:nth-child(3)
+      width: 16.7vw
+  &:nth-child(5)
+    & span:nth-child(3)
+      width: 20.8vw
+  &:nth-child(6)
+    & span:nth-child(3)
+      width: 16vw
+  & span:nth-child(1)
+    @include text(1.04vw, white)
+    margin-bottom: 2.6vw
+    user-select: none
+  & span:nth-child(2)
+    @include text(2.86vw, white)
+    margin-bottom: 1.822vw
+    user-select: none
+  & span:nth-child(3)
+    user-select: none
+    @include text(0.9375vw, #B0B0B0)
+    line-height: 1.31vw
+    display: block
 
 .step
   &:not(&:first-child)
@@ -54,7 +90,7 @@
     user-select: none
   & span:nth-child(3)
     user-select: none
-    @include text(1.04vw, #B0B0B0)
+    @include text(0.9375vw, #B0B0B0)
     line-height: 1.31vw
     display: block
 
@@ -62,8 +98,11 @@
   &:nth-child(1)
     min-width: 61vw
   &:nth-child(2)
-    min-width: 66.94vw
-  height: 43.333vw
+    min-width: 60.5vw
+  &:nth-child(3)
+    min-width: 63vw
+  &:nth-child(4)
+    min-width: 66.9vw
   display: flex
   flex-direction: column
   &:not(&:first-child)
@@ -96,6 +135,7 @@
     height: 247.5vw
     background-size: 100% 100%
   .stepsTitle
+    display: flex
     & div
       display: flex
       flex-direction: column
@@ -118,13 +158,22 @@
     margin-right: 5.555vw
     transform: rotateX(0)
   .step
-    height: 32.222vw
-    min-width: 50.55vw
+    &:nth-child(1) span:nth-child(3)
+      min-width: 53vw
+    &:nth-child(2) span:nth-child(3)
+      min-width: 60.5vw
     justify-content: normal
     align-items: normal
     &:not(&:first-child)
       margin-left: 15vw
     transform: rotateX(0)
+    &:nth-child(2)
+      margin-right: 4vw
+      & span:nth-child(3)
+        width: 55vw
+    &:nth-child(6)
+      & span:nth-child(3)
+        width: 58vw
     & span:nth-child(1)
       @include text(3.611vw, white)
       margin-bottom: 6.9444vw

@@ -6,10 +6,14 @@ const DiscussScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowP
     return <div className={styles.body}>
         <img className={styles.marseroImg} src={'/assets/MARSERO.svg'}/>
         <span className={styles.officialText}>{officialText}</span>
-        <button className={styles.backBtn} onClick={ () => {
+        <div className={styles.backBtn} onClick={ () => {
             setNowPage('none')
             setTimeout(() => setNowPage('common'), 500)
-        }}/>
+        }}>
+            <div/>
+            <div/>
+            <div/>
+        </div>
         <div className={styles.callBox}>
             <div className={styles.title}>
                 <span>ОБРАТНЫЙ</span>

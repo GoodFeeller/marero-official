@@ -9,7 +9,6 @@ import DiscussScreen from "../../discuss-screen/DiscussScreen";
 import {nowPageType} from "../../../../public/staticInfo";
 import {CSSTransition} from "react-transition-group";
 import KeyDesignMobile from "../../mobile/keyDesignMobile/KeyDesignMobile";
-import Steps from "../../steps/Steps";
 import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
 import PagesSwitcher from "../../mobile/pages-switcher/PagesSwitcher";
 import CallPage from "../../mobile/callPage/CallPage";
@@ -28,7 +27,6 @@ const BrandingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <BuisnessActivity isMobile={isMobile}/>
                         <AdvantagesMobile/>
                         <KeyDesignMobile page={'branding'}/>
-                        <Steps page={'branding'}/>
                         <Ending isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
                         <FooterMobile page={'branding'}/>
                     </div>
@@ -46,9 +44,13 @@ const BrandingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                     <div>
                         <BrandingScreen setNowPage={setNowPage}/>
                         <BuisnessActivity isMobile={isMobile}/>
-                        <MarseroAdvantages page={'branding'}/>
+                        <div style={{margin: '4.16vw 0 22.23vw 0'}}>
+                            <MarseroAdvantages page={'branding'}/>
+                        </div>
                         <KeyDesign setNowPage={setNowPage} page={'branding'}/>
+                        <div style={{margin: '0 0 10.4vw 0'}}>
                         <Ending isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
+                        </div>
                         <Footer/>
                     </div>
                 </CSSTransition>

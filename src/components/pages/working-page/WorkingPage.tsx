@@ -29,7 +29,7 @@ const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <WorkingMobilePage setNowPage={setNowPage}/>
                         <CategoriesMobile page={'working'}/>
                         <Photo src={'/assets/workingPagePhotoMobile.png'}/>
-                        <Steps page={'working-mobile'}/>
+                        <Steps isMobile={isMobile} page={'working-mobile'}/>
                         <AdvantagesMobile/>
                         <Technologies isMobile={isMobile}/>
                         <Ending isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
@@ -48,13 +48,21 @@ const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                 <CSSTransition in={nowPage == 'common'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
                     <div>
                         <WorkingPageScreen setNowPage={setNowPage}/>
+                        <div style={{margin: '10.41vw 0 20.625vw 0'}}>
                         <Categories page={'working'}/>
+                        </div>
                         <Circles page={'working'}/>
-                        <MarseroAdvantages page={'working'}/>
+                        <div style={{margin: '24.53vw 0 18.33vw 0'}}>
+                        <MarseroAdvantages page={'main-page'}/>
+                        </div>
                         <Photo src={'/assets/workingPhoto.svg'}/>
-                        <Steps page={'working'}/>
+                        <div style={{margin: '19.79vw 0 19.27vw 0'}}>
+                        <Steps isMobile={isMobile} page={'working'}/>
+                        </div>
                         <Technologies isMobile={isMobile}/>
+                        <div style={{margin: '10.72vw 0 10.41vw 0'}}>
                         <Ending isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
+                        </div>
                         <Footer/>
                     </div>
                 </CSSTransition>

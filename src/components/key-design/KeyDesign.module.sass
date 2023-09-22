@@ -39,14 +39,14 @@
 
 .topImagesBoxBranding
   display: flex
-  margin-top: 76px
-  margin-bottom: 50px
+  margin-top: 1.82vw
   & div
     & img
       width: 100%
+      user-select: none
     &:not(&:first-child)
       flex: 2
-      margin-left: 14px
+      margin-left: 0.729vw
     &:first-child
       flex: 1
 
@@ -64,9 +64,11 @@
   flex: 1
   display: flex
   flex-direction: column
+  margin-top: 2.6vw
   & span
-    @include text(18px, white)
-    margin-bottom: 7px
+    @include text(0.9375vw, white)
+    line-height: 1.3125vw
+    user-select: none
 
 
 .keyDesignTextMainPage
@@ -103,10 +105,10 @@
         height: 100%
         flex: 1
       & div
-        align-self: center
         flex: 0.5
         height: 100%
-        margin-top: 55px
         width: 100%
+        display: flex
+        justify-content: center
         & button
           width: 100%
