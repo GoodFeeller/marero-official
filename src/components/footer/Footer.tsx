@@ -24,8 +24,8 @@ const Footer: FunctionComponent = () => {
             </div>
             <div>
                 <span>МЫ В СЕТЯХ</span>
-                <span>Instagram</span>
-                <span>Linkedin</span>
+                <a href={'https://www.instagram.com/marsero_org/'} target={'_blank'}>Instagram</a>
+                <a href={'https://www.linkedin.com/in/marsero-corporation-986910250/?originalSubdomain=by'} target={'_blank'}>Linkedin</a>
             </div>
         </div>
     </div>

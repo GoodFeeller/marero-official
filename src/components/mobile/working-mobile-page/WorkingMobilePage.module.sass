@@ -18,11 +18,13 @@
 .titleGreen
   @include text(13.333vw, $main-green-color)
   line-height: 14.9333vw
+  user-select: none
 
 
 .titleWhite
   @include text(13.333vw, white)
   line-height: 14.9333vw
+  user-select: none
 
 .littleText
   @include text(3.888vw, rgba(255, 255, 255, 1))
@@ -30,6 +32,7 @@
   text-align: center
   margin-top: 3.05vw
   margin-bottom: 61.11vw
+  user-select: none
 
 
 .discussBtnBox
@@ -49,6 +52,7 @@
     width: 100%
     display: flex
     @include text(3.611vw, rgba(179, 179, 179, 1))
+    user-select: none
     &:not(&:last-child)
       margin-right: 12.777vw
     &:before

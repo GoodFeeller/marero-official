@@ -22,7 +22,7 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
         { isMobile
             ?
             <div>
-                <CSSTransition in={nowPage == 'common'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
+                <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <div>
                         <WebDesignMobileScreen setNowPage={setNowPage}/>
                         <CategoriesMobile page={'design'}/>
@@ -32,16 +32,16 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <FooterMobile page={'design'}/>
                     </div>
                 </CSSTransition>
-                <CSSTransition in={nowPage == 'pageChanger'} timeout={500} classNames='mobilePageChanger'  unmountOnExit>
+                <CSSTransition in={nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>
                     <PagesSwitcher page={'design'} setNowPage={setNowPage}/>
                 </CSSTransition>
-                <CSSTransition in={nowPage == 'callPage'} timeout={500} classNames='mobilePageChanger'  unmountOnExit>
+                <CSSTransition in={nowPage == 'callPage'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>
                     <CallPage setNowPage={setNowPage}/>
                 </CSSTransition>
             </div>
             :
             <div>
-                <CSSTransition in={nowPage == 'common'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
+                <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <div>
                         <WebDesignScreen setNowPage={setNowPage}/>
                         <div style={{margin: '10.41vw 0 24.53vw 0'}}>
@@ -58,7 +58,7 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <Footer/>
                     </div>
                 </CSSTransition>
-                <CSSTransition in={nowPage == 'callPage'} timeout={500} classNames='mobilePageChanger' unmountOnExit>
+                <CSSTransition in={nowPage == 'callPage'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <DiscussScreen setNowPage={setNowPage}/>
                 </CSSTransition>
             </div>

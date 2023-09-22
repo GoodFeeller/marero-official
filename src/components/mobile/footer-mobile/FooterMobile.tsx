@@ -11,7 +11,9 @@ const FooterMobile: FunctionComponent<{page: string}> = ({page}) => {
             <span>{marseroMail}</span>
         </div>
             <div className={styles.linkBox}>
-                <a/><a/><a/>
+                <a href={'https://www.linkedin.com/in/marsero-corporation-986910250/?originalSubdomain=by'} target={'_blank'}/>
+                <a href={'https://www.instagram.com/marsero_org/'} target={'_blank'}/>
+                <a/>
             </div>
         <button className={styles.arrowBtn} onClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}/>
         <span className={styles.officialSpan}>{officialText}</span>

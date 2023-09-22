@@ -46,36 +46,31 @@ $main-gray-color: #B3B3B3;
   animation: closeScreen 3s
 }
 
-@keyframes closeScreen {
+@keyframes openScreen {
   from {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(100px);
     opacity: 0;
   }
+
   100% {
-    transform: translateY(0);
     opacity: 1;
   }
 }
 
+@keyframes closeScreen {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .mobilePageChanger-enter{
-  opacity: 0;
+  animation: openScreen 0.5s ease
 }
 
-.mobilePageChanger-active {
-  opacity: 1;
-  transition: all ease 0.5s;
-
-}
 
 .mobilePageChanger-exit {
-  opacity: 1;
-  transition: all ease 0.5s;
-
-
-}
-.mobilePageChanger-exit-active {
-  opacity: 0;
+  animation: closeScreen 0.5s ease forwards;
 }

@@ -36,6 +36,7 @@
   overflow-x: scroll
 
 
+
 .workingStep
   &:not(&:first-child)
     margin-left: 17.91vw
@@ -162,6 +163,41 @@
       min-width: 53vw
     &:nth-child(2) span:nth-child(3)
       min-width: 60.5vw
+    min-width: 50.55vw
+    justify-content: normal
+    align-items: normal
+    &:not(&:first-child)
+      margin-left: 15vw
+    transform: rotateX(0)
+    &:nth-child(2)
+      margin-right: 4vw
+      & span:nth-child(3)
+        width: 55vw
+    &:nth-child(6)
+      & span:nth-child(3)
+        width: 58vw
+    & span:nth-child(1)
+      @include text(3.611vw, white)
+      margin-bottom: 6.9444vw
+    & span:nth-child(2)
+      @include text(5.555vw, white)
+      margin-bottom: 4.166vw
+    & span:nth-child(3)
+      @include text(3.888vw, #B0B0B0)
+      line-height: 5.44vw
+      display: block
+  .workingStep
+    &:nth-child(1) span:nth-child(3)
+      min-width: 53vw
+    &:nth-child(2) span:nth-child(3)
+      min-width: 60.5vw
+    &:nth-child(3) span:nth-child(3)
+      min-width: 60.5vw
+    &:nth-child(4) span:nth-child(3)
+      min-width: 58vw
+    &:nth-child(5) span:nth-child(3)
+      min-width: 60.5vw
+    min-width: 60vw
     justify-content: normal
     align-items: normal
     &:not(&:first-child)
@@ -188,3 +224,16 @@
 .workingBack
   background: url("/assets/workingStepsBackMobile.png")
   background-size: 100% 100%
+
+.newstepScrollBox
+  &::-webkit-scrollbar
+    height: 1px
+    background-color: #333333
+  &::-webkit-scrollbar-thumb
+    background-color: $main-green-color
+  padding-bottom: 5.2vw
+  transform: rotateX(180deg)
+  display: flex
+  flex-direction: row
+  overflow-x: scroll
+  min-height: 30vw

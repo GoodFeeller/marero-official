@@ -20,13 +20,13 @@ const CategoriesMobile: FunctionComponent<{page: string}> = ( {page} ) => {
                 page == 'design'
                     ?
                     categoriesList.map( e => <div style={ category.src == e.src ? {opacity: '1'} : {opacity: '0'}}
-                                                  className={styles.categoryContent}>
+                                                  className={styles.categoryContent + ' ' + styles.designPageStyle}>
                         <div className={styles.categoryBlockTitle}><span>{e.title}</span></div>
                         <div className={styles.categoryBlockText}><span>{e.text}</span></div>
                     </div>)
                     :
                     categoriesListWorkingPageMobile.map( e => <div style={ category.src == e.src ? {opacity: '1'} : {opacity: '0'} }
-                                                             className={styles.categoryContent}>
+                                                             className={styles.categoryContent + ' ' + styles.workingPageStyle}>
                         <div className={styles.categoryBlockTitle}><span>{e.title}</span></div>
                         <div className={styles.categoryBlockText}><span>{e.text}</span></div>
                     </div>)

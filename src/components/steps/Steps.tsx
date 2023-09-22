@@ -1,9 +1,19 @@
-import {FunctionComponent} from "react";
+import { FunctionComponent} from "react";
 import styles from './Steps.module.sass'
-import {valuesList, workSteps, workStepsDesignPage, workStepsWorkingPage} from '../../../public/staticInfo'
+import {
+    valuesList,
+    workSteps,
+    workStepsDesignPage, workStepsDesignPageMobile,
+    workStepsWorkingPage,
+    workStepsWorkingPageMobile
+} from '../../../public/staticInfo'
 const Steps: FunctionComponent<{page: string, isMobile: boolean}> = ({page, isMobile}) => {
     const stepList = page == 'main-page' ? workSteps :
-        page == 'about-mobile' ? valuesList : page == 'working' || page == 'working-mobile' ? workStepsWorkingPage : workStepsDesignPage
+        page == 'about-mobile' ? valuesList : page == 'working' ? workStepsWorkingPage :
+            page == 'working-mobile' ? workStepsWorkingPageMobile :
+                (page == 'design' && isMobile) ? workStepsDesignPageMobile : workStepsDesignPage
+
+
     return <div className={page == 'working-mobile' || (page == 'design' && isMobile) ? styles.stepsBody + ' ' + styles.workingBack : styles.stepsBody }>
         <div className={styles.stepsTitle}>
             {
@@ -17,12 +27,13 @@ const Steps: FunctionComponent<{page: string, isMobile: boolean}> = ({page, isMo
                     </div>
             }
         </div>
-        <div className={styles.stepScrollBox}>
 
+        <div className={styles.stepScrollBox}>
             {
                 stepList.map( (s, index) => <div
                     key={index}
-                    className={page == 'about-mobile' ? styles.stepAbout : page == 'working' ? styles.workingStep :  styles.step}
+                    className={page == 'about-mobile' ? styles.stepAbout : page == 'working' || page == 'working-mobile' ||
+                        ( page == 'design' && isMobile) ? styles.workingStep : styles.step}
                 >
                 <span>{s.id}</span>
                 <span>{s.title}</span>
@@ -30,7 +41,6 @@ const Steps: FunctionComponent<{page: string, isMobile: boolean}> = ({page, isMo
                 </div>)
 
             }
-
         </div>
     </div>
 }

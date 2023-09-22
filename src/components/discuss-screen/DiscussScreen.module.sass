@@ -14,6 +14,7 @@
   top: 2.6vw
   width: 11.35vw
   height: 1.19vw
+  user-select: none
 
 
 .officialText
@@ -21,6 +22,7 @@
   top: 2.81vw
   right: 5.208vw
   @include text(0.572vw, white)
+  user-select: none
 
 
 .backBtn
@@ -52,6 +54,7 @@
   justify-content: center
   align-items: center
   height: 4.01vw
+  user-select: none
 
 
 .littleTitle
@@ -61,6 +64,7 @@
   display: flex
   align-items: center
   justify-content: center
+  user-select: none
 
 .green
   color: $main-green-color
@@ -75,6 +79,8 @@
   outline: none
   margin-bottom: 1.04vw
   @include text(0.9375vw, rgba(157, 157, 157, 1))
+  user-select: none
+
 
 
 .send
@@ -83,6 +89,12 @@
   border: 1px $main-green-color solid
   border-radius: 5.208vw
   @include text(0.9375vw, $main-green-color)
-  padding: 1.3vw 2.7vw
-
+  height: 3.5vw
+  transition: background-color ease 0.25s, color ease 0.25s, font-weight 0.01s ease 0.124s, padding-bottom 0.01s ease 0.124s
+  user-select: none
+  &:hover
+    background: $main-green-color
+    color: black
+    font-weight: 400
+    padding-bottom: 0.1vw
 

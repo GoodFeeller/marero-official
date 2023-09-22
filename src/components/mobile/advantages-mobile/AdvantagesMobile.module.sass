@@ -9,18 +9,21 @@
   margin-bottom: 12.88vw
   @include text(3.611vw, white)
   text-align: center
+  user-select: none
 
 .advantagesBigTitle
   text-align: center
   @include text(10vw, white)
   margin-bottom: 5.55vw
   line-height: 10vw
+  user-select: none
 
 
 .advantagesLittleTitle
   text-align: center
   @include text(3.611vw, #B0B0B0)
   margin-bottom: 5.55vw
+  user-select: none
 
 .green
   color: $main-green-color
@@ -42,6 +45,7 @@
     width: 27.77vw
     height: 27.77vw
     float: right
+    user-select: none
 
 .common
   flex-direction: column
@@ -56,6 +60,7 @@
 .advantageBlockText
   @include text(3.333vw, white)
   line-height: 3.972vw
+  user-select: none
 
 
 .advantagesBox
@@ -82,14 +87,17 @@
     grid-area: title
     @include text(4.444vw, white)
     padding: 8.611vw 0 0 4.166vw
+    user-select: none
   & span:nth-child(2)
     grid-area: text
     @include text(3.333vw, rgba(176, 176, 176, 1))
     padding: 2.777vw 0 8.333vw 4.1666vw
     line-height: 4.3333vw
     width: 50vw
+    user-select: none
   & img
     grid-area: i
     position: absolute
+    user-select: none
 
 
