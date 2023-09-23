@@ -1,6 +1,9 @@
 body {
   margin: 0;
   background-color: black;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 @font-face {

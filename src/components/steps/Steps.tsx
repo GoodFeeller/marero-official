@@ -13,7 +13,6 @@ const Steps: FunctionComponent<{page: string, isMobile: boolean}> = ({page, isMo
             page == 'working-mobile' ? workStepsWorkingPageMobile :
                 (page == 'design' && isMobile) ? workStepsDesignPageMobile : workStepsDesignPage
 
-
     return <div className={page == 'working-mobile' || (page == 'design' && isMobile) ? styles.stepsBody + ' ' + styles.workingBack : styles.stepsBody }>
         <div className={styles.stepsTitle}>
             {
@@ -27,7 +26,6 @@ const Steps: FunctionComponent<{page: string, isMobile: boolean}> = ({page, isMo
                     </div>
             }
         </div>
-
         <div className={styles.stepScrollBox}>
             {
                 stepList.map( (s, index) => <div
