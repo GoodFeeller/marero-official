@@ -2,8 +2,14 @@ import {FunctionComponent} from "react";
 import styles from './DiscussMobileButton.module.sass'
 import {setNowPageType} from "../../../../public/staticInfo";
 
-const DiscussMobileButton:FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
+interface IProps {
+    setNowPage: setNowPageType,
+    setPosition:  (value: (((prevState: number) => number) | number)) => void
+
+}
+const DiscussMobileButton:FunctionComponent<IProps> = ({setNowPage, setPosition}) => {
     return <button className={styles.discussButtonMobile} onClick={() => {
+        setPosition(window.scrollY)
         setNowPage('none')
         setTimeout(() => setNowPage('callPage'), 500)
     }}>

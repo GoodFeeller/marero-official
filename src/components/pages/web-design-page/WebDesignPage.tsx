@@ -1,4 +1,4 @@
-import {FunctionComponent, useState} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import WebDesignScreen from "../../web-design-screen/WebDesignScreen";
 import Ending from "../../ending/Ending";
 import Footer from "../../footer/Footer";
@@ -18,17 +18,22 @@ import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
 
 const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
+    const [position, setPosition] = useState<number>(0)
+    useEffect( () => {
+        if (nowPage == 'common')
+            window.scrollTo(0, position)
+    }, [nowPage])
     return <div>
         { isMobile
             ?
             <div>
                 <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <div>
-                        <WebDesignMobileScreen setNowPage={setNowPage}/>
+                        <WebDesignMobileScreen setPosition={setPosition} setNowPage={setNowPage}/>
                         <CategoriesMobile page={'design'}/>
                         <KeyDesignMobile page={'design'}/>
                         <Steps isMobile={isMobile} page={'design'}/>
-                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
+                        <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
                         <FooterMobile page={'design'}/>
                     </div>
                 </CSSTransition>
@@ -41,19 +46,19 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
             </div>
             :
             <div>
-                <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
+                <CSSTransition in={nowPage == 'common' || nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <div>
-                        <WebDesignScreen setNowPage={setNowPage}/>
+                        <WebDesignScreen setPosition={setPosition} setNowPage={setNowPage}/>
                         <div style={{margin: '10.41vw 0 24.53vw 0'}}>
                         <Categories page={'design'}/>
                         </div>
                         <Circles page={'design'}/>
                         <div style={{margin: '19.27vw 0'}}>
-                        <KeyDesign setNowPage={setNowPage} page={'design'}/>
+                        <KeyDesign setPosition={setPosition} setNowPage={setNowPage} page={'design'}/>
                         </div>
                         <Steps isMobile={isMobile} page={'design'}/>
                         <div style={{margin: '13.33vw 0 10.41vw 0'}}>
-                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
+                        <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
                         </div>
                         <Footer/>
                     </div>

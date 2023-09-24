@@ -3,16 +3,22 @@ import Header from "../header/Header";
 import styles from './Branding.module.sass'
 import {officialText, setNowPageType} from '../../../public/staticInfo'
 import DiscussButton from "../header/discussButton/DiscussButton";
-const BrandingScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
+
+interface IProps {
+    setNowPage: setNowPageType
+    setPosition:  (value: (((prevState: number) => number) | number)) => void
+
+}
+const BrandingScreen: FunctionComponent<IProps> = ({setNowPage, setPosition}) => {
     return <div className={styles.screenBody}>
         <div>
-            <Header setNowPage={setNowPage} page={'branding'}/>
+            <Header setPosition={setPosition} setNowPage={setNowPage} page={'branding'}/>
         </div>
         <div className={styles.screenContent}>
             <div className={styles.screenTitle}>
                 <span className={styles.webDesignTitle}>БРЕНДИНГ</span>
                 <span className={styles.webDesignText}>Разрабатываем сайты,которые помогут вам продавать больше</span>
-                <DiscussButton setNowPage={setNowPage}/>
+                <DiscussButton setPosition={setPosition} setNowPage={setNowPage}/>
             </div>
             <div className={styles.bottomText}>
                 <span>{officialText}</span>

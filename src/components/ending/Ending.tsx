@@ -4,7 +4,15 @@ import {setNowPageType} from "../../../public/staticInfo";
 import DiscussButton from "../header/discussButton/DiscussButton";
 import DiscussMobileButton from "../mobile/discussButtonMobile/DiscussMobileButton";
 
-const Ending: FunctionComponent<{isMobile: boolean, page: string, setNowPage: setNowPageType}> = ({ page , setNowPage, isMobile}) => {
+interface IProps {
+    isMobile: boolean,
+    page: string,
+    setNowPage: setNowPageType,
+    setPosition:  (value: (((prevState: number) => number) | number)) => void
+
+}
+
+const Ending: FunctionComponent<IProps> = ({ page , setNowPage, isMobile, setPosition}) => {
     return <div className={styles.endingBody}>
         <div className={styles.endingContent}>
         <div className={styles.back}>
@@ -41,9 +49,9 @@ const Ending: FunctionComponent<{isMobile: boolean, page: string, setNowPage: se
         </div>
         { isMobile
             ?
-            <DiscussMobileButton setNowPage={setNowPage}/>
+            <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>
             :
-            <DiscussButton setNowPage={setNowPage}/>
+            <DiscussButton setPosition={setPosition} setNowPage={setNowPage}/>
         }
 
     </div>

@@ -1,4 +1,4 @@
-import {FunctionComponent, useState} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import AboutScreen from "../../about-screen/AboutScreen";
 import Mission from "../../mission/Mission";
 import Photo from "../../photo/Photo";
@@ -16,18 +16,23 @@ import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
 
 const AboutPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
+    const [position, setPosition] = useState<number>(0)
+    useEffect( () => {
+        if (nowPage == 'common')
+            window.scrollTo(0, position)
+    }, [nowPage])
     return <div>
         {
             isMobile ?
                 <div>
                     <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                         <div>
-                            <AboutMobile setNowPage={setNowPage}/>
+                            <AboutMobile setPosition={setPosition} setNowPage={setNowPage}/>
                             <Mission isMobile={isMobile}/>
                             <Photo src={'/assets/aboutMobilePhoto.png'}/>
                             <Steps isMobile={isMobile} page={'about-mobile'}/>
                             <div style={{transform: 'translateY(-64.6vw)'}}>
-                                <Ending isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
+                                <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
                             </div>
                             <FooterMobile page={'about-mobile'}/>
                         </div>
@@ -41,16 +46,16 @@ const AboutPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                 </div>
                 :
                 <div>
-                    <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
+                    <CSSTransition in={nowPage == 'common' || nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                         <div>
-                            <AboutScreen setNowPage={setNowPage}/>
+                            <AboutScreen setPosition={setPosition} setNowPage={setNowPage}/>
                             <Mission isMobile={isMobile}/>
-                            <Photo src={'/assets/Group.png'}/>
+                            <Photo src= {'/assets/Group.png'}/>
                             <div style={{marginTop: '7.96vw'}}>
                             <Value/>
                             </div>
                             <div style={{margin: '7.5vw 0 5.2vw 0'}}>
-                                <Ending isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
+                                <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
                             </div>
                             <Footer/>
                         </div>

@@ -4,9 +4,12 @@ import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {setNowPageType} from "../../../../public/staticInfo";
 
-
-const WorkingMobilePage: FunctionComponent<{setNowPage: setNowPageType}>
-    = ({setNowPage}) => {
+interface IProps {
+    setNowPage: setNowPageType,
+    setPosition: (value: (((prevState: number) => number) | number)) => void
+}
+const WorkingMobilePage: FunctionComponent<IProps>
+    = ({setNowPage, setPosition}) => {
     return <div className={styles.workingScreenBody}>
         <div className={styles.headerBox}>
             <HeaderMobile setNowPage={setNowPage}/>
@@ -23,7 +26,7 @@ const WorkingMobilePage: FunctionComponent<{setNowPage: setNowPageType}>
             <span>HTML</span>
         </div>
         <div className={styles.discussBtnBox}>
-            <DiscussMobileButton setNowPage={setNowPage}/>
+            <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>
         </div>
     </div>
 }

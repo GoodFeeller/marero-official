@@ -1,4 +1,4 @@
-import {FunctionComponent, useState} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import MainScreen from "../../main-screen/MainScreen";
 import Services from "../../services/Services";
 import Photo from "../../photo/Photo";
@@ -21,20 +21,24 @@ import { nowPageType } from './../../../../public/staticInfo'
 
 const MainPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
-
+    const [position, setPosition] = useState<number>(0)
+    useEffect( () => {
+        if (nowPage == 'common')
+            window.scrollTo(0, position)
+    }, [nowPage])
     return <div>
         {
             isMobile ?
                 <div>
                     <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                         <div>
-                            <MainScreenMobile setNowPage={setNowPage}/>
+                            <MainScreenMobile setPosition={setPosition} setNowPage={setNowPage}/>
                             <ServicesMobile/>
                             <Photo src={'/assets/main-page-photo.png'}/>
                             <Steps isMobile={isMobile} page={'main-page'}/>
                             <AdvantagesMobile/>
                             <Technologies isMobile={isMobile}/>
-                            <Ending isMobile={isMobile} page={'main-page'} setNowPage={setNowPage}/>
+                            <Ending setPosition={setPosition} isMobile={isMobile} page={'main-page'} setNowPage={setNowPage}/>
                             <FooterMobile page={'main-mobile'}/>
                         </div>
                     </CSSTransition>
@@ -47,21 +51,21 @@ const MainPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                 </div>
                 :
                 <div>
-                        <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
+                        <CSSTransition in={nowPage == 'common' || nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                             <div>
-                                <MainScreen setNowPge={setNowPage}/>
+                                <MainScreen setNowPage={setNowPage} setPosition={setPosition}/>
                                 <Services/>
                                 <Photo src={'/assets/Group.png'}/>
                                 <div style={{margin: '16.66vw 0 17.604vw 0'}}>
                                     <Steps isMobile={isMobile} page={'main-page'}/>
                                 </div>
-                                <KeyDesign setNowPage={setNowPage} page={'main-page'}/>
+                                <KeyDesign setPosition={setPosition} setNowPage={setNowPage} page={'main-page'}/>
                                 <div style={{margin: '17.6vw 0 16.19vw 0'}}>
                                     <MarseroAdvantages page={'main-page'}/>
                                 </div>
                                 <Technologies isMobile={isMobile}/>
                                 <div style={{margin: '12.03vw 0 10.41vw 0'}}>
-                                    <Ending isMobile={isMobile} setNowPage={setNowPage} page={'main-page'}/>
+                                    <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'main-page'}/>
                                 </div>
                                 <Footer/>
                             </div>

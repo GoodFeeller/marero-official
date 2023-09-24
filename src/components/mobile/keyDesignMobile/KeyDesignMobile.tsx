@@ -1,5 +1,7 @@
 import styles from './KeyDesignMobile.module.sass'
 import {FunctionComponent} from "react";
+
+
 const KeyDesignMobile: FunctionComponent<{page: string}> = ({page}) => {
     return <div className={styles.keyDesignBody}>
 

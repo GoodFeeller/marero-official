@@ -5,8 +5,12 @@ import HeaderMobile from "../header-mobile/HeaderMobile";
 import {setNowPageType} from "../../../../public/staticInfo";
 
 
-const MainScreenMobile: FunctionComponent<{setNowPage: setNowPageType}>
-    = ({setNowPage}) => {
+interface IProps {
+    setNowPage: setNowPageType
+    setPosition: (value: (((prevState: number) => number) | number)) => void
+}
+const MainScreenMobile: FunctionComponent<IProps>
+    = ({setNowPage, setPosition}) => {
     return <div className={styles.mainScreenBody}>
         <div className={styles.headerBox}>
             <HeaderMobile setNowPage={setNowPage}/>
@@ -29,7 +33,7 @@ const MainScreenMobile: FunctionComponent<{setNowPage: setNowPageType}>
             <div className={styles.dot}/>
         </div>
         <div className={styles.discussBtnBox}>
-            <DiscussMobileButton setNowPage={setNowPage}/>
+            <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>
         </div>
     </div>
 }

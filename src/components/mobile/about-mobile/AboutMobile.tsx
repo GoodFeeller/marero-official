@@ -3,10 +3,14 @@ import styles from './AboutMobile.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {officialText, setNowPageType} from "../../../../public/staticInfo";
+interface IProps {
+    setNowPage: setNowPageType
+    setPosition: (value: (((prevState: number) => number) | number)) => void
+}
 
 
-const AboutMobile: FunctionComponent<{setNowPage: setNowPageType}>
-    = ({setNowPage}) => {
+const AboutMobile: FunctionComponent<IProps>
+    = ({setNowPage, setPosition}) => {
     return <div className={styles.aboutScreenBody}>
         <div className={styles.headerBox}>
             <HeaderMobile setNowPage={setNowPage}/>
@@ -28,7 +32,7 @@ const AboutMobile: FunctionComponent<{setNowPage: setNowPageType}>
             <div className={styles.dot}/>
         </div>
         <div className={styles.discussBtnBox}>
-            <DiscussMobileButton setNowPage={setNowPage}/>
+            <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>
         </div>
         <div className={styles.officialText}>
             {officialText}

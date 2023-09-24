@@ -1,4 +1,4 @@
-import {FunctionComponent, useState} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import BrandingScreen from "../../branding-screen/BrandingScreen";
 import BuisnessActivity from "../../buisness-activity/BuisnessActivity";
 import MarseroAdvantages from "../../marsero-advantages/MarseroAdvantages";
@@ -15,19 +15,26 @@ import CallPage from "../../mobile/callPage/CallPage";
 import BrandingMobileScreen from "../../mobile/branding-mobile-page/BrandingMobilePage";
 import AdvantagesMobile from "../../mobile/advantages-mobile/AdvantagesMobile";
 
+
+
 const BrandingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
+    const [position, setPosition] = useState<number>(0)
+    useEffect( () => {
+        if (nowPage == 'common')
+            window.scrollTo(0, position)
+    }, [nowPage])
     return <div>
         { isMobile
             ?
             <div>
                 <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <div>
-                        <BrandingMobileScreen setNowPage={setNowPage}/>
+                        <BrandingMobileScreen setPosition={setPosition} setNowPage={setNowPage}/>
                         <BuisnessActivity isMobile={isMobile}/>
                         <AdvantagesMobile/>
-                        <KeyDesignMobile page={'branding'}/>
-                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
+                        <KeyDesignMobile  page={'branding'}/>
+                        <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
                         <FooterMobile page={'branding'}/>
                     </div>
                 </CSSTransition>
@@ -40,16 +47,16 @@ const BrandingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
             </div>
             :
             <div>
-                <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
+                <CSSTransition in={nowPage == 'common' || nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <div>
-                        <BrandingScreen setNowPage={setNowPage}/>
+                        <BrandingScreen setPosition={setPosition} setNowPage={setNowPage}/>
                         <BuisnessActivity isMobile={isMobile}/>
                         <div style={{margin: '4.16vw 0 22.23vw 0'}}>
                             <MarseroAdvantages page={'branding'}/>
                         </div>
-                        <KeyDesign setNowPage={setNowPage} page={'branding'}/>
+                        <KeyDesign setPosition={setPosition} setNowPage={setNowPage} page={'branding'}/>
                         <div style={{margin: '0 0 10.4vw 0'}}>
-                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
+                        <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
                         </div>
                         <Footer/>
                     </div>

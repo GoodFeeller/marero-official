@@ -1,8 +1,14 @@
 import {FunctionComponent} from "react";
 import styles from './../Header.module.sass'
 import {setNowPageType} from "../../../../public/staticInfo";
-const DiscussButton:FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
+
+interface IProps {
+    setNowPage: setNowPageType,
+    setPosition: (value: (((prevState: number) => number) | number)) => void
+}
+const DiscussButton:FunctionComponent<IProps> = ({setNowPage, setPosition}) => {
     return <button className={styles.discussButton} onClick={() => {
+        setPosition(window.scrollY)
         setNowPage('none')
         setTimeout( () => setNowPage('callPage'), 240)
     }

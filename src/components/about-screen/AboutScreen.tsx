@@ -4,10 +4,14 @@ import styles from "./AboutScreen.module.sass"
 import Dots from "../main-screen/dots/Dots";
 import AboutTitle from "./about-title/AboutTitle";
 import {setNowPageType} from "../../../public/staticInfo";
-const AboutScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowPage}) => {
+interface IProps {
+    setNowPage: setNowPageType
+    setPosition: (value: (((prevState: number) => number) | number)) => void
+}
+const AboutScreen: FunctionComponent<IProps> = ({setNowPage, setPosition}) => {
     return <div className={styles.mainBody}>
         <div>
-            <Header setNowPage={setNowPage} page={'about'}/>
+            <Header setPosition={setPosition} setNowPage={setNowPage} page={'about'}/>
         </div>
 
         <div className={styles.titleBody}>

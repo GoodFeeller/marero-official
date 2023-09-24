@@ -2,7 +2,13 @@ import styles from './KeyDesign.module.sass'
 import {FunctionComponent} from "react";
 import DiscussButton from "../header/discussButton/DiscussButton";
 import {setNowPageType} from "../../../public/staticInfo";
-const KeyDesign: FunctionComponent<{page: string, setNowPage: setNowPageType}> = ({page, setNowPage}) => {
+
+interface IProps {
+    page: string,
+    setNowPage: setNowPageType
+    setPosition:  (value: (((prevState: number) => number) | number)) => void
+}
+const KeyDesign: FunctionComponent<IProps> = ({page, setNowPage, setPosition}) => {
     return <div className={styles.keyDesignBody}>
 
         {/*Верхний текст*/}
@@ -65,7 +71,7 @@ const KeyDesign: FunctionComponent<{page: string, setNowPage: setNowPageType}> =
                     ? '/assets/keyDesign4.png' : '/assets/keyDesign6.svg'}/></div>
                 <div><img src={page === 'main-page' || page == 'branding'
                     ? '/assets/keyDesign5.png' : '/assets/keyDesign7.svg'}/>
-                    {page == 'branding' ? <div><DiscussButton setNowPage={setNowPage}/></div> : <div/>}
+                    {page == 'branding' ? <div><DiscussButton setPosition={setPosition} setNowPage={setNowPage}/></div> : <div/>}
                 </div>
             </div>
         </div>

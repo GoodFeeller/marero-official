@@ -4,9 +4,13 @@ import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {setNowPageType} from "../../../../public/staticInfo";
 
+interface IProps {
+    setNowPage: setNowPageType
+    setPosition: (value: (((prevState: number) => number) | number)) => void
+}
 
-const WebDesignMobileScreen: FunctionComponent<{setNowPage: setNowPageType}>
-    = ({setNowPage}) => {
+const WebDesignMobileScreen: FunctionComponent<IProps>
+    = ({setNowPage, setPosition}) => {
     return <div className={styles.workingScreenBody}>
         <div className={styles.headerBox}>
             <HeaderMobile setNowPage={setNowPage}/>
@@ -22,7 +26,7 @@ const WebDesignMobileScreen: FunctionComponent<{setNowPage: setNowPageType}>
             <span>Webflow</span>
         </div>
         <div className={styles.discussBtnBox}>
-            <DiscussMobileButton setNowPage={setNowPage}/>
+            <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>
         </div>
     </div>
 }

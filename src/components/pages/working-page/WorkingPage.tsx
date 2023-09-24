@@ -1,4 +1,4 @@
-import {FunctionComponent, useState} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import MarseroAdvantages from "../../marsero-advantages/MarseroAdvantages";
 import Ending from "../../ending/Ending";
 import Footer from "../../footer/Footer";
@@ -20,19 +20,24 @@ import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
 
 const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
+    const [position, setPosition] = useState<number>(0)
+    useEffect( () => {
+        if (nowPage == 'common')
+            window.scrollTo(0, position)
+    }, [nowPage])
     return <div>
         { isMobile
             ?
             <div>
                 <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <div>
-                        <WorkingMobilePage setNowPage={setNowPage}/>
+                        <WorkingMobilePage setPosition={setPosition} setNowPage={setNowPage}/>
                         <CategoriesMobile page={'working'}/>
                         <Photo src={'/assets/workingPagePhotoMobile.png'}/>
                         <Steps isMobile={isMobile} page={'working-mobile'}/>
                         <AdvantagesMobile/>
                         <Technologies isMobile={isMobile}/>
-                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
+                        <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
                         <FooterMobile page={'working'}/>
                     </div>
                 </CSSTransition>
@@ -45,9 +50,9 @@ const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
             </div>
             :
             <div>
-                <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
+                <CSSTransition in={nowPage == 'common' || nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                     <div>
-                        <WorkingPageScreen setNowPage={setNowPage}/>
+                        <WorkingPageScreen setPosition={setPosition} setNowPage={setNowPage}/>
                         <div style={{margin: '10.41vw 0 20.625vw 0'}}>
                         <Categories page={'working'}/>
                         </div>
@@ -61,7 +66,7 @@ const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         </div>
                         <Technologies isMobile={isMobile}/>
                         <div style={{margin: '10.72vw 0 10.41vw 0'}}>
-                        <Ending isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
+                        <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
                         </div>
                         <Footer/>
                     </div>

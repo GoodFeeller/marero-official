@@ -4,9 +4,13 @@ import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {setNowPageType} from "../../../../public/staticInfo";
 
+interface IProps {
+    setNowPage: setNowPageType,
+    setPosition:  (value: (((prevState: number) => number) | number)) => void
 
-const BrandingMobileScreen: FunctionComponent<{setNowPage: setNowPageType}>
-    = ({setNowPage}) => {
+}
+const BrandingMobileScreen: FunctionComponent<IProps>
+    = ({setNowPage, setPosition}) => {
     return <div className={styles.brandingScreenBody}>
         <div className={styles.headerBox}>
             <HeaderMobile setNowPage={setNowPage}/>
@@ -16,7 +20,7 @@ const BrandingMobileScreen: FunctionComponent<{setNowPage: setNowPageType}>
             <span className={styles.littleText}>Разработаем дизайн и стратегию<br/>продвижения ваших товаров и услуг</span>
         </div>
         <div className={styles.discussBtnBox}>
-            <DiscussMobileButton setNowPage={setNowPage}/>
+            <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>
         </div>
     </div>
 }
