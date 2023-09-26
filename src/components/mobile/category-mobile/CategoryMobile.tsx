@@ -2,6 +2,7 @@ import {FunctionComponent, useState} from "react";
 import styles from './CategoryMobile.module.sass'
 import {categoriesList, categoriesListWorkingPageMobile, categoryType} from '../../../../public/staticInfo'
 import CategoryButton from "../../categories/category-button/CategoryButton";
+import Photo from "../../photo/Photo";
 
 const CategoriesMobile: FunctionComponent<{page: string}> = ( {page} ) => {
 
@@ -38,10 +39,16 @@ const CategoriesMobile: FunctionComponent<{page: string}> = ( {page} ) => {
                     page == 'design'
                     ?
                         categoriesList.map( e =>
-                            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
+                            <Photo className={styles.categoryImg}
+                                   src={e.src}
+                                   smallSrc={e.smallSrc}
+                                   style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
                         :
                         categoriesListWorkingPageMobile.map( e =>
-                            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
+                            <Photo className={styles.categoryImg}
+                                    src={e.src}
+                                    smallSrc={e.smallSrc}
+                                    style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
                 }
             </div>
 

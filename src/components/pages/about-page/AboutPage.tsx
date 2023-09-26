@@ -29,7 +29,7 @@ const AboutPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <div>
                             <AboutMobile setPosition={setPosition} setNowPage={setNowPage}/>
                             <Mission isMobile={isMobile}/>
-                            <Photo src={'/assets/aboutMobilePhoto.png'}/>
+                            <Photo smallSrc={'/assets/big-photos/aboutMobilePhoto-small.png'} src={'/assets/big-photos/aboutMobilePhoto.png'}/>
                             <Steps isMobile={isMobile} page={'about-mobile'}/>
                             <div style={{transform: 'translateY(-64.6vw)'}}>
                                 <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
@@ -50,7 +50,7 @@ const AboutPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <div>
                             <AboutScreen setPosition={setPosition} setNowPage={setNowPage}/>
                             <Mission isMobile={isMobile}/>
-                            <Photo src= {'/assets/Group.png'}/>
+                            <Photo smallSrc={'/assets/big-photos/Group.png'} src= {'/assets/big-photos/Group.png'}/>
                             <div style={{marginTop: '7.96vw'}}>
                             <Value/>
                             </div>
@@ -64,7 +64,8 @@ const AboutPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <DiscussScreen setNowPage={setNowPage}/>
                     </CSSTransition>
                 </div>
-        }
+        }   
     </div>
 }
+
 export default AboutPage;

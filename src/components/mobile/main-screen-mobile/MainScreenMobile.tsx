@@ -1,4 +1,4 @@
-import {FunctionComponent} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import styles from './MainScreenMobile.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
@@ -11,7 +11,13 @@ interface IProps {
 }
 const MainScreenMobile: FunctionComponent<IProps>
     = ({setNowPage, setPosition}) => {
-    return <div className={styles.mainScreenBody}>
+    const [imgSrc, setImgSrc] = useState<string>("/assets/big-photos/MobileMainScreen-small.png")
+    useEffect( () => {
+        const img = new Image()
+        img.src = "/assets/big-photos/MobileMainScreen.png"
+        img.onload = () => setImgSrc("/assets/big-photos/MobileMainScreen.png")
+    })
+    return <div style={{  backgroundImage: 'url("' + imgSrc + '")'}} className={styles.mainScreenBody}>
         <div className={styles.headerBox}>
             <HeaderMobile setNowPage={setNowPage}/>
         </div>

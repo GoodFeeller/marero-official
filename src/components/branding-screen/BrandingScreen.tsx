@@ -1,4 +1,4 @@
-import {FunctionComponent} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import Header from "../header/Header";
 import styles from './Branding.module.sass'
 import {officialText, setNowPageType} from '../../../public/staticInfo'
@@ -10,7 +10,13 @@ interface IProps {
 
 }
 const BrandingScreen: FunctionComponent<IProps> = ({setNowPage, setPosition}) => {
-    return <div className={styles.screenBody}>
+    const [imgSrc, setImgSrc] = useState<string>("/assets/big-photos/BrandingBack-small.png")
+    useEffect( () => {
+        const img = new Image()
+        img.src = "/assets/big-photos/BrandingBack.png"
+        img.onload = () => setImgSrc("/assets/big-photos/BrandingBack.png")
+    })
+    return <div style={{  backgroundImage: 'url("' + imgSrc + '")'}}  className={styles.screenBody}>
         <div>
             <Header setPosition={setPosition} setNowPage={setNowPage} page={'branding'}/>
         </div>

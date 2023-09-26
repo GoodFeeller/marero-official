@@ -10,8 +10,10 @@ const AdvantagesMobile: FunctionComponent = () => {
             const hoverImage = new Image()
             hoverImage.src = image.hoverSrc
             img.src = image.src
+            hoverImage.onload
+            img.onload
         })
-    })
+    }, [])
     return <div className={styles.advantagesBody}>
         {/*Верхний текст*/}
         <div className={styles.advantagesTitleContent}>

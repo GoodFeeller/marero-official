@@ -1,4 +1,4 @@
-import {FunctionComponent} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import Header from "../header/Header";
 import styles from './WorkingPageScreen.module.sass'
 import DiscussButton from "../header/discussButton/DiscussButton";
@@ -8,7 +8,13 @@ interface IProps {
     setPosition: (value: (((prevState: number) => number) | number)) => void
 }
 const WorkingPageScreen: FunctionComponent<IProps> = ({setNowPage, setPosition}) => {
-    return <div className={styles.screenBody}>
+    const [imgSrc, setImgSrc] = useState<string>("/assets/big-photos/workingBack-small.png")
+    useEffect( () => {
+        const img = new Image()
+        img.src = "/assets/big-photos/workingBack.png"
+        img.onload = () => setImgSrc("/assets/big-photos/workingBack.png")
+    })
+    return <div style={{  backgroundImage: 'url("' + imgSrc + '")'}} className={styles.screenBody}>
         <Header setPosition={setPosition} setNowPage={setNowPage} page={'working'}/>
         <div className={styles.screenContent}>
             <div className={styles.screenTitle}>

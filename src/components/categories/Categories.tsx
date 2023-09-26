@@ -2,6 +2,7 @@ import {FunctionComponent, useState} from "react";
 import styles from './Categories.module.sass'
 import CategoryButton from "./category-button/CategoryButton";
 import {categoriesList, categoriesListWorkingPage, categoryType} from '../../../public/staticInfo'
+import Photo from "../photo/Photo";
 
 const Categories: FunctionComponent<{page: string}> = ( {page} ) => {
 
@@ -27,10 +28,16 @@ const Categories: FunctionComponent<{page: string}> = ( {page} ) => {
                     page == 'design'
                     ?
                         categoriesList.map( e =>
-                            <img className={styles.categoryImg} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
+                            <Photo className={styles.categoryImg}
+                                   smallSrc={e.smallSrc}
+                                   src={e.src}
+                                   style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
                         :
                         categoriesListWorkingPage.map( e =>
-                            <img className={styles.categoryImgWorkingPage} src={e.src} style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
+                            <Photo className={styles.categoryImgWorkingPage}
+                                   smallSrc={e.smallSrc}
+                                   src={e.src}
+                                   style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
                 }
             </div>
 
