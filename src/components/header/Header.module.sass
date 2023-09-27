@@ -31,10 +31,11 @@
     content: ''
     margin-top: 0.781vw
     display: block
-    height: 1px
+    height: 2px
     width: 100%
     transform: scaleX(0)
     transition: all ease 0.25s
+    -webkit-transition: all ease 0.25s
     background-color: $main-green-color
     user-select: none
 
@@ -74,6 +75,7 @@
   offset: none
   user-select: none
   transition: background-color ease 0.25s, color ease 0.25s, font-weight 0.01s ease 0.124s, padding-bottom 0.01s ease 0.124s
+  -webkit-transition: background-color ease 0.25s, color ease 0.25s, font-weight 0.01s ease 0.124s, padding-bottom 0.01s ease 0.124s
   &:hover
     background: $main-green-color
     color: black
