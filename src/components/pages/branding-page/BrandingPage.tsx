@@ -32,8 +32,10 @@ const BrandingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                     <div>
                         <BrandingMobileScreen setPosition={setPosition} setNowPage={setNowPage}/>
                         <BuisnessActivity isMobile={isMobile}/>
-                        <AdvantagesMobile/>
+                        <AdvantagesMobile page={'branding'}/>
+                        <div style={{margin: '55.55vw 0 0 0'}}>
                         <KeyDesignMobile  page={'branding'}/>
+                        </div>
                         <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
                         <FooterMobile/>
                     </div>

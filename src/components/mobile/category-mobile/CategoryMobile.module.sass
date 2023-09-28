@@ -1,7 +1,7 @@
 @import "src/index"
 .categoriesBody
   margin: 0
-  padding: 55.5vw 5.555vw 0 5.555vw
+  padding: 0 5.555vw 0 5.555vw
   display: flex
   height: 305.5vw
   flex-direction: column
@@ -10,6 +10,7 @@
 
 
 .categoryTopBody
+  margin-top: 55.55vw
   grid-area: title
   display: flex
   flex-direction: column
@@ -95,7 +96,6 @@
 
 
 .buttonsBox
-  margin-top: 11.11vw
   display: grid
   grid-template-rows: repeat(4, 1fr)
   grid-template-columns: 1fr 1fr
@@ -108,13 +108,13 @@
     &:nth-child(1)
       grid-area: a
     &:nth-child(2)
-      grid-area: b
-    &:nth-child(3)
       grid-area: f
+    &:nth-child(3)
+      grid-area: b
     &:nth-child(4)
-      grid-area: d
-    &:nth-child(5)
       grid-area: c
+    &:nth-child(5)
+      grid-area: d
     &:nth-child(6)
       grid-area: e
 
@@ -128,32 +128,18 @@
   grid-row-gap: 2.777vw
   grid-column-gap: 2.777vw
   flex-direction: column
-  & button
-    &:nth-child(1)
-      grid-area: a
-    &:nth-child(2)
-      grid-area: d
-    &:nth-child(3)
-      grid-area: e
-    &:nth-child(4)
-      grid-area: b
-    &:nth-child(5)
-      grid-area: c
+
 
 .workingPageStyle
   &:nth-child(1) div:nth-child(1)
     width: 63.6vw
-  &:nth-child(2) div:nth-child(2)
-    width: 48vw
-  &:nth-child(3) div:nth-child(2)
-    width: 53vw
   &:nth-child(4) div:nth-child(1)
     width: 88.3vw
 
 .designPageStyle
-  &:nth-child(2) div:nth-child(2)
+  &:nth-child(2) div:nth-child(1)
     width: 60vw
-  &:nth-child(3) div:nth-child(2)
+  &:nth-child(3) div:nth-child(1)
     width: 70vw
-  &:nth-child(6) div:nth-child(2)
+  &:nth-child(6) div:nth-child(1)
     width: 70vw

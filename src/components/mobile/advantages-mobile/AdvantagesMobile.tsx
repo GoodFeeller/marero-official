@@ -1,9 +1,9 @@
 import {FunctionComponent, useEffect, useState} from "react";
 import styles from './AdvantagesMobile.module.sass';
-import {advantagesListMobile, advantageTypeMobile} from "../../../../public/staticInfo";
+import {advantagesListMobile, advantagesListMobileBranding, advantageTypeMobile} from "../../../../public/staticInfo";
 
-const AdvantagesMobile: FunctionComponent = () => {
-    const [advantages, setAdvantages] = useState<advantageTypeMobile[]>(advantagesListMobile)
+const AdvantagesMobile: FunctionComponent<{page?: string}> = ({page}) => {
+    const [advantages, setAdvantages] = useState<advantageTypeMobile[]>( page === 'branding' ? advantagesListMobileBranding : advantagesListMobile)
     useEffect( () => {
         advantagesListMobile.forEach((image) => {
             const img = new Image()
@@ -29,10 +29,10 @@ const AdvantagesMobile: FunctionComponent = () => {
             {/*Вывод кнопок*/}
             {advantages.map( (a, index) => {
                     if (index == 0) return <div key={index} className={styles.advantageBlockChosen}>
-                        <span>{a.title}</span>
-                        <span>{a.text}</span>
+                        <span style={{width: a.positions[5]}}>{a.title}</span>
+                        <span style={{width: a.positions[5]}}>{a.text}</span>
                         <img style={{width: a.positions[0], height: a.positions[1], left: a.positions[2], top: a.positions[3],
-                        transform: a.positions[4] + 'rotateZ(10deg)'}} src={a.hoverSrc}/>
+                        transform: a.positions[4] + 'rotateZ(15deg)'}} src={a.hoverSrc}/>
                     </div>
                     else return <div key={index}
                                      className={a.style == 'common' ? styles.advantageBlock + ' ' + styles.common : styles.advantageBlock + ' ' + styles.reverse}
@@ -42,8 +42,8 @@ const AdvantagesMobile: FunctionComponent = () => {
                                          setAdvantages([...advantages])
 
                                      }}>
-                        <div><img src={a.src}/></div>
-                        <span className={styles.advantageBlockText}>{a.title}</span>
+                        <div><img style={{width: a.defaultPosition[0], height: a.defaultPosition[1]}} src={a.src}/></div>
+                        <span style={{width: a.defaultPosition[2]}} className={styles.advantageBlockText}>{a.title}</span>
                     </div>
                 }
             )

@@ -31,9 +31,13 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                     <div>
                         <WebDesignMobileScreen setPosition={setPosition} setNowPage={setNowPage}/>
                         <CategoriesMobile page={'design'}/>
+                        <div style={{margin: '-15.27vw 0 0 0'}}>
                         <KeyDesignMobile page={'design'}/>
+                        </div>
                         <Steps isMobile={isMobile} page={'design'}/>
+                        <div style={{margin: '-36.38vw 0 0 0'}}>
                         <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
+                        </div>
                         <FooterMobile/>
                     </div>
                 </CSSTransition>
