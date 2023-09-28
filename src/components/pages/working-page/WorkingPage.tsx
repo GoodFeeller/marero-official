@@ -35,7 +35,7 @@ const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <CategoriesMobile page={'working'}/>
                         <Photo smallSrc={'/assets/big-photos/workingPagePhotoMobile-small.png'} src={'/assets/big-photos/workingPagePhotoMobile.png'}/>
                         <div style={{margin: '0 0 -24.44vw 0'}}>
-                            <Steps isMobile={isMobile} page={'working-mobile'}/>
+                            <Steps cef={2} isMobile={isMobile} page={'working-mobile'}/>
                         </div>
                         <AdvantagesMobile/>
                         <Technologies isMobile={isMobile}/>
@@ -64,7 +64,7 @@ const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         </div>
                         <Photo smallSrc={'/assets/big-photos/workingPhoto-small.png'} src={'/assets/big-photos/workingPhoto.png'}/>
                         <div style={{margin: '19.79vw 0 19.27vw 0'}}>
-                        <Steps isMobile={isMobile} page={'working'}/>
+                        <Steps cef={2} isMobile={isMobile} page={'working'}/>
                         </div>
                         <Technologies isMobile={isMobile}/>
                         <div style={{margin: '10.72vw 0 10.41vw 0'}}>

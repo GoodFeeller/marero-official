@@ -35,11 +35,22 @@
   flex-direction: row
   overflow-x: scroll
 
+.scrollBody
+  position: relative
+  display: flex
 
+.shadow
+  position: absolute
+  right: 0
+  margin: 0
+  min-width: 100%
+  height: 100%
+  background: radial-gradient( circle at 0%, transparent 70%, black 100% )
 
 .workingStep
-  &:not(&:first-child)
-    margin-left: 17.91vw
+  margin-right: 17.91vw
+  &:last-child
+    margin-right: 10vw
   display: flex
   transform: rotateX(180deg)
   flex-direction: column
@@ -76,8 +87,9 @@
     display: block
 
 .step
-  &:not(&:first-child)
-    margin-left: 17.91vw
+  margin-right: 17.91vw
+  &:last-child
+    margin-right: 10vw
   display: flex
   transform: rotateX(180deg)
   flex-direction: column

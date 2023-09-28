@@ -30,7 +30,7 @@ const AboutPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                             <AboutMobile setPosition={setPosition} setNowPage={setNowPage}/>
                             <Mission isMobile={isMobile}/>
                             <Photo smallSrc={'/assets/big-photos/aboutMobilePhoto-small.png'} src={'/assets/big-photos/aboutMobilePhoto.png'}/>
-                            <Steps isMobile={isMobile} page={'about-mobile'}/>
+                            <Steps cef={2} isMobile={isMobile} page={'about-mobile'}/>
                             <div style={{margin: '-66.6vw 0 0 0'}}>
                                 <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
                             </div>
