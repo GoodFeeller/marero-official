@@ -28,6 +28,8 @@
 
 
 .topImagesBox
+  display: -webkit-box
+  display: -ms-flexbox
   display: flex
   flex-direction: column
   & div
@@ -42,28 +44,18 @@
 
 .topImagesBoxBranding
   display: -webkit-box
-  display: -moz-box
   display: -ms-flexbox
-  display: -webkit-flex
   display: flex
   flex-direction: column
   -webkit-flex-direction: column
-  & div
+  & img
     width: 100%
     height: 61.3vw
     margin-bottom: 2.77vw
+    user-select: none
     &:first-child, &:last-child
-      flex: 2
-      -webkit-flex: 2
-      -webkit-box-flex: 2
-    &:not(&:first-child), &:not(&:last-child)
-      flex: 1
-      -webkit-flex: 1
-      -webkit-box-flex: 1
-    & img
-      width: 100%
-      height: 100%
-      user-select: none
+      height: 121.6vw
+
 
 .keyDesignTextDesignPage
   display: flex

@@ -33,13 +33,17 @@ const MainPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                     <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
                         <div>
                             <MainScreenMobile setPosition={setPosition} setNowPage={setNowPage}/>
-                            <ServicesMobile/>
+                            <div style={{margin: '-10.55vw 0 0 0'}}>
+                                <ServicesMobile/>
+                            </div>
                             <Photo smallSrc={'/assets/big-photos/main-page-photo-small.png'} src={'/assets/big-photos/main-page-photo.png'}/>
+                            <div style={{margin: '0 0 -24.44vw 0'}}>
                             <Steps isMobile={isMobile} page={'main-page'}/>
+                            </div>
                             <AdvantagesMobile/>
                             <Technologies isMobile={isMobile}/>
                             <Ending setPosition={setPosition} isMobile={isMobile} page={'main-page'} setNowPage={setNowPage}/>
-                            <FooterMobile page={'main-mobile'}/>
+                            <FooterMobile/>
                         </div>
                     </CSSTransition>
                     <CSSTransition in={nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>

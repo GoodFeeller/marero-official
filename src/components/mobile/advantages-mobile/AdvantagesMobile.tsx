@@ -21,7 +21,7 @@ const AdvantagesMobile: FunctionComponent = () => {
             <span className={styles.advantagesBigTitle}>ПРЕИМУЩЕСТВА<br/>MARSERO</span>
             <span className={styles.advantagesLittleTitle}>
                 <span className={styles.green}>Уникальные</span> решения.
-                <span className={styles.green}>Уникальная</span> эффективность.
+                <span className={styles.green}> Уникальная</span> эффективность.
             </span>
         </div>
         <div className={styles.advantagesBox}>

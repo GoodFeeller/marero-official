@@ -35,7 +35,7 @@ const BrandingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <AdvantagesMobile/>
                         <KeyDesignMobile  page={'branding'}/>
                         <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'branding'}/>
-                        <FooterMobile page={'branding'}/>
+                        <FooterMobile/>
                     </div>
                 </CSSTransition>
                 <CSSTransition in={nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>

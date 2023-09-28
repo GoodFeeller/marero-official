@@ -34,33 +34,33 @@ const KeyDesignMobile: FunctionComponent<{page: string}> = ({page}) => {
 
 
         <div className={page == 'branding' ? styles.topImagesBoxBranding : styles.topImagesBox}>
-            <div>{ page == 'branding' ?
+            { page == 'branding' ?
                 <Photo smallSrc={'/assets/keyDesign/keyDesign8-small.png'} src={'/assets/keyDesign/keyDesign8.png'}/> :
                 <Photo smallSrc={'/assets/keyDesign/keyDesign.png'} src={'/assets/keyDesign/keyDesign-small.png'}/>
-            }</div>
-            <div>
+            }
+
                 { page == 'branding' ?
                 <Photo src={'/assets/keyDesign/keyDesign9.png'} smallSrc={'/assets/keyDesign/keyDesign9-small.png'}/> :
                     <Photo src={'/assets/keyDesign/keyDesign2.png'} smallSrc={'/assets/keyDesign/keyDesign2-small.png'}/>
-                }</div>
-            <div>
+                }
+
                 { page == 'branding' ? <Photo src={'/assets/keyDesign/keyDesign10.png'} smallSrc={'/assets/keyDesign/keyDesign10-small.png'}/> :
                     page == 'design' ?
                     <Photo src={'/assets/keyDesign/keyDesign3.png'} smallSrc={'/assets/keyDesign/keyDesign3-small.png'}/> : <div/> }
-            </div>
-                <div>
+
+
                     {page == 'branding'
                     ?
                         <Photo src={'/assets/keyDesign/keyDesign4.png'} smallSrc={'/assets/keyDesign/keyDesign4-small.png'}/> :
                         <Photo src={ '/assets/keyDesign/keyDesign6.png'} smallSrc={'/assets/keyDesign/keyDesign6-small.png'}/>
-                    }</div>
-                <div>{page == 'branding'
+                    }
+                {page == 'branding'
                     ?
                     <Photo src={'/assets/keyDesign/keyDesign5.png'} smallSrc={'/assets/keyDesign/keyDesign5-small.png'}/>
                     :
                     <Photo src={'/assets/keyDesign/keyDesign7.png'} smallSrc={'/assets/keyDesign/keyDesign7-small.png'}/>
                 }
-                </div>
+
         </div>
 
     </div>

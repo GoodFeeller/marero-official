@@ -31,10 +31,10 @@ const AboutPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                             <Mission isMobile={isMobile}/>
                             <Photo smallSrc={'/assets/big-photos/aboutMobilePhoto-small.png'} src={'/assets/big-photos/aboutMobilePhoto.png'}/>
                             <Steps isMobile={isMobile} page={'about-mobile'}/>
-                            <div style={{transform: 'translateY(-64.6vw)'}}>
+                            <div style={{margin: '-66.6vw 0 0 0'}}>
                                 <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
                             </div>
-                            <FooterMobile page={'about-mobile'}/>
+                            <FooterMobile/>
                         </div>
                     </CSSTransition>
                     <CSSTransition in={nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>

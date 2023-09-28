@@ -34,7 +34,7 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <KeyDesignMobile page={'design'}/>
                         <Steps isMobile={isMobile} page={'design'}/>
                         <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
-                        <FooterMobile page={'design'}/>
+                        <FooterMobile/>
                     </div>
                 </CSSTransition>
                 <CSSTransition in={nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>

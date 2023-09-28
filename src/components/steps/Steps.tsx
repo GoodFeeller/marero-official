@@ -13,7 +13,8 @@ const Steps: FunctionComponent<{page: string, isMobile: boolean}> = ({page, isMo
             page == 'working-mobile' ? workStepsWorkingPageMobile :
                 (page == 'design' && isMobile) ? workStepsDesignPageMobile : workStepsDesignPage
 
-    return <div className={page == 'working-mobile' || (page == 'design' && isMobile) ? styles.stepsBody + ' ' + styles.workingBack : styles.stepsBody }>
+    return <div className={(page == 'design' && isMobile) ? styles.stepsBody + ' ' + styles.workingBack :
+        page == 'about-mobile' ? styles.stepsBody + ' ' + styles.aboutBack : styles.stepsBody }>
         <div className={styles.stepsTitle}>
             {
                 page == 'about-mobile'

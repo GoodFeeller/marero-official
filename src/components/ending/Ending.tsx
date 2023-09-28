@@ -30,6 +30,12 @@ const Ending: FunctionComponent<IProps> = ({ page , setNowPage, isMobile, setPos
             </div>
             {   isMobile
                 ?
+                page == 'about'
+                ?
+                    <div  className={styles.titleBox}>
+                        <span className={styles.titleTextAboutPage}>МЫ ЗАБЕРЕМ<br/>ВАШУ БОЛЬ<br/>И <span className={styles.titleGreen}>ТРАНСФОРМИРУЕМ<br/></span> ЕЁ В ВЫГОДУ!</span>
+                    </div>
+                    :
                 <div  className={styles.titleBox}>
                     <span className={styles.titleText}>ВЫВЕДИТЕ<br/>БИЗНЕС<br/>НА <span className={styles.titleGreen}>НОВЫЙ<br/></span> УРОВЕНЬ</span>
                 </div>

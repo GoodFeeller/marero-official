@@ -34,11 +34,13 @@ const WorkingPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
                         <WorkingMobilePage setPosition={setPosition} setNowPage={setNowPage}/>
                         <CategoriesMobile page={'working'}/>
                         <Photo smallSrc={'/assets/big-photos/workingPagePhotoMobile-small.png'} src={'/assets/big-photos/workingPagePhotoMobile.png'}/>
-                        <Steps isMobile={isMobile} page={'working-mobile'}/>
+                        <div style={{margin: '0 0 -24.44vw 0'}}>
+                            <Steps isMobile={isMobile} page={'working-mobile'}/>
+                        </div>
                         <AdvantagesMobile/>
                         <Technologies isMobile={isMobile}/>
                         <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'working'}/>
-                        <FooterMobile page={'working'}/>
+                        <FooterMobile/>
                     </div>
                 </CSSTransition>
                 <CSSTransition in={nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>

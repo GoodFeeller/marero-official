@@ -4,7 +4,7 @@ import styles from './Technologies.module.sass'
 
 const Technologies: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     return <div className={styles.techBody}>
-        <span className={styles.techTitle}>ТЕХНОЛОГИИ И ПЛАТФОРМЫ</span>
+        <span className={styles.techTitle}>ТЕХНОЛОГИИ<br/>И ПЛАТФОРМЫ</span>
         <div className={styles.techContent}>
             { techSrcList.map( (src, index) =>
                 isMobile && index == 14 ? ''

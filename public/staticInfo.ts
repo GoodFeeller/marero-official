@@ -464,11 +464,12 @@ export const categoriesListWorkingPageMobile: categoryType[] = [
     },
     {
         btnText: 'Платежные системы',
-        src: '/assets/categories/categories_8.png',
-        smallSrc: '/assets/categories/categories_8-small.png',
+        src: '/assets/categories/categories_10.png',
+        smallSrc: '/assets/categories/categories_10-small.png',
         id: '02',
         title: 'ПЛАТЕЖНЫЕ СИСТЕМЫ',
-        text: 'Сделаем вашу систему самой быстрой, удобной и безопасной'
+        text: 'Напишем программы для автоматического сбора данных под ваш запрос.'
+
     },
     {
         btnText: 'Прочее ПО',
@@ -480,11 +481,11 @@ export const categoriesListWorkingPageMobile: categoryType[] = [
     },
     {
         btnText: 'Сервисы для парсинга данных',
-        src: '/assets/categories/categories_10.png',
-        smallSrc: '/assets/categories/categories_10-small.png',
+        src: '/assets/categories/categories_8.png',
+        smallSrc: '/assets/categories/categories_8-small.png',
         id: '04',
         title: 'СЕРВИСЫ ДЛЯ ПАРСИНГА ДАННЫХ',
-        text: 'Напишем программы для автоматического сбора данных под ваш запрос.'
+        text: 'Сделаем вашу систему самой быстрой, удобной и безопасной'
     },
     {
         btnText: 'Сервисы для моделирования',

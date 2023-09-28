@@ -11,28 +11,11 @@ const CategoriesMobile: FunctionComponent<{page: string}> = ( {page} ) => {
 
         {/*Верхний текст*/}
         <div className={styles.categoryTopBody}>
-                <span className={styles.categoriesLittleTitle}>{page == 'design' ? '/Категории сайтов' : '/Категории услуг'}</span>
+                <span className={styles.categoriesLittleTitle}>{page == 'design' ? '/ Категории сайтов' : '/ Категории услуг'}</span>
                 <span className={styles.categoriesBigTitle}>ВОЗМОЖНОСТИ<br/>ДЛЯ БИЗНЕСА</span>
         </div>
 
-        {/*Блок текста*/}
-        <div className={styles.categoryBlock}>
-            {
-                page == 'design'
-                    ?
-                    categoriesList.map( e => <div style={ category.src == e.src ? {opacity: '1'} : {opacity: '0'}}
-                                                  className={styles.categoryContent + ' ' + styles.designPageStyle}>
-                        <div className={styles.categoryBlockTitle}><span>{e.title}</span></div>
-                        <div className={styles.categoryBlockText}><span>{e.text}</span></div>
-                    </div>)
-                    :
-                    categoriesListWorkingPageMobile.map( e => <div style={ category.src == e.src ? {opacity: '1'} : {opacity: '0'} }
-                                                             className={styles.categoryContent + ' ' + styles.workingPageStyle}>
-                        <div className={styles.categoryBlockTitle}><span>{e.title}</span></div>
-                        <div className={styles.categoryBlockText}><span>{e.text}</span></div>
-                    </div>)
-            }
-        </div>
+
 
             <div className={styles.imagesBox}>
                 {
@@ -51,6 +34,23 @@ const CategoriesMobile: FunctionComponent<{page: string}> = ( {page} ) => {
                                     style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
                 }
             </div>
+
+        {/*Блок текста*/}
+        <div className={styles.categoryBlock}>
+            {
+                page == 'design'
+                    ?
+                    categoriesList.map( e => <div style={ category.src == e.src ? {opacity: '1'} : {opacity: '0'}}
+                                                  className={styles.categoryContent + ' ' + styles.designPageStyle}>
+                        <div className={styles.categoryBlockText}><span>{e.text}</span></div>
+                    </div>)
+                    :
+                    categoriesListWorkingPageMobile.map( e => <div style={ category.src == e.src ? {opacity: '1'} : {opacity: '0'} }
+                                                                   className={styles.categoryContent + ' ' + styles.workingPageStyle}>
+                        <div className={styles.categoryBlockText}><span>{e.text}</span></div>
+                    </div>)
+            }
+        </div>
 
             <div className={styles.categoryRightBottom}>
                 {/*Блок кнопок*/}
