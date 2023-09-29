@@ -23,10 +23,10 @@ const Steps: FunctionComponent<IProps> = ({page, isMobile, cef}) => {
 
     useEffect( () => {
         const scrollTo: () => void = () => {
-            console.log(window.scrollY)
+            let scrollCef = isMobile ? 2 : 1
             if (ref.current) {
-                let scroll: number = (window.scrollY - (cef * window.innerWidth)) / (2.61 * window.innerWidth) * ref.current.scrollWidth
-                ref.current?.scrollTo({left: scroll, top: 0})
+                let scroll: number = (window.scrollY - (cef * window.innerWidth)) / (scrollCef * window.innerWidth) * ref.current.scrollWidth
+                ref.current?.scrollTo({left: scroll, top: 0, behavior: 'auto'})
             }
         }
             window.addEventListener('scroll', scrollTo)
