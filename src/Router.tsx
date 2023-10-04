@@ -1,6 +1,6 @@
 import {FunctionComponent, lazy, Suspense, useEffect, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Loading from "./components/Loading/Loading";
+import Loading from "./components/share/Loading/Loading";
 
 
 const MainPage = lazy( () => import("./components/pages/main-page/MainPage"))

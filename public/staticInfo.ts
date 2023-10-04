@@ -1,5 +1,5 @@
 export const phoneNumber: string = "+375(29)111-11-11"
-export const officialText: string = "© NM / 2023. MINSK / BELARUS"
+export const officialText: string = "© MARSERO / 2023. MINSK / BELARUS"
 export const marseroMail: string = 'marsero@gmail.com'
 
 export type workType = {
@@ -207,11 +207,6 @@ export type advantageType = {
     src: string
     hoverSrc: string
 }
-export type advantageTypeWorkingPage = {
-    title: string
-    src: string
-    hoverSrc: string
-}
 
 export type advantageTypeMobile = {
     title: string
@@ -348,14 +343,16 @@ export const advantagesListMobileBranding: advantageTypeMobile[] = [
         defaultPosition: ['28.05vw', '31.94vw', 'auto']
     }
 ]
-export const advantagesListWorkingPage: advantageTypeWorkingPage[] = [
+export const advantagesListWorkingPage: advantageType[] = [
     {
         title: 'ПОЖИЗНЕННАЯ ТЕХПОДДЕРЖКА',
+        text: 'Клиенты которым мы разрабатываем продукты с нуля получают эксклюзивные условия дальнейшего сопровождения.',
         src: '/assets/advantages/headphone_front.svg',
         hoverSrc: '/assets/advantages/headphone_front_hover.svg'
     },
     {
         title: 'ФОКУС НА ФОРМУЛЕ «ЦЕНА-КАЧЕСТВО»',
+        text: 'Клиенты MARSERO четко понимают за что они платят.',
         src: '/assets/advantages/badge_front.svg',
         hoverSrc: '/assets/advantages/badge_front_hover.svg'
     }
@@ -363,11 +360,13 @@ export const advantagesListWorkingPage: advantageTypeWorkingPage[] = [
     {
         title: 'ЛЮБОВЬ К СВОЕМУ ДЕЛУ',
         src: '/assets/advantages/heart_front.svg',
-        hoverSrc: '/assets/advantages/heart_front_hover.svg'
+        hoverSrc: '/assets/advantages/heart_front_hover.svg',
+        text: 'Мы верим в то что мы делаем, и поэтому постоянно изобретаем что-то новое.'
     }
     ,
     {
         title: 'ПРОВЕРЕННЫЕ СПЕЦИАЛИСТЫ',
+        text: 'Все, кто работает в MARSERO, проходят жесточайшие условия отбора. В приоритете качество - остальное детали.',
         src: '/assets/advantages/magnifying_glass_front.svg',
         hoverSrc: '/assets/advantages/magnifying_glass_front_hover.svg'
     }
@@ -412,35 +411,35 @@ export const categoriesList: categoryType[] = [
         text: 'Откройте собственный онлайн-магазин или полноценный маркетплейс'
     },
     {
-        btnText: 'Landing page',
+        btnText: 'Корпоративный сайт',
         src: '/assets/categories/categories_2.png',
         smallSrc: '/assets/categories/categories_2-small.png',
         id: '02',
-        title: 'LANDING PAGE',
+        title: 'КОРПОРАТИВНЫЙ САЙТ',
         text: 'Создайте лицо вашего бизнеса в интернете'
     },
     {
-        btnText: 'Корпоративный сайт',
+        btnText: 'Landing page',
         src: '/assets/categories/categories_3.png',
         smallSrc: '/assets/categories/categories_3-small.png',
         id: '03',
-        title: 'КОРПОРАТИВНЫЙ САЙТ',
+        title: 'LANDING PAGE',
         text: 'Выгодный способ продавать товары или услуги'
     },
     {
-        btnText: 'Дизайн приложений',
+        btnText: 'Интернет-портал',
+        title: 'ИНТЕРНЕТ-ПОРТАЛ',
         src: '/assets/categories/categories_4.png',
         smallSrc: '/assets/categories/categories_4-small.png',
         id: '04',
-        title: 'ДИЗАЙН ПРИЛОЖЕНИЙ',
         text: 'Публикуйте контент и создавайте сообщество клиентов и партнеров'
     },
     {
-        btnText: 'Интернет-портал',
+        btnText: 'Дизайн приложений',
         src: '/assets/categories/categories_5.png',
         smallSrc: '/assets/categories/categories_5-small.png',
         id: '05',
-        title: 'ИНТЕРНЕТ-ПОРТАЛ',
+        title: 'ДИЗАЙН ПРИЛОЖЕНИЙ',
         text: 'Удивляйте простотой и красотой приложения на IOs и Android'
     },
     {
@@ -463,12 +462,12 @@ export const categoriesListWorkingPage: categoryType[] = [
         text: 'Сделайте свой бизнес доступным в один клик.'
     },
     {
-        btnText: 'Платежные банковские системы',
-        src: '/assets/categories/categories_8.png',
-        smallSrc: '/assets/categories/categories_8-small.png',
+        btnText: 'Сервисы для парсинга данных',
+        src: '/assets/categories/categories_1.png',
+        smallSrc: '/assets/categories/categories_1-small.png',
         id: '02',
-        title: 'ПЛАТЕЖНЫЕ БАНКОВСКИЕ СИСТЕМЫ',
-        text: 'Сделаем вашу систему самой быстрой, удобной и безопасной'
+        title: 'СЕРВИСЫ ДЛЯ ПАРСИНГА ДАННЫХ',
+        text: 'Напишем программы для автоматического сбора данных под ваш запрос.'
     },
     {
         btnText: 'Прочее ПО',
@@ -483,20 +482,20 @@ export const categoriesListWorkingPage: categoryType[] = [
             'CRM-системы;']
     },
     {
-        btnText: 'Сервисы для парсинга данных',
-        src: '/assets/categories/categories_10.png',
-        smallSrc: '/assets/categories/categories_10-small.png',
+        btnText: 'Платежные банковские системы',
+        src: '/assets/categories/categories_8.png',
+        smallSrc: '/assets/categories/categories_8-small.png',
         id: '04',
-        title: 'СЕРВИСЫ ДЛЯ ПАРСИНГА ДАННЫХ',
-        text: 'Напишем программы для автоматического сбора данных под ваш запрос.'
+        title: 'ПЛАТЕЖНЫЕ БАНКОВСКИЕ СИСТЕМЫ',
+        text: 'Сделаем вашу систему самой быстрой, удобной и безопасной'
     },
     {
-        btnText: 'Сервисы для моделирования',
-        src: '/assets/categories/categories_11.png',
-        smallSrc: '/assets/categories/categories_11-small.png',
+        btnText: 'Системы управления базами данных',
+        src: '/assets/categories/categories_10.png',
+        smallSrc: '/assets/categories/categories_10-small.png',
         id: '05',
-        title: 'СЕРВИСЫ ДЛЯ МОДЕЛИРОВАНИЯ',
-        text: 'Многоуровневая система безопасности, оперативность обработки информации и простота в использовании - то что мы гарантируем.'
+        title: 'СИСТЕМЫ УПРАВЛЕНИЯ БАЗАМИ ДАННЫХ',
+        text: 'Напишем программы для автоматического сбора данных под ваш запрос.'
     }
 ]
 export const categoriesListWorkingPageMobile: categoryType[] = [

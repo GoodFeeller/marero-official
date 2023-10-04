@@ -1,8 +1,8 @@
 import {FunctionComponent, useState} from "react";
 import styles from './CategoryMobile.module.sass'
 import {categoriesList, categoriesListWorkingPageMobile, categoryType} from '../../../../public/staticInfo'
-import CategoryButton from "../../categories/category-button/CategoryButton";
-import Photo from "../../photo/Photo";
+import CategoryButton from "../../desctop/categories/category-button/CategoryButton";
+import Photo from "../../share/photo/Photo";
 
 const CategoriesMobile: FunctionComponent<{page: string}> = ( {page} ) => {
 

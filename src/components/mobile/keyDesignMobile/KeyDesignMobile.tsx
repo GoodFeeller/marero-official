@@ -1,6 +1,6 @@
 import styles from './KeyDesignMobile.module.sass'
 import {FunctionComponent} from "react";
-import Photo from "../../photo/Photo";
+import Photo from "../../share/photo/Photo";
 
 
 const KeyDesignMobile: FunctionComponent<{page: string}> = ({page}) => {

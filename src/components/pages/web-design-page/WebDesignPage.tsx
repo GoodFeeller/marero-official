@@ -1,21 +1,7 @@
 import {FunctionComponent, useEffect, useState} from "react";
-import WebDesignScreen from "../../web-design-screen/WebDesignScreen";
-import Ending from "../../ending/Ending";
-import Footer from "../../footer/Footer";
-import KeyDesign from "../../key-design/KeyDesign";
-import Categories from "../../categories/Categories";
-import Circles from "../../circles/Circles";
-import Steps from "../../steps/Steps";
-import DiscussScreen from "../../discuss-screen/DiscussScreen";
 import {nowPageType} from "../../../../public/staticInfo";
-import {CSSTransition} from "react-transition-group";
-import PagesSwitcher from "../../mobile/pages-switcher/PagesSwitcher";
-import CallPage from "../../mobile/callPage/CallPage";
-import WebDesignMobileScreen from "../../mobile/web-design-mobile-screen/WebDesignMobileScreen";
-import CategoriesMobile from "../../mobile/category-mobile/CategoryMobile";
-import KeyDesignMobile from "../../mobile/keyDesignMobile/KeyDesignMobile";
-import FooterMobile from "../../mobile/footer-mobile/FooterMobile";
-import styles from './web-design-page.module.sass';
+import WebDesignPageMobile from "./web-design-page-mobile/WebDesignPageMobile";
+import WebDesignPageDesktop from "./web-design-page-desktop/WebDesignPageDesktop";
 
 const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const [nowPage, setNowPage] = useState<nowPageType>('common')
@@ -27,59 +13,9 @@ const WebDesignPage: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     return <div>
         { isMobile
             ?
-            <div>
-                <CSSTransition in={nowPage == 'common'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
-                    <div>
-                        <WebDesignMobileScreen setPosition={setPosition} setNowPage={setNowPage}/>
-                        <CategoriesMobile page={'design'}/>
-                        <div style={{margin: '-15.27vw 0 0 0'}}>
-                        <KeyDesignMobile page={'design'}/>
-                        </div>
-                        <div className={styles.stickyBody}>
-                            <div className={styles.stickyBlock}>
-                                <Steps cef={9.5} isMobile={isMobile} page={'design'}/>
-                                <div style={{margin: '-36.38vw 0 0 0'}}>
-                                <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
-                                </div>
-                                <FooterMobile/>
-                            </div>
-                        </div>
-                    </div>
-                </CSSTransition>
-                <CSSTransition in={nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>
-                    <PagesSwitcher page={'design'} setNowPage={setNowPage}/>
-                </CSSTransition>
-                <CSSTransition in={nowPage == 'callPage'} timeout={250} classNames='mobilePageChanger'  unmountOnExit>
-                    <CallPage setNowPage={setNowPage}/>
-                </CSSTransition>
-            </div>
+                <WebDesignPageMobile nowPage={nowPage} isMobile={isMobile} setNowPage={setNowPage} setPosition={setPosition}/>
             :
-            <div>
-                <CSSTransition in={nowPage == 'common' || nowPage == 'pageChanger'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
-                    <div>
-                        <WebDesignScreen setPosition={setPosition} setNowPage={setNowPage}/>
-                        <div style={{margin: '10.41vw 0 24.53vw 0'}}>
-                        <Categories page={'design'}/>
-                        </div>
-                        <Circles page={'design'}/>
-                        <div style={{margin: '19.27vw 0'}}>
-                        <KeyDesign setPosition={setPosition} setNowPage={setNowPage} page={'design'}/>
-                        </div>
-                        <div className={styles.stickyBodyDesktop}>
-                            <div className={styles.stickyBlockDesktop}>
-                                <Steps cef={2.65} isMobile={isMobile} page={'design'}/>
-                                <div style={{margin: '13.33vw 0 10.41vw 0'}}>
-                                <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'design'}/>
-                                </div>
-                                <Footer/>
-                            </div>
-                        </div>
-                    </div>
-                </CSSTransition>
-                <CSSTransition in={nowPage == 'callPage'} timeout={250} classNames='mobilePageChanger' unmountOnExit>
-                    <DiscussScreen setNowPage={setNowPage}/>
-                </CSSTransition>
-            </div>
+                <WebDesignPageDesktop nowPage={nowPage} setPosition={setPosition} setNowPage={setNowPage} isMobile={isMobile}/>
         }
     </div>
 }
