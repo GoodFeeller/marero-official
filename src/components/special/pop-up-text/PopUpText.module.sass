@@ -1,0 +1,22 @@
+.textBox
+  overflow-y: hidden
+  margin-top: -1vw
+  padding-top: 1vw
+
+
+.open
+  transform: translateY(150%)
+  animation: show ease 1s forwards
+  display: inline-block
+  white-space: pre
+
+.close
+  transform: translateY(150%)
+  display: inline-block
+  white-space: pre
+
+@keyframes show
+  from
+    transform: translateY(150%)
+  to
+    transform: translateY(0)

@@ -1,4 +1,4 @@
-import {FunctionComponent, useEffect, useState} from "react";
+import {FunctionComponent, memo, useEffect, useState} from "react";
 import styles from './Photo.module.sass'
 
 interface IProps {
@@ -18,4 +18,4 @@ const Photo: FunctionComponent<IProps> = ({ src , smallSrc, className = styles.p
     })
     return <img src={imgSrc} className={className} style={style}/>
 }
-export default Photo;
+export default memo(Photo);

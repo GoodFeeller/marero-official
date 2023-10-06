@@ -39,12 +39,16 @@
     justify-content: normal
     background: url("/assets/tech/techMobileBack.png")
     background-size: 100% 100%
-  .techTitle
-    margin-top: 55.55vw
-    margin-bottom: 10vw
-    font-size: 8.333vw
-    line-height: 7.916vw
-    text-align: center
+    &>div:first-child
+      margin-top: 55.55vw
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-bottom: 10vw
+    .techTitle
+      font-size: 8.333vw
+      line-height: 7.916vw
+      text-align: center
   .techContent
     grid-template-columns: repeat(2, 1fr)
     grid-template-rows: repeat(7, 1fr)

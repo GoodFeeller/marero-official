@@ -2,7 +2,6 @@ import {FunctionComponent} from "react";
 import {CSSTransition} from "react-transition-group";
 import MainScreen from "../../../desctop/main-screen/MainScreen";
 import Services from "../../../desctop/services/Services";
-import Photo from "../../../share/photo/Photo";
 import styles from "../main-page.module.sass";
 import Steps from "../../../share/steps/Steps";
 import {nowPageType, setNowPageType, workSteps} from "../../../../../public/staticInfo";
@@ -12,6 +11,7 @@ import Technologies from "../../../share/technologies/Technologies";
 import Ending from "../../../share/ending/Ending";
 import Footer from "../../../desctop/footer/Footer";
 import DiscussScreen from "../../../desctop/discuss-screen/DiscussScreen";
+import BigPhoto from "../../../special/big-photo/BigPhoto";
 
 interface IProps {
     nowPage: nowPageType,
@@ -25,7 +25,7 @@ const DesktopMainPage: FunctionComponent<IProps> = ({nowPage, setNowPage, setPos
             <div>
                 <MainScreen setNowPage={setNowPage} setPosition={setPosition}/>
                 <Services/>
-                <Photo smallSrc={'/assets/big-photos/Group_small.png'} src={'/assets/big-photos/Group.png'}/>
+                <BigPhoto position={0.397} smallSrc={'/assets/big-photos/Group_small.png'} src={'/assets/big-photos/Group.png'}/>
                 <div className={styles.stickyBodyDesktop}>
                     <div className={styles.stickyBlockDesktop}>
                         <div style={{margin: '16.66vw 0 17.604vw 0'}}>

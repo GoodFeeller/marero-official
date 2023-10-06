@@ -5,8 +5,10 @@
 
 .stepsTitle
   margin-bottom: 4.166vw
-  & div
+  &>div
     display: flex
+    &>div
+      flex: 1
 
 
 
@@ -149,18 +151,17 @@
   .stepsTitle
     margin-top: 55.55vw
     display: flex
-    & div
+    &>div
       display: flex
       flex-direction: column
       width: 100%
-      margin-bottom: 0
+      margin-bottom: 13.888vw
     width: 100%
     margin-bottom: 0
   .titleBig
     text-align: center
     @include text(10.55vw, white)
     line-height: 10vw
-    margin-bottom: 13.888vw
   .titleLittle
     text-align: center
     @include text(3.6111vw, white)

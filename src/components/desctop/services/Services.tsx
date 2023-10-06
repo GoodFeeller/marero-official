@@ -1,5 +1,6 @@
 import {FunctionComponent, memo, useEffect, useState} from "react";
 import styles from './Services.module.sass'
+import PopUpText from "../../special/pop-up-text/PopUpText";
 const Services: FunctionComponent = () => {
     const [src, setSrc] = useState('')
     const [matrix, setMatrix] = useState<string>('/assets/service/backMatrix-small.png')
@@ -33,11 +34,11 @@ const Services: FunctionComponent = () => {
 
     }, [matrix, branding, design])
     return <div className={styles.servicesBody} style={src === '' ? {background: 'black'} : {backgroundImage: 'url("' + src + '")'}}>
-        <span className={styles.service}>/Услуги</span>
+        <PopUpText str={'/Услуги'} threshold={1} boxClassName={styles.service}/>
         <div className={styles.servicesContent}>
-            <span onMouseEnter={() => setSrc(matrix)} onMouseLeave={() => setSrc('')}>РАЗРАБОТКА</span>
-            <span onMouseEnter={() => setSrc(design)} onMouseLeave={() => setSrc('')}>WEB-DESIGN</span>
-            <span onMouseEnter={() => setSrc(branding)} onMouseLeave={() => setSrc('')}>БРЕНДИНГ</span>
+            <PopUpText str={'РАЗРАБОТКА'} threshold={1} onMouseLeave={() => setSrc('')} onMouseEnter={() => setSrc(matrix)}/>
+            <PopUpText str={'WEB-DESIGN'} threshold={1} onMouseLeave={() => setSrc('')} onMouseEnter={() => setSrc(design)}/>
+            <PopUpText str={'БРЕНДИНГ'} threshold={1} onMouseLeave={() => setSrc('')} onMouseEnter={() => setSrc(branding)}/>
         </div>
     </div>
 }
