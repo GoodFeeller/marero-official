@@ -5,7 +5,6 @@
   url('/fonts/Muller/MullerLight.woff') format('woff'),
   url('/fonts/Muller/MullerLight.ttf') format('truetype');
   font-weight: 300;
-  font-display: optional;
   font-style: normal;
 }
 
@@ -17,7 +16,6 @@
   url('/fonts/Muller/MullerUltraLight.woff') format('woff'),
   url('/fonts/Muller/MullerUltraLight.ttf') format('truetype');
   font-weight: 200;
-  font-display: optional;
   font-style: normal;
 }
 @font-face {
@@ -27,6 +25,5 @@
   url('/fonts/Muller/Muller-Regular.woff') format('woff'),
   url('/fonts/Muller/Muller-Regular.ttf') format('truetype');
   font-weight: 400;
-  font-display: optional;
   font-style: normal;
 }
