@@ -1,0 +1,29 @@
+@import "src/index"
+.box
+  position: relative
+  margin-bottom: 0.8333vw
+
+.checkBox
+  position: absolute
+  width: 100%
+  height: 100%
+  opacity: 0
+  margin: 0
+  &:checked ~ .text:before
+    background-image: url("/public/assets/check.svg")
+    background-size: 60%
+    background-position: center
+    background-repeat: no-repeat
+
+.text
+  @include text(0.833vw, rgba(157, 157, 157, 1))
+  display: inline-flex
+  align-content: center
+  &::before
+    content: ''
+    width: 1.14vw
+    margin-top: -0.2vw
+    height: 1.14vw
+    margin-right: 0.625vw
+    background: rgba(26, 26, 26, 1)
+    border-radius: 0.156vw
