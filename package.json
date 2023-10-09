@@ -17,12 +17,14 @@
     "react-scroll-horizontal": "^1.6.6",
     "react-transition-group": "^4.4.5",
     "sass": "^1.67.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/react-transition-group": "^4.4.6",
+    "@types/webfontloader": "^1.6.35",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",

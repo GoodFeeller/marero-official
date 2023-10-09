@@ -1,6 +1,7 @@
 import {FunctionComponent, lazy, Suspense, useEffect, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Loading from "./components/share/Loading/Loading";
+import * as WebFont from "webfontloader";
 
 
 const MainPage = lazy( () => import("./components/pages/main-page/MainPage"))
@@ -19,6 +20,14 @@ const Router: FunctionComponent = () => {
 
         return () => window.removeEventListener('resize', checkMobile)
     }, [])
+    useEffect(() => {
+        WebFont.load({
+            custom: {
+                families: ['Muller'],
+                urls: ['./index.scss']
+            }
+        })
+    },[])
     return <BrowserRouter>
         <Routes>
             <Route element={
