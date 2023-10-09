@@ -1,11 +1,13 @@
 import {FunctionComponent, memo, useEffect, useState} from "react";
 import styles from './Services.module.sass'
 import PopUpText from "../../special/pop-up-text/PopUpText";
+import {useNavigate} from "react-router-dom";
 const Services: FunctionComponent = () => {
     const [src, setSrc] = useState('')
     const [matrix, setMatrix] = useState<string>('/assets/service/backMatrix-small.png')
     const [design, setDesign] = useState<string>('/assets/service/designBack-small.png')
     const [branding, setBranding] = useState<string>('/assets/service/backBranding-small.png')
+    const navigate = useNavigate()
     useEffect(() => {
         const imgMatrix = new Image()
         const imgDesign = new Image()
@@ -36,9 +38,12 @@ const Services: FunctionComponent = () => {
     return <div className={styles.servicesBody} style={src === '' ? {background: 'black'} : {backgroundImage: 'url("' + src + '")'}}>
         <PopUpText str={'/Услуги'} threshold={1} boxClassName={styles.service}/>
         <div className={styles.servicesContent}>
-            <PopUpText str={'РАЗРАБОТКА'} threshold={1} onMouseLeave={() => setSrc('')} onMouseEnter={() => setSrc(matrix)}/>
-            <PopUpText str={'WEB-DESIGN'} threshold={1} onMouseLeave={() => setSrc('')} onMouseEnter={() => setSrc(design)}/>
-            <PopUpText str={'БРЕНДИНГ'} threshold={1} onMouseLeave={() => setSrc('')} onMouseEnter={() => setSrc(branding)}/>
+            <PopUpText onClick={() => navigate('/working')} str={'РАЗРАБОТКА'} threshold={1} onMouseLeave={() => setSrc('')}
+                       onMouseEnter={() => setSrc(matrix)}/>
+            <PopUpText onClick={() => navigate('/design')} str={'WEB-DESIGN'} threshold={1} onMouseLeave={() => setSrc('')}
+                       onMouseEnter={() => setSrc(design)}/>
+            <PopUpText onClick={() => navigate('/branding')} str={'БРЕНДИНГ'} threshold={1} onMouseLeave={() => setSrc('')}
+                       onMouseEnter={() => setSrc(branding)}/>
         </div>
     </div>
 }

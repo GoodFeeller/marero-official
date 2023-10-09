@@ -11,6 +11,7 @@ interface IProps {
     boxClassName?: string
     onMouseEnter?: MouseEventHandler<HTMLSpanElement> | undefined
     onMouseLeave?: MouseEventHandler<HTMLSpanElement> | undefined
+    onClick?: MouseEventHandler<HTMLSpanElement> | undefined
 }
 
 const PopUpText: FunctionComponent<IProps> = ({
@@ -21,7 +22,8 @@ const PopUpText: FunctionComponent<IProps> = ({
                                                   addDelay = 0.04,
                                                   onMouseEnter,
                                                   onMouseLeave,
-                                                  boxClassName
+                                                  boxClassName,
+                                                  onClick
                                               }) => {
     const [show, setShow] = useState(false)
     const {ref, inView} = useInView({
@@ -30,7 +32,7 @@ const PopUpText: FunctionComponent<IProps> = ({
     useEffect(() => {
         if (inView) setShow(true)
     }, [inView])
-    return <div ref={ref} className={styles.textBox + ' ' + boxClassName}>
+    return <div onClick={onClick} ref={ref} className={styles.textBox + ' ' + boxClassName}>
         <span
             className={className}
             onMouseEnter={onMouseEnter}
