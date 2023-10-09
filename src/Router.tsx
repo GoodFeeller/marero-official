@@ -23,7 +23,8 @@ const Router: FunctionComponent = () => {
     useEffect(() => {
         WebFont.load({
             custom: {
-                families: ['Muller']
+                families: ['Muller:n4,n3,n2'],
+                urls: ['/public/fonts.css']
             }
         })
     },[])
