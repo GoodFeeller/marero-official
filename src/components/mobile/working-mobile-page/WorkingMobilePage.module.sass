@@ -30,12 +30,15 @@
   @include text(3.888vw, rgba(255, 255, 255, 1))
   line-height: 5.444vw
   text-align: center
-  margin-top: 3.05vw
-  margin-bottom: 61.11vw
+  &:first-child
+    margin-top: 3.05vw
+  &:last-child
+    margin-bottom: 61.11vw
   user-select: none
 
 
 .discussBtnBox
+  margin-top: 8.33vw
   width: 100%
   display: flex
   justify-content: center
@@ -46,15 +49,11 @@
   margin-bottom: 25.833vw
 
 .dots
-  margin: 0 5.555vw 8.333vw 5.555vw
   display: flex
-  & span
-    width: 100%
-    display: flex
+  justify-content: space-around
+  &>div
     @include text(3.611vw, rgba(179, 179, 179, 1))
     user-select: none
-    &:not(&:last-child)
-      margin-right: 12.777vw
     &:before
       max-width: 0.8333vw
       max-height: 0.8333vw

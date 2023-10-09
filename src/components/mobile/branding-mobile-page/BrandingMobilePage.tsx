@@ -3,6 +3,7 @@ import styles from './BrandingMobilePage.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {setNowPageType} from "../../../../public/staticInfo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
 
 interface IProps {
     setNowPage: setNowPageType,
@@ -16,8 +17,9 @@ const BrandingMobileScreen: FunctionComponent<IProps>
             <HeaderMobile setNowPage={setNowPage}/>
         </div>
         <div className={styles.titleBox}>
-            <span className={styles.titleWhite}>БРЕНДИНГ</span>
-            <span className={styles.littleText}>Разработаем дизайн и стратегию<br/>продвижения ваших товаров и услуг</span>
+            <PopUpText str={'БРЕНДИНГ'} threshold={1} boxClassName={styles.titleWhite}/>
+            <PopUpText str={'Разработаем дизайн и стратегию'} threshold={1} boxClassName={styles.littleText}/>
+            <PopUpText str={'продвижения ваших товаров и услуг'} threshold={1} boxClassName={styles.littleText}/>
         </div>
         <div className={styles.discussBtnBox}>
             <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>

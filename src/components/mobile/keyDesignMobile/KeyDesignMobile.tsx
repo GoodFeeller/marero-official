@@ -1,6 +1,7 @@
 import styles from './KeyDesignMobile.module.sass'
 import {FunctionComponent} from "react";
-import Photo from "../../share/photo/Photo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
+import GrowingPhoto from "../../special/growingPhoto/GrowingPhoto";
 
 
 const KeyDesignMobile: FunctionComponent<{page: string}> = ({page}) => {
@@ -8,11 +9,17 @@ const KeyDesignMobile: FunctionComponent<{page: string}> = ({page}) => {
 
         {/*Верхний текст*/}
         <div className={styles.keyDesignTitleBody}>
-            <span className={styles.keyDesignLittleTitle}>{ page == 'branding' ? '/Разработка брендинга' : '/Разработка дизайна сайта'}</span>
+            <PopUpText str={ page == 'branding' ? '/Разработка брендинга' : '/Разработка дизайна сайта'} addDelay={0.02} threshold={1} boxClassName={styles.keyDesignLittleTitle}/>
             { page == 'branding' ?
-                <span className={styles.keyDesignBigTitle}>МЫ ВЕРИМ<br/>В ВАШ БРЕНД</span>
+                <div>
+                    <PopUpText str={'МЫ ВЕРИМ'} threshold={1} boxClassName={styles.keyDesignBigTitle}/>
+                    <PopUpText str={'В ВАШ БРЕНД'} threshold={1} boxClassName={styles.keyDesignBigTitle}/>
+                </div>
                 :
-                <span className={styles.keyDesignBigTitle}>РАЗРАБОТАЕМ<br/>ДИЗАЙН САЙТА</span>
+                <div>
+                    <PopUpText str={'РАЗРАБОТАЕМ'} threshold={1} boxClassName={styles.keyDesignBigTitle}/>
+                    <PopUpText str={'ДИЗАЙН САЙТА'} threshold={1} boxClassName={styles.keyDesignBigTitle}/>
+                </div>
             }
         </div>
 
@@ -21,13 +28,14 @@ const KeyDesignMobile: FunctionComponent<{page: string}> = ({page}) => {
             {
                 page == 'main-page' ?
                     <div className={styles.keyDesignTextMainPage}>
-                        <span>СОЗДАЙТЕ</span>
-                        <span>ПРИВЛЕКАТЕЛЬНЫЙ</span>
-                        <span>ОБРАЗ БИЗНЕСА</span>
+                        <PopUpText str={'СОЗДАЙТЕ'} threshold={1}/>
+                        <PopUpText str={'ПРИВЛЕКАТЕЛЬНЫЙ'} threshold={1}/>
+                        <PopUpText str={'ОБРАЗ БИЗНЕСА'} threshold={1}/>
                     </div>
                     :
                     <div className={styles.keyDesignTextDesignPage}>
-                        <span>Благодаря дизайну и более широкому<br/> контексту. Наша цель: продвигать ваши идеи.</span>
+                        <PopUpText str={'Благодаря дизайну и более широкому'} threshold={1} addDelay={0.01}/>
+                        <PopUpText str={'контексту. Наша цель: продвигать ваши идеи.'} threshold={1} addDelay={0.01}/>
                     </div>
             }
         </div>
@@ -35,32 +43,31 @@ const KeyDesignMobile: FunctionComponent<{page: string}> = ({page}) => {
 
         <div className={page == 'branding' ? styles.topImagesBoxBranding : styles.topImagesBox}>
             { page == 'branding' ?
-                <Photo smallSrc={'/assets/keyDesign/keyDesign8-small.png'} src={'/assets/keyDesign/keyDesign8.png'}/> :
-                <Photo smallSrc={'/assets/keyDesign/keyDesign.png'} src={'/assets/keyDesign/keyDesign-small.png'}/>
+                <GrowingPhoto height={122.76} smallSrc={'/assets/keyDesign/keyDesign8-small.png'} src={'/assets/keyDesign/keyDesign8.png'}/> :
+                <GrowingPhoto height={61.38} smallSrc={'/assets/keyDesign/keyDesign.png'} src={'/assets/keyDesign/keyDesign-small.png'}/>
             }
 
                 { page == 'branding' ?
-                <Photo src={'/assets/keyDesign/keyDesign9.png'} smallSrc={'/assets/keyDesign/keyDesign9-small.png'}/> :
-                    <Photo src={'/assets/keyDesign/keyDesign2.png'} smallSrc={'/assets/keyDesign/keyDesign2-small.png'}/>
+                <GrowingPhoto height={61.38} src={'/assets/keyDesign/keyDesign9.png'} smallSrc={'/assets/keyDesign/keyDesign9-small.png'}/> :
+                    <GrowingPhoto height={61.38} src={'/assets/keyDesign/keyDesign2.png'} smallSrc={'/assets/keyDesign/keyDesign2-small.png'}/>
                 }
 
-                { page == 'branding' ? <Photo src={'/assets/keyDesign/keyDesign10.png'} smallSrc={'/assets/keyDesign/keyDesign10-small.png'}/> :
+                { page == 'branding' ? <GrowingPhoto height={61.38} src={'/assets/keyDesign/keyDesign10.png'} smallSrc={'/assets/keyDesign/keyDesign10-small.png'}/> :
                     page == 'design' ?
-                    <Photo src={'/assets/keyDesign/keyDesign3.png'} smallSrc={'/assets/keyDesign/keyDesign3-small.png'}/> : <div/> }
+                    <GrowingPhoto height={61.38} src={'/assets/keyDesign/keyDesign3.png'} smallSrc={'/assets/keyDesign/keyDesign3-small.png'}/> : <div/> }
 
 
                     {page == 'branding'
                     ?
-                        <Photo src={'/assets/keyDesign/keyDesign4.png'} smallSrc={'/assets/keyDesign/keyDesign4-small.png'}/> :
-                        <Photo src={ '/assets/keyDesign/keyDesign6.png'} smallSrc={'/assets/keyDesign/keyDesign6-small.png'}/>
+                        <GrowingPhoto height={61.38} src={'/assets/keyDesign/keyDesign4.png'} smallSrc={'/assets/keyDesign/keyDesign4-small.png'}/> :
+                        <GrowingPhoto height={61.38} src={ '/assets/keyDesign/keyDesign6.png'} smallSrc={'/assets/keyDesign/keyDesign6-small.png'}/>
                     }
                 {page == 'branding'
                     ?
-                    <Photo src={'/assets/keyDesign/keyDesign5.png'} smallSrc={'/assets/keyDesign/keyDesign5-small.png'}/>
+                    <GrowingPhoto height={122.76} src={'/assets/keyDesign/keyDesign5.png'} smallSrc={'/assets/keyDesign/keyDesign5-small.png'}/>
                     :
-                    <Photo src={'/assets/keyDesign/keyDesign7.png'} smallSrc={'/assets/keyDesign/keyDesign7-small.png'}/>
+                    <GrowingPhoto height={61.38} src={'/assets/keyDesign/keyDesign7.png'} smallSrc={'/assets/keyDesign/keyDesign7-small.png'}/>
                 }
-
         </div>
 
     </div>

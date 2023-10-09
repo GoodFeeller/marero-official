@@ -1,6 +1,7 @@
 import {FunctionComponent, useEffect, useState} from "react";
 import styles from './AdvantagesMobile.module.sass';
 import {advantagesListMobile, advantagesListMobileBranding, advantageTypeMobile} from "../../../../public/staticInfo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
 
 const AdvantagesMobile: FunctionComponent<{page?: string}> = ({page}) => {
     const [advantages, setAdvantages] = useState<advantageTypeMobile[]>( page === 'branding' ? advantagesListMobileBranding : advantagesListMobile)
@@ -17,12 +18,17 @@ const AdvantagesMobile: FunctionComponent<{page?: string}> = ({page}) => {
     return <div className={styles.advantagesBody}>
         {/*Верхний текст*/}
         <div className={styles.advantagesTitleContent}>
-            <span className={styles.advantagesSlash}>/Преимущества</span>
-            <span className={styles.advantagesBigTitle}>ПРЕИМУЩЕСТВА<br/>MARSERO</span>
-            <span className={styles.advantagesLittleTitle}>
-                <span className={styles.green}>Уникальные</span> решения.
-                <span className={styles.green}> Уникальная</span> эффективность.
-            </span>
+            <PopUpText str={'/Преимущества'} threshold={1} boxClassName={styles.advantagesSlash}/>
+            <div className={styles.advantagesBigTitle}>
+                <PopUpText str={'ПРЕИМУЩЕСТВА'} threshold={1}/>
+                <PopUpText str={'MARSERO'} threshold={1}/>
+            </div>
+            <div className={styles.advantagesLittleTitle}>
+                <PopUpText str={'Уникальные'} threshold={1} addDelay={0.01} className={styles.green}/>
+                <PopUpText str={' решения.'} addDelay={0.01} startDelay={0.1} threshold={1}/>
+                <PopUpText str={' Уникальная'} addDelay={0.01} startDelay={0.19} threshold={1} className={styles.green}/>
+                <PopUpText str={' эффективность.'} addDelay={0.01} startDelay={0.3} threshold={1}/>
+            </div>
         </div>
         <div className={styles.advantagesBox}>
 

@@ -1,7 +1,12 @@
 import {FunctionComponent} from "react";
 import styles from './BuisnessActivity.module.sass'
+import PopUpText from "../../special/pop-up-text/PopUpText";
+import {useInView} from "react-intersection-observer";
 
 const BuisnessActivity: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    })
     return <div className={styles.buisnessBody}>
         <div className={styles.buisnessContent}>
             <div className={styles.titleBody}>
@@ -12,46 +17,90 @@ const BuisnessActivity: FunctionComponent<{isMobile: boolean}> = ({isMobile}) =>
                 ?
                 <div className={styles.infoBox}>
                     <div className={styles.infoBlock}>
-                        <span>Дизайн упаковки</span>
-                        <span>Дизайн упаковки</span>
-                        <span>Разработка фирменного стиля</span>
-                        <span>Оформление пространств</span>
-                        <span>Разработка брендинга</span>
-                        <span>Дизайн интерфейсов<br/>и WEB</span>
+                        <PopUpText str={'Дизайн упаковки'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Дизайн упаковки'} addDelay={0.02} threshold={1}/>
+                        <div>
+                            <div>
+                                <PopUpText str={'Разработка'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'фирменного стиля'} addDelay={0.02} threshold={1}/>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <PopUpText str={'Оформление'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'пространств'} addDelay={0.02} threshold={1}/>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <PopUpText str={'Разработка'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'брендинга'} addDelay={0.02} threshold={1}/>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <PopUpText str={'Дизайн'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'интерфейсов'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'и WEB'} addDelay={0.02} threshold={1}/>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.infoBlock}>
-                        <span>Дизайн этикетки</span>
-                        <span>Ребрендинг</span>
-                        <span>Инфографика<br/>и анимация</span>
-                        <span>Корпоративный брендинг</span>
-                        <span>Разработка дизайн-стратегии</span>
-                        <span>Фудстайлинг<br/>и рекламная фотосъемка</span>
+                        <PopUpText str={'Дизайн этикетки'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Ребрендинг'} addDelay={0.02} threshold={1}/>
+                        <div>
+                            <div>
+                                <PopUpText str={'Инфографика'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'и анимация'} addDelay={0.02} threshold={1}/>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <PopUpText str={'Корпоративный'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'брендинг'} addDelay={0.02} threshold={1}/>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <PopUpText str={'Разработка'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'дизайн-стратегии'} addDelay={0.02} threshold={1}/>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <PopUpText str={'Фудстайлинг'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'и рекламная'} addDelay={0.02} threshold={1}/>
+                                <PopUpText str={'фотосъемка'} addDelay={0.02} threshold={1}/>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 :
                 <div className={styles.infoBox}>
                     <div className={styles.infoBlock}>
-                        <span>Дизайн упаковки</span>
-                        <span>Дизайн этикетки</span>
-                        <span>Фудстайлинг и рекламная фотосъемка</span>
-                        <span>Инфографика и анимация</span>
+                        <PopUpText str={'Дизайн упаковки'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Дизайн этикетки'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Фудстайлинг и рекламная фотосъемка'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Инфографика и анимация'} addDelay={0.02} threshold={1}/>
                     </div>
                     <div className={styles.infoBlock}>
-                        <span>Корпоративный брендинг</span>
-                        <span>Ребрендинг</span>
-                        <span>Разработка дизайн-стратегии</span>
-                        <span>Разработка фирменного стиля</span>
+                        <PopUpText str={'Корпоративный брендинг'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Ребрендинг'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Разработка дизайн-стратегии'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Разработка фирменного стиля'} addDelay={0.02} threshold={1}/>
                     </div>
                     <div className={styles.infoBlock}>
-                        <span>Оформление пространств</span>
-                        <span>Дизайн интерфейсов и WEB</span>
-                        <span>Дизайн упаковки</span>
-                        <span>Разработка брендбука</span>
+                        <PopUpText str={'Оформление пространств'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Дизайн интерфейсов и WEB'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Дизайн упаковки'} addDelay={0.02} threshold={1}/>
+                        <PopUpText str={'Разработка брендбука'} addDelay={0.02} threshold={1}/>
                     </div>
                 </div>
             }
         </div>
-        <div className={styles.linesBlock}>
+        <div ref={ref} className={inView ? styles.linesBlock + ' ' + styles.animateBack : styles.linesBlock}>
             <div>
                 <div className={styles.firstLine}/>
                 <div className={styles.secondLine}/>

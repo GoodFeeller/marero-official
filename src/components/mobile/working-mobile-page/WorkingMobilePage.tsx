@@ -3,6 +3,7 @@ import styles from './WorkingMobilePage.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {setNowPageType} from "../../../../public/staticInfo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
 
 interface IProps {
     setNowPage: setNowPageType,
@@ -15,15 +16,16 @@ const WorkingMobilePage: FunctionComponent<IProps>
             <HeaderMobile setNowPage={setNowPage}/>
         </div>
         <div className={styles.titleBox}>
-            <span className={styles.titleWhite}>РАЗРАБОТКА</span>
-            <span className={styles.titleGreen}>ПО</span>
-            <span className={styles.littleText}>Создаем уникальные программные<br/>решения для бизнеса</span>
+            <PopUpText str={'РАЗРАБОТКА'} threshold={1} boxClassName={styles.titleWhite}/>
+            <PopUpText str={'ПО'} threshold={1} boxClassName={styles.titleGreen}/>
+            <PopUpText str={'Создаем уникальные программные'} addDelay={0.02} threshold={1} boxClassName={styles.littleText}/>
+            <PopUpText str={'решения для бизнеса'} addDelay={0.02} threshold={1} boxClassName={styles.littleText}/>
         </div>
         <div className={styles.dots}>
-            <span>Python</span>
-            <span>PHP</span>
-            <span>Java</span>
-            <span>HTML</span>
+            <PopUpText str={'Python'} threshold={1}/>
+            <PopUpText str={'PHP'} threshold={1}/>
+            <PopUpText str={'Java'} threshold={1}/>
+            <PopUpText str={'HTML'} threshold={1}/>
         </div>
         <div className={styles.discussBtnBox}>
             <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>

@@ -3,6 +3,7 @@ import Header from "../header/Header";
 import styles from './Branding.module.sass'
 import {officialText, setNowPageType} from '../../../../public/staticInfo'
 import DiscussButton from "../header/discussButton/DiscussButton";
+import PopUpText from "../../special/pop-up-text/PopUpText";
 
 interface IProps {
     setNowPage: setNowPageType
@@ -22,12 +23,15 @@ const BrandingScreen: FunctionComponent<IProps> = ({setNowPage, setPosition}) =>
         </div>
         <div className={styles.screenContent}>
             <div className={styles.screenTitle}>
-                <span className={styles.webDesignTitle}>БРЕНДИНГ</span>
-                <span className={styles.webDesignText}>Разрабатываем сайты,которые помогут вам продавать больше</span>
+                <PopUpText str={'БРЕНДИНГ'} threshold={1} boxClassName={styles.webDesignTitle}/>
+                <div className={styles.webDesignText}>
+                    <PopUpText str={'Разработаем дизайн и стратегию'} addDelay={0.02} threshold={1}/>
+                    <PopUpText str={'продвижения ваших товаров и услуг'} addDelay={0.02} threshold={1}/>
+                </div>
                 <DiscussButton setPosition={setPosition} setNowPage={setNowPage}/>
             </div>
             <div className={styles.bottomText}>
-                <span>{officialText}</span>
+                <PopUpText str={officialText} addDelay={0.02} threshold={1}/>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@ import Header from "../header/Header";
 import styles from './WebDesignScreen.module.sass'
 import DiscussButton from "../header/discussButton/DiscussButton";
 import {setNowPageType} from "../../../../public/staticInfo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
 interface IProps {
     setNowPage: setNowPageType
     setPosition: (value: (((prevState: number) => number) | number)) => void
@@ -20,15 +21,20 @@ const WebDesignScreen: FunctionComponent<IProps> = ({setNowPage, setPosition}) =
         </div>
         <div className={styles.screenContent}>
             <div className={styles.screenTitle}>
-                <span className={styles.webDesignTitle}>ВЕБ-ДИЗАЙН</span>
-                <span className={styles.webDesignText}>Разрабатываем сайты,которые помогут вам продавать больше</span>
+                <PopUpText str={'ВЕБ-ДИЗАЙН'} threshold={1} boxClassName={styles.webDesignTitle}/>
+                <div className={styles.webDesignText}>
+                    <PopUpText str={'Разрабатываем сайты,которые помогут'} addDelay={0.02} threshold={1} />
+                    <PopUpText str={'вам продавать больше'} addDelay={0.02} threshold={1}/>
+
+                </div>
                 <DiscussButton setPosition={setPosition} setNowPage={setNowPage}/>
             </div>
             <div className={styles.dots}>
-                <span>Figma</span>
-                <span>Tilda</span>
-                <span>Adobe XD</span>
-                <span>Webflow</span>
+                <PopUpText str={'Figma'} threshold={1}/>
+                <PopUpText str={'Tilda'} threshold={1}/>
+                <PopUpText str={'Adobe XD'} threshold={1}/>
+                <PopUpText str={'Webflow'} threshold={1}/>
+
             </div>
         </div>
     </div>

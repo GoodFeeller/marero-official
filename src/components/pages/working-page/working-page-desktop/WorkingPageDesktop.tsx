@@ -4,7 +4,6 @@ import WorkingPageScreen from "../../../desctop/working-page-screen/WorkingPageS
 import Categories from "../../../desctop/categories/Categories";
 import Circles from "../../../desctop/circles/Circles";
 import MarseroAdvantages from "../../../desctop/marsero-advantages/MarseroAdvantages";
-import Photo from "../../../share/photo/Photo";
 import Steps from "../../../share/steps/Steps";
 import {nowPageType, setNowPageType, workStepsDesignPage} from "../../../../../public/staticInfo";
 import Technologies from "../../../share/technologies/Technologies";
@@ -12,6 +11,7 @@ import Ending from "../../../share/ending/Ending";
 import Footer from "../../../desctop/footer/Footer";
 import DiscussScreen from "../../../desctop/discuss-screen/DiscussScreen";
 import styles from "../WorkingPage.module.sass"
+import BigPhoto from "../../../special/big-photo/BigPhoto";
 
 interface IProps {
     nowPage: nowPageType,
@@ -31,7 +31,7 @@ const WorkingPageDesktop: FunctionComponent<IProps> = ({nowPage, setNowPage, isM
                 <div style={{margin: '24.53vw 0 18.33vw 0'}}>
                     <MarseroAdvantages page={'main-page'}/>
                 </div>
-                <Photo smallSrc={'/assets/big-photos/workingPhoto-small.png'}
+                <BigPhoto elemPos={2.427} smallSrc={'/assets/big-photos/workingPhoto-small.png'}
                        src={'/assets/big-photos/workingPhoto.png'}/>
                 <div className={styles.stickyBodyDesktop}>
                     <div className={styles.stickyBlockDesktop}>

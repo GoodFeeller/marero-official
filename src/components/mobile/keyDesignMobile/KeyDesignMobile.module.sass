@@ -22,7 +22,8 @@
 .keyDesignBigTitle
   @include text(10.555vw, white)
   line-height: 10vw
-  margin-bottom: 5.555vw
+  &:last-child
+    margin-bottom: 5.555vw
   text-align: center
   user-select: none
 
@@ -55,13 +56,15 @@
 
 
 .keyDesignTextDesignPage
-  display: flex
-  justify-content: center
+  &:last-child
+    margin-bottom: 8.333vw
+  >div
+    display: flex
+    justify-content: center
   & span
     @include text(3.888vw, rgba(176, 176, 176, 1))
     line-height: 5.444vw
     text-align: center
-    margin-bottom: 8.333vw
     user-select: none
 
 

@@ -4,13 +4,14 @@
   height: 31.56vw
   width: 77.18vw
   margin: 0 5.208vw
-  & span
+  &>div
     user-select: none
     &:nth-child(1)
       left: 0
       top: 0
     &:nth-child(2)
       left: 44.42vw
+      top: 0
     &:nth-child(3)
       left: 44.42vw
       top: 3.645vw
@@ -39,6 +40,8 @@
 .littleText
   position: absolute
   @include text(1.041vw, rgba(176, 176, 176, 1))
+  &>div
+    margin-bottom: 0.41vw
 
 
 
@@ -53,18 +56,18 @@
 
 .firstLine
   position: absolute
-  width: 24.79vw
+  width: 0
+  left: 42.23vw
   height: 2px
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.3))
   bottom: 5.468vw
-  left: 17.44vw
   opacity: 50%
 
 
 .secondLine
   position: absolute
   width: 2px
-  height: 25vw
+  height: 0
   background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.3))
   bottom: 5.468vw
   left: 42.23vw
@@ -75,6 +78,7 @@
   height: 0.3125vw
   background: rgba(217, 217, 217, 1)
   border-radius: 0.15625vw
+  opacity: 0
 
 .firstDot
   position: absolute
@@ -97,3 +101,34 @@
   position: absolute
   top: 0.885vw
   left: 42.083vw
+
+.animateLine
+  .firstLine
+    animation: linesHoriz 2s ease forwards
+  .secondLine
+    animation: linesVert 2s ease forwards
+  .firstDot, .secondDot, .thirdDot, .fourthDot
+    animation: dotsShow 1s ease forwards
+      delay: 1.5s
+
+@keyframes linesVert
+  from
+    height: 0
+  to
+    height: 25vw
+
+@keyframes linesHoriz
+  from
+    width: 0
+    left: 42.23vw
+  to
+    width: 24.79vw
+    left: 17.44vw
+
+
+
+@keyframes dotsShow
+  from
+    opacity: 0
+  to
+    opacity: 1

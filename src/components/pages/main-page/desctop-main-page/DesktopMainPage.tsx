@@ -25,7 +25,7 @@ const DesktopMainPage: FunctionComponent<IProps> = ({nowPage, setNowPage, setPos
             <div>
                 <MainScreen setNowPage={setNowPage} setPosition={setPosition}/>
                 <Services/>
-                <BigPhoto position={0.397} smallSrc={'/assets/big-photos/Group_small.png'} src={'/assets/big-photos/Group.png'}/>
+                <BigPhoto elemPos={1.04} smallSrc={'/assets/big-photos/Group_small.png'} src={'/assets/big-photos/Group.png'}/>
                 <div className={styles.stickyBodyDesktop}>
                     <div className={styles.stickyBlockDesktop}>
                         <div style={{margin: '16.66vw 0 17.604vw 0'}}>

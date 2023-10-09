@@ -11,6 +11,8 @@
   flex-direction: column
   align-items: flex-start
   & div
+    &:nth-child(1) img
+      cursor: pointer
     padding-left: 5.208vw
     height: 100%
     display: flex
@@ -78,32 +80,3 @@
   height: 2px
   background: rgba(34, 34, 34, 1)
 
-@mixin click
-  position: relative
-  display: block
-  &:after
-    position: absolute
-    content: 'Сохранено в буфер обмена'
-    display: flex
-    align-items: center
-    justify-content: center
-    min-height: 2vw
-    background: white
-    border-radius: 0.1vw
-    font-family: 'Muller', serif
-    font-weight: 400
-    font-size: 0.9375vw
-    color: black
-    padding: 0 0.5vw
-    transition: all ease 0.5s
-    left: 50%
-    text-align: center
-    top: -60%
-
-.clicked
-  @include click
-
-.notClick
-  @include click
-  &:after
-    opacity: 0

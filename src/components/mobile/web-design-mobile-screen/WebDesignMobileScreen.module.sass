@@ -24,12 +24,15 @@
   @include text(3.888vw, rgba(255, 255, 255, 1))
   line-height: 5.444vw
   text-align: center
-  margin-top: 5.555vw
-  margin-bottom: 80.27vw
+  &:first-child
+    margin-top: 5.555vw
+  &:last-child
+    margin-bottom: 80.27vw
   user-select: none
 
 
 .discussBtnBox
+  margin-top: 8.33vw
   width: 100%
   display: flex
   justify-content: center
@@ -40,17 +43,14 @@
   margin-bottom: 20.20vw
 
 .dots
-  margin: 0 5.555vw 7.5vw 5.555vw
-  & span
-    width: 100%
-    display: inline
+  display: flex
+  justify-content: space-around
+  &>div
     @include text(3.611vw, rgba(179, 179, 179, 1))
     user-select: none
-    &:not(&:last-child)
-      margin-right: 8.05vw
     &:before
       max-width: 0.8333vw
       max-height: 0.8333vw
       content: url("/assets/grayCirle.svg")
-      margin-right: 1.5vw
+      margin-right: 2.777vw
       transform: translateY(-0.6vw)

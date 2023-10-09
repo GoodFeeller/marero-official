@@ -3,6 +3,7 @@ import styles from './WebDesignMobileScreen.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {setNowPageType} from "../../../../public/staticInfo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
 
 interface IProps {
     setNowPage: setNowPageType
@@ -16,14 +17,15 @@ const WebDesignMobileScreen: FunctionComponent<IProps>
             <HeaderMobile setNowPage={setNowPage}/>
         </div>
         <div className={styles.titleBox}>
-            <span className={styles.titleWhite}>ВЕБ-ДИЗАЙН</span>
-            <span className={styles.littleText}>Разрабатываем сайты,которые помогут<br/>вам продавать больше</span>
+            <PopUpText str={'ВЕБ-ДИЗАЙН'} boxClassName={styles.titleWhite} threshold={1}/>
+            <PopUpText str={'Разрабатываем сайты,которые помогут'} addDelay={0.02} boxClassName={styles.littleText} threshold={1}/>
+            <PopUpText str={'вам продавать больше'} addDelay={0.02} boxClassName={styles.littleText} threshold={1}/>
         </div>
         <div className={styles.dots}>
-            <span>Figma</span>
-            <span>Tilda</span>
-            <span>Adobe XD</span>
-            <span>Webflow</span>
+            <PopUpText str={'Figma'} threshold={1}/>
+            <PopUpText str={'Tilda'} threshold={1}/>
+            <PopUpText str={'Adobe XD'} threshold={1}/>
+            <PopUpText str={'Webflow'} threshold={1}/>
         </div>
         <div className={styles.discussBtnBox}>
             <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>

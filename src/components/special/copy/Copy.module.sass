@@ -1,0 +1,28 @@
+@import "src/index"
+.copy
+  margin: auto
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  position: fixed
+  z-index: 2
+  width: 10.93vw
+  height: 2.96vw
+  border: rgba(0, 255, 10, 1) 0.052vw solid
+    radius: 4vw
+  background: rgba(34, 34, 34, 1)
+  @include text(0.9375vw, white)
+  line-height: 1.07vw
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+
+@media (max-width: 560px)
+  .copy
+    width: 50vw
+    height: 15vw
+    border-radius: 15vw
+    @include text(5vw, white)
+    line-height: 5.5vw

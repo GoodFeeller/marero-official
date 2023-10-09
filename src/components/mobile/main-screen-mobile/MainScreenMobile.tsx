@@ -3,6 +3,8 @@ import styles from './MainScreenMobile.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {setNowPageType} from "../../../../public/staticInfo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
+import {useInView} from "react-intersection-observer";
 
 
 interface IProps {
@@ -12,6 +14,9 @@ interface IProps {
 const MainScreenMobile: FunctionComponent<IProps>
     = ({setNowPage, setPosition}) => {
     const [imgSrc, setImgSrc] = useState<string>("/assets/big-photos/MobileMainScreen-small.png")
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    })
     useEffect( () => {
         const img = new Image()
         img.src = "/assets/big-photos/MobileMainScreen.png"
@@ -22,17 +27,16 @@ const MainScreenMobile: FunctionComponent<IProps>
             <HeaderMobile setNowPage={setNowPage}/>
         </div>
         <div className={styles.titleBox}>
-            <span className={styles.titleGreen}>ЯРКИЕ</span>
-            <span className={styles.titleWhite}>РЕШЕНИЯ ДЛЯ</span>
-            <span className={styles.titleWhite}>УЛУЧШЕНИЙ</span>
+            <PopUpText str={'ЯРКИЕ'} threshold={1} boxClassName={styles.titleGreen}/>
+            <PopUpText str={'РЕШЕНИЯ ДЛЯ'} threshold={1} boxClassName={styles.titleWhite}/>
+            <PopUpText str={'УЛУЧШЕНИЙ'} threshold={1} boxClassName={styles.titleWhite}/>
         </div>
-        <div className={styles.linesBox}>
+        <div ref={ref} className={inView ? styles.linesBox + ' ' + styles.animated : styles.linesBox}>
             <div className={styles.linesBoxContent}>
-                <span>Разработка игр</span>
-                <span>Визуальные решения</span>
-                <span>Web-desgin</span>
-                <span>Разработка ПО</span>
-
+                <PopUpText str={'Разработка игр'} threshold={1} addDelay={0.02}/>
+                <PopUpText str={'Визуальные решения'} threshold={1} addDelay={0.02}/>
+                <PopUpText str={'Web-desgin'} threshold={1} addDelay={0.02}/>
+                <PopUpText str={'Разработка ПО'} threshold={1} addDelay={0.02}/>
             </div>
             <div className={styles.horizLine}/>
             <div className={styles.vertLine}/>

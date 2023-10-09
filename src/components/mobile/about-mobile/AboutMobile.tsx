@@ -3,6 +3,8 @@ import styles from './AboutMobile.module.sass'
 import DiscussMobileButton from './../discussButtonMobile/DiscussMobileButton';
 import HeaderMobile from "../header-mobile/HeaderMobile";
 import {officialText, setNowPageType} from "../../../../public/staticInfo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
+import {useInView} from "react-intersection-observer";
 interface IProps {
     setNowPage: setNowPageType
     setPosition: (value: (((prevState: number) => number) | number)) => void
@@ -11,20 +13,24 @@ interface IProps {
 
 const AboutMobile: FunctionComponent<IProps>
     = ({setNowPage, setPosition}) => {
+    const {ref, inView} = useInView({
+        threshold: 0.2
+    })
     return <div className={styles.aboutScreenBody}>
         <div className={styles.headerBox}>
             <HeaderMobile setNowPage={setNowPage}/>
         </div>
         <div className={styles.titleBox}>
-            <span className={styles.titleBig}>О НАС</span>
-            <span className={styles.titleLittle}>Разрабатываем сайты,которые помогут<br/>вам продавать больше</span>
+            <PopUpText str={'О НАС'} threshold={1} boxClassName={styles.titleBig}/>
+            <PopUpText str={'Разрабатываем сайты,которые помогут'} addDelay={0.01} boxClassName={styles.titleLittle} threshold={1}/>
+            <PopUpText str={'вам продавать больше'} addDelay={0.01} boxClassName={styles.titleLittle} threshold={1}/>
         </div>
-        <div className={styles.linesBox}>
+        <div ref={ref} className={inView ? styles.linesBox + ' ' + styles.animated : styles.linesBox}>
             <div className={styles.linesBoxContent}>
-                <span>Разработка игр</span>
-                <span>Визуальные решения</span>
-                <span>Web-desgin</span>
-                <span>Разработка ПО</span>
+                <PopUpText str={'Разработка игр'} threshold={1} addDelay={0.02}/>
+                <PopUpText str={'Визуальные решения'} threshold={1} addDelay={0.02}/>
+                <PopUpText str={'Web-desgin'} threshold={1} addDelay={0.02}/>
+                <PopUpText str={'Разработка ПО'} threshold={1} addDelay={0.02}/>
 
             </div>
             <div className={styles.horizLine}/>
@@ -34,9 +40,8 @@ const AboutMobile: FunctionComponent<IProps>
         <div className={styles.discussBtnBox}>
             <DiscussMobileButton setPosition={setPosition} setNowPage={setNowPage}/>
         </div>
-        <div className={styles.officialText}>
-            {officialText}
-        </div>
+        <PopUpText str={officialText} addDelay={0.02} threshold={1} boxClassName={styles.officialText}/>
+
     </div>
 }
 export default AboutMobile

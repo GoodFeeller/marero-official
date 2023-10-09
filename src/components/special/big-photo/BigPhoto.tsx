@@ -1,35 +1,39 @@
-import {FunctionComponent, memo, useEffect, useState} from "react";
-import {useInView} from "react-intersection-observer";
+import {FunctionComponent, memo, useEffect, useRef, useState} from "react";
 import styles from './bigPhoto.module.sass'
 import Photo from "../../share/photo/Photo";
 
 interface IProps {
     src: string,
     smallSrc: string,
-    position: number
+    elemPos: number
 }
-const BigPhoto: FunctionComponent<IProps> = ({src, smallSrc, position}) => {
-    const {ref, inView, entry} = useInView({
-        threshold: 0.001
-    })
-    const [style, setStyle] = useState<object>({borderWidth: '20vw'})
+const BigPhoto: FunctionComponent<IProps> = ({src, smallSrc, elemPos}) => {
+    const ref = useRef<HTMLDivElement | null>(null)
+    const [position, setPosition] = useState(elemPos * window.innerWidth - window.innerHeight)
+    const [style, setStyle] = useState<object>({borderWidth: '35vw'})
 
     useEffect(() => {
         const resize: () => void = () => {
-            if (entry) {
-                const size = 20 - (window.scrollY / window.innerWidth - position) / (entry.target.clientWidth / window.innerWidth) * 35
+            if (ref.current) {
+                const size = 35 - (window.scrollY - position) / (ref.current.clientWidth) * 80
                 size < 0 ? setStyle({backgroundWidth: '0'}) :
                     setStyle({borderWidth: `${size}vw`})
             }
         }
-        inView ? window.addEventListener('scroll', resize) :
-            window.removeEventListener('scroll', resize)
+        window.addEventListener('scroll', resize)
         return () => window.removeEventListener('scroll', resize)
-    }, [inView])
+    }, [position])
+    useEffect( () => {
+        const checkPosition = () => {
+            setPosition(elemPos * window.innerWidth - window.innerHeight)
+        }
+        window.addEventListener('resize', checkPosition)
+        return () => window.removeEventListener('resize', checkPosition)
+    }, [])
 
 
-    return <div className={styles.photoBody}>
-        <div ref={ref} className={styles.borders} style={style}/>
+    return <div ref={ref} className={styles.photoBody}>
+        <div className={styles.borders} style={style}/>
         <Photo src={src} smallSrc={smallSrc}/>
     </div>
 

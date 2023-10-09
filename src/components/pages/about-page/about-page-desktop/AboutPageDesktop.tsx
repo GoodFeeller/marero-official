@@ -1,13 +1,13 @@
 import {FunctionComponent} from "react";
 import {CSSTransition} from "react-transition-group";
 import Mission from "../../../share/mission/Mission";
-import Photo from "../../../share/photo/Photo";
 import Ending from "../../../share/ending/Ending";
 import {nowPageType, setNowPageType} from "../../../../../public/staticInfo";
 import AboutScreen from "../../../desctop/about-screen/AboutScreen";
 import Value from "../../../desctop/value/Value";
 import Footer from "../../../desctop/footer/Footer";
 import DiscussScreen from "../../../desctop/discuss-screen/DiscussScreen";
+import BigPhoto from "../../../special/big-photo/BigPhoto";
 
 interface IProps {
     nowPage: nowPageType,
@@ -22,7 +22,7 @@ const AboutPageDesktop: FunctionComponent<IProps> = ({nowPage, setNowPage, setPo
                 <div>
                     <AboutScreen setPosition={setPosition} setNowPage={setNowPage}/>
                     <Mission isMobile={isMobile}/>
-                    <Photo smallSrc={'/assets/big-photos/Group.png'} src= {'/assets/big-photos/Group.png'}/>
+                    <BigPhoto elemPos={0.721} smallSrc={'/assets/big-photos/Group.png'} src= {'/assets/big-photos/Group.png'}/>
                     <div style={{marginTop: '7.96vw'}}>
                         <Value/>
                     </div>

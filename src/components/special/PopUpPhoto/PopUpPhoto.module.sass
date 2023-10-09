@@ -1,0 +1,20 @@
+.photoBox
+  overflow-y: hidden
+
+
+
+.open
+  transform: translateY(150%)
+  animation: show ease 1s forwards
+  display: inline-block
+
+
+.close
+  transform: translateY(150%)
+  display: inline-block
+
+@keyframes show
+  from
+    transform: translateY(150%)
+  to
+    transform: translateY(0)

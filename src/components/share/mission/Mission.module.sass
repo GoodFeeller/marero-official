@@ -2,7 +2,7 @@
 .missionBody
   margin: 0 5.208vw 7.55vw 5.208vw
   display: flex
-  & div
+  &>div
     flex: 1
     width: 100%
 
@@ -15,6 +15,10 @@
   @include text(1.5625vw, rgba(255, 255, 255, 1))
   line-height: 2.1875vw
   user-select: none
+  &>div>div
+    display: flex
+    justify-content: start
+
 
 
 .green
@@ -35,11 +39,12 @@
   .text
     @include text(3.888vw, rgba(176, 176, 176, 1))
     line-height: 5.444vw
-    text-align: center
     user-select: none
-    & span
+    &>div>div
+      display: flex
+      justify-content: center
+      text-align: center
       margin: 0 5.555vw
-      display: block
   .littleTitle
     @include text(10.555vw, rgba(255, 255, 255, 1))
     margin-bottom: 5.555vw

@@ -3,6 +3,7 @@ import Header from "../header/Header";
 import styles from './WorkingPageScreen.module.sass'
 import DiscussButton from "../header/discussButton/DiscussButton";
 import {setNowPageType} from "../../../../public/staticInfo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
 interface IProps {
     setNowPage: setNowPageType,
     setPosition: (value: (((prevState: number) => number) | number)) => void
@@ -18,16 +19,20 @@ const WorkingPageScreen: FunctionComponent<IProps> = ({setNowPage, setPosition})
         <Header setPosition={setPosition} setNowPage={setNowPage} page={'working'}/>
         <div className={styles.screenContent}>
             <div className={styles.screenTitle}>
-                <span className={styles.webDesignTitle}>РАЗРАБОТКА<br/>ПРОГРАММНОГО<br/>ОБЕСПЕЧЕНИЯ</span>
-                <span className={styles.webDesignText}>Создаем уникальные программные решения для бизнеса</span>
+                <div className={styles.webDesignTitle}>
+                    <PopUpText str={'РАЗРАБОТКА'} threshold={1}/>
+                    <PopUpText str={'ПРОГРАММНОГО'} threshold={1}/>
+                    <PopUpText str={'ОБЕСПЕЧЕНИЯ'} threshold={1}/>
+                </div>
+                <PopUpText str={'Создаем уникальные программные решения для бизнеса'} threshold={1} boxClassName={styles.webDesignText} addDelay={0.01}/>
                 <DiscussButton setPosition={setPosition} setNowPage={setNowPage}/>
             </div>
             <div className={styles.dots}>
-                <span>Python</span>
-                <span>PHP</span>
-                <span>Java</span>
-                <span>HTML</span>
-                <span>И др.</span>
+                <PopUpText str={'Python'} threshold={1}/>
+                <PopUpText str={'PHP'} threshold={1}/>
+                <PopUpText str={'Java'} threshold={1}/>
+                <PopUpText str={'HTML'} threshold={1}/>
+                <PopUpText str={'И др.'} threshold={1}/>
             </div>
         </div>
     </div>

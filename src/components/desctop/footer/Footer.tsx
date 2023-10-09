@@ -1,31 +1,35 @@
 import {FunctionComponent, memo, useState} from "react";
 import {infoMail, officialText, phoneNumber} from '../../../../public/staticInfo'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import styles from './Footer.module.sass'
+import {CSSTransition} from "react-transition-group";
+import Copy from "../../special/copy/Copy";
 
 const copy = (info: string) => {
     navigator.clipboard.writeText(info)
 }
 const Footer: FunctionComponent = () => {
-    const [click, setClick] = useState([false, false])
+    const [click, setClick] = useState(false)
+    const navigate = useNavigate()
+
     return<div className={styles.footerBody}>
         <div className={styles.line}/>
         <div className={styles.leftContent}>
-            <div><img src={'/assets/MARSERO.svg'}/></div>
+            <div><img onClick={() => navigate('/')}  src={'/assets/MARSERO.svg'}/></div>
             <div><span className={styles.officialText}>{officialText}</span></div>
         </div>
         <div className={styles.rightContent}>
             <div>
                 <span>КОНТАКТЫ</span>
-                <span className={click[0] ? styles.clicked : styles.notClick} onClick={() => {
+                <span onClick={() => {
                     copy(phoneNumber)
-                    setClick([true, false])
-                    setTimeout(() => setClick([false, false]), 1000)
+                    setClick(true)
+                    setTimeout(() => setClick(false), 1500)
                 }}>{phoneNumber}</span>
-                <span className={click[1] ? styles.clicked : styles.notClick} onClick={() => {
+                <span onClick={() => {
                     copy(infoMail)
-                    setClick([false, true])
-                    setTimeout(() => setClick([false, false]), 1000)
+                    setClick(true)
+                    setTimeout(() => setClick(false), 1500)
                 }}>{infoMail}</span>
             </div>
             <div>
@@ -42,6 +46,9 @@ const Footer: FunctionComponent = () => {
                 <a href='https://t.me/MARSERO_ORG' target={'_blank'}>Telegram</a>
             </div>
         </div>
+        <CSSTransition in={click} timeout={250} classNames='mobilePageChanger' unmountOnExit>
+            <Copy/>
+        </CSSTransition>
     </div>
 }
 export default memo(Footer)

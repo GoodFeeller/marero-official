@@ -2,7 +2,6 @@ import {FunctionComponent} from "react";
 import {CSSTransition} from "react-transition-group";
 import WorkingMobilePage from "../../../mobile/working-mobile-page/WorkingMobilePage";
 import CategoriesMobile from "../../../mobile/category-mobile/CategoryMobile";
-import Photo from "../../../share/photo/Photo";
 import Steps from "../../../share/steps/Steps";
 import {nowPageType, setNowPageType, workStepsWorkingPageMobile} from "../../../../../public/staticInfo";
 import AdvantagesMobile from "../../../mobile/advantages-mobile/AdvantagesMobile";
@@ -12,6 +11,7 @@ import FooterMobile from "../../../mobile/footer-mobile/FooterMobile";
 import PagesSwitcher from "../../../mobile/pages-switcher/PagesSwitcher";
 import CallPage from "../../../mobile/callPage/CallPage";
 import styles from "../WorkingPage.module.sass";
+import GrowingPhoto from "../../../special/growingPhoto/GrowingPhoto";
 
 interface IProps {
     nowPage: nowPageType,
@@ -25,7 +25,7 @@ const WorkingPageMobile: FunctionComponent<IProps> = ({nowPage, setNowPage, isMo
             <div>
                 <WorkingMobilePage setPosition={setPosition} setNowPage={setNowPage}/>
                 <CategoriesMobile page={'working'}/>
-                <Photo smallSrc={'/assets/big-photos/workingPagePhotoMobile-small.png'}
+                <GrowingPhoto height={111} smallSrc={'/assets/big-photos/workingPagePhotoMobile-small.png'}
                        src={'/assets/big-photos/workingPagePhotoMobile.png'}/>
                 <div className={styles.stickyBody}>
                     <div className={styles.stickyBlock}>

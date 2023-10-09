@@ -1,4 +1,4 @@
-export const phoneNumber: string = "+375(29)111-11-11"
+export const phoneNumber: string = "+375 29 746 00 26"
 export const officialText: string = "© MARSERO / 2023. MINSK / BELARUS"
 export const marseroMail: string = 'marsero@gmail.com'
 

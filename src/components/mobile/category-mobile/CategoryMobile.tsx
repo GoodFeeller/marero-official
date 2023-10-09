@@ -3,6 +3,7 @@ import styles from './CategoryMobile.module.sass'
 import {categoriesList, categoriesListWorkingPageMobile, categoryType} from '../../../../public/staticInfo'
 import CategoryButton from "../../desctop/categories/category-button/CategoryButton";
 import Photo from "../../share/photo/Photo";
+import PopUpText from "../../special/pop-up-text/PopUpText";
 
 const CategoriesMobile: FunctionComponent<{page: string}> = ( {page} ) => {
 
@@ -11,8 +12,9 @@ const CategoriesMobile: FunctionComponent<{page: string}> = ( {page} ) => {
 
         {/*Верхний текст*/}
         <div className={styles.categoryTopBody}>
-                <span className={styles.categoriesLittleTitle}>{page == 'design' ? '/ Категории сайтов' : '/ Категории услуг'}</span>
-                <span className={styles.categoriesBigTitle}>ВОЗМОЖНОСТИ<br/>ДЛЯ БИЗНЕСА</span>
+            <PopUpText str={page == 'design' ? '/ Категории сайтов' : '/ Категории услуг'} threshold={1} boxClassName={styles.categoriesLittleTitle}/>
+            <PopUpText str={'ВОЗМОЖНОСТИ'} threshold={1} boxClassName={styles.categoriesBigTitle}/>
+            <PopUpText str={'ДЛЯ БИЗНЕСА'} threshold={1} boxClassName={styles.categoriesBigTitle}/>
         </div>
 
 
