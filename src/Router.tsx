@@ -10,6 +10,7 @@ const BrandingPage = lazy( () => import("./components/pages/branding-page/Brandi
 const WebDesignPage = lazy(() => import("./components/pages/web-design-page/WebDesignPage"))
 const AboutPage = lazy( () => import("./components/pages/about-page/AboutPage"))
 
+
 const Router: FunctionComponent = () => {
     const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 560)
     useEffect( () => {
@@ -30,30 +31,30 @@ const Router: FunctionComponent = () => {
     },[])
     return <BrowserRouter>
         <Routes>
-            <Route element={
-                <Suspense fallback={<Loading/>}>
-                    <MainPage isMobile={isMobile}/>
-                </Suspense>} path={'/'}/>
-            <Route element={
-                <Suspense fallback={<Loading/>}>
-                    <AboutPage isMobile={isMobile}/>
-                </Suspense>}
-                   path={'/about'}/>
-            <Route element={
-                <Suspense fallback={<Loading/>}>
-                <WebDesignPage isMobile={isMobile}/>
-            </Suspense>}
-                   path={'/design'}/>
-            <Route element={
-                <Suspense fallback={<Loading/>}>
-                    <WorkingPage isMobile={isMobile}/>
-            </Suspense>}
-                   path={'/working'}/>
-            <Route element={
-                <Suspense fallback={<Loading/>}>
-                    <BrandingPage isMobile={isMobile}/>
-            </Suspense>}
-                   path={'/branding'}/>
+                <Route element={
+                    <Suspense fallback={<Loading/>}>
+                        <MainPage isMobile={isMobile}/>
+                    </Suspense>} path={'/'}/>
+                <Route element={
+                    <Suspense fallback={<Loading/>}>
+                        <AboutPage isMobile={isMobile}/>
+                    </Suspense>}
+                       path={'/about'}/>
+                <Route element={
+                    <Suspense fallback={<Loading/>}>
+                        <WebDesignPage isMobile={isMobile}/>
+                    </Suspense>}
+                       path={'/design'}/>
+                <Route element={
+                    <Suspense fallback={<Loading/>}>
+                        <WorkingPage isMobile={isMobile}/>
+                    </Suspense>}
+                       path={'/working'}/>
+                <Route element={
+                    <Suspense fallback={<Loading/>}>
+                        <BrandingPage isMobile={isMobile}/>
+                    </Suspense>}
+                       path={'/branding'}/>
         </Routes>
     </BrowserRouter>
 }
