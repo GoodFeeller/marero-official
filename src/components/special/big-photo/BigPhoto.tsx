@@ -16,8 +16,8 @@ const BigPhoto: FunctionComponent<IProps> = ({src, smallSrc, elemPos}) => {
         const resize: () => void = () => {
             if (ref.current) {
                 const size = 35 - (window.scrollY - position) / (ref.current.clientWidth) * 80
-                size < 0 ? setStyle({backgroundWidth: '0'}) :
-                    setStyle({borderWidth: `${size}vw`})
+                size < 0 ?  setStyle({backgroundWidth: '0'}) :
+                    size > 35 ? setStyle({borderWidth: '35vw'}) :setStyle({borderWidth: `${size}vw`})
             }
         }
         window.addEventListener('scroll', resize)
