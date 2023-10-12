@@ -9,6 +9,7 @@ const WorkingPage = lazy( () => import("./components/pages/working-page/WorkingP
 const BrandingPage = lazy( () => import("./components/pages/branding-page/BrandingPage"))
 const WebDesignPage = lazy(() => import("./components/pages/web-design-page/WebDesignPage"))
 const AboutPage = lazy( () => import("./components/pages/about-page/AboutPage"))
+const WaitScreen = lazy( () => import("./components/pages/wait-screen/WaitScreen"))
 
 
 const Router: FunctionComponent = () => {
@@ -55,6 +56,11 @@ const Router: FunctionComponent = () => {
                         <BrandingPage isMobile={isMobile}/>
                     </Suspense>}
                        path={'/branding'}/>
+                <Route element={
+                    <Suspense fallback={<Loading/>}>
+                        <WaitScreen/>
+                    </Suspense>}
+                       path={'/thankyou'}/>
         </Routes>
     </BrowserRouter>
 }

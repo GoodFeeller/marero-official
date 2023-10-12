@@ -40,10 +40,10 @@ const Header:FunctionComponent<IProps> = ({page, setNowPage, setPosition}) => {
         }
         } className={styles.phone}>{phoneNumber}</span>
         <DiscussButton setPosition={setPosition} setNowPage={setNowPage}/>
-            <CSSTransition in={click} timeout={250} classNames='mobilePageChanger' unmountOnExit>
-                <Copy/>
-            </CSSTransition>
     </header>
+        <CSSTransition in={click} timeout={250} classNames='mobilePageChanger' unmountOnExit>
+            <Copy/>
+        </CSSTransition>
     </div>
 
 }

@@ -19,6 +19,7 @@
   @include text(0.833vw, rgba(157, 157, 157, 1))
   display: inline-flex
   align-content: center
+  user-select: none
   &::before
     content: ''
     width: 1.14vw
@@ -27,3 +28,18 @@
     margin-right: 0.625vw
     background: rgba(26, 26, 26, 1)
     border-radius: 0.156vw
+
+@media (max-width: 560px)
+  .text
+    @include text(3.5vw, rgba(157, 157, 157, 1))
+    display: inline-flex
+    align-content: center
+    user-select: none
+    &::before
+      content: ''
+      width: 5vw
+      margin-top: -1vw
+      height: 5vw
+      margin-right: 2vw
+      background: rgba(26, 26, 26, 1)
+      border-radius: 0.156vw

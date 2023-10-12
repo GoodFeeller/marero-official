@@ -24,13 +24,13 @@ const DiscussScreen: FunctionComponent<{setNowPage: setNowPageType}> = ({setNowP
             <div className={styles.littleTitle}>
                 <span><span className={styles.green}>Уникальные</span> решения. <span className={styles.green}>Уникальная</span> эффективность.</span>
             </div>
-            <div className={styles.callBody}>
-                <input className={styles.input} type={"text"} placeholder={'Имя'}/>
-                <input className={styles.input} type={'text'} placeholder={'Номер телефона'}/>
-                <input className={styles.input} type={"email"} placeholder={'E-mail'}/>
+            <form action="/send.php" method={"POST"} className={styles.callBody}>
+                <input className={styles.input} name="name" placeholder={'Имя'} type='text' required={true}/>
+                <input className={styles.input} name="phone" placeholder={'Номер телефона'} type='tel' required={true}/>
+                <input className={styles.input} name="email" placeholder={'E-mail'} type='email' required={true}/>
                 <CheckBox checked={checked} setChecked={setChecked}/>
-                <button disabled={!checked} className={styles.send}>Отправить</button>
-            </div>
+                <input disabled={!checked} className={styles.send} type='submit'/>
+            </form>
         </div>
     </div>
 }
