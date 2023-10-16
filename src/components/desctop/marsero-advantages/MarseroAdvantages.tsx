@@ -20,8 +20,7 @@ const MarseroAdvantages: FunctionComponent<{page: string}> = ({page}) => {
                 advantagesList.map( (a, index) =>
                 <div key={index}
                      className={styles.advantageBlock}
-                     onMouseEnter={() => setText(a.text)}
-                    >
+                     onMouseEnter={() => setText(a.text)}>
                         <div><img src={a.src}/><img src={a.hoverSrc}/></div>
                         <span className={styles.advantageBlockText}>{a.title}</span>
                 </div>)
@@ -29,8 +28,7 @@ const MarseroAdvantages: FunctionComponent<{page: string}> = ({page}) => {
                 advantagesListWorkingPage.map( (a, index) =>
                     <div key={index}
                          className={styles.advantageBlock}
-                         onMouseEnter={() => setText(a.text)}
-                         style={text !== '' ?  text == a.text ? {opacity: '1'} : { opacity: '0.3'} : {opacity: '0.5'}}>
+                         onMouseEnter={() => setText(a.text)}>
                         <div><img src={a.src}/><img src={a.hoverSrc}/></div>
                         <span className={styles.advantageBlockText}>{a.title}</span>
                     </div>)
