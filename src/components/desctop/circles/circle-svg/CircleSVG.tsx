@@ -7,8 +7,8 @@ interface IProps {
 }
 const CircleSVG: FunctionComponent<IProps> = ({offset, delay}) => {
 
-    return <div>
-        <svg className={styles.svgBody} viewBox={"0 0 200 200"}>
+    return <div className={styles.svgBody}>
+        <svg viewBox={"0 0 200 200"}>
             <defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" style={{stopColor: 'rgba(47, 47, 47, 1)'}}/>

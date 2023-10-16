@@ -1,5 +1,6 @@
 .circleBody
-  margin: 0 11.5vw
+  overflow-x: hidden
+  padding: 0 11.5vw
   display: flex
   justify-content: space-between
   align-items: center
@@ -7,11 +8,11 @@
 
 .animate
   & .circleBox
-    animation: moveLeft forwards 2s ease
+    animation: moveLeft forwards 1s ease
   & .circleSVG
-    animation: forwards 3s draw ease
+    animation: forwards 1.5s draw ease
   & .imageBox
-    animation: forwards imgShow 2s
+    animation: forwards imgShow 1s
 
 
 .circleBox
@@ -32,8 +33,8 @@
   transform: translateY(-5vw)
 
 .circleSVG
-  height: 100%
-  width: 100%
+  width: 25vw
+  margin: auto
   stroke-width: 1
   fill: transparent
   stroke-dasharray: 0 628
@@ -41,21 +42,7 @@
 
 .svgBody
   position: absolute
-  top: 0
-  bottom: 0
-  margin: auto
-  left: -5.5vw
-  right: -5.5vw
-
-@supports (-webkit-appearance: none)
-  .svgBody
-    position: absolute
-    top: 0
-    bottom: 0
-    margin: auto
-    left: -5.5vw
-    right: -5.5vw
-
+  width: 25vw
 
 @keyframes draw
   from

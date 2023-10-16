@@ -13,16 +13,16 @@ const Circles: FunctionComponent<{page: string}> = ({ page }) => {
 
         {   page == 'design' ?
             circlesList.map( (elem, index) =>
-                <div style={{animationDelay: `${index == 0 ? 0 : index * 0.8 + 0.8}s`}} key={index} className={styles.circleBox}>
-                    <CircleSVG offset={index == 0 ? '-50' : '265'} delay={index == 0 ? '0s' : `${index * 0.8 + 0.8}s`}/>
-                    <div><img style={{animationDelay: `${index * 0.8 + 3.2}s`}} className={styles.imageBox} src={elem}/></div>
+                <div style={{animationDelay: `${index == 0 ? 0 : index * 0.4 + 0.4}s`}} key={index} className={styles.circleBox}>
+                    <CircleSVG offset={index == 0 ? '-50' : '265'} delay={index == 0 ? '0s' : `${index * 0.4 + 0.4}s`}/>
+                    <div><img style={{animationDelay: `${index * 0.4 + 1.6}s`}} className={styles.imageBox} src={elem}/></div>
                 </div>
             )
             :
             circleListWorkingPage.map( (elem, index) =>
-                <div style={{animationDelay: `${index == 0 ? 0 : index * 0.8 + 0.8}s`}} key={index} className={styles.circleBox}>
-                    <CircleSVG offset={index == 0 ? '-50' : '265'} delay={index == 0 ? '0s' : `${index * 0.8 + 0.8}s`}/>
-                    <div><img style={{animationDelay: `${index * 0.8 + 3.2}s`}} className={styles.imageBox} src={elem}/></div>
+                <div style={{animationDelay: `${index == 0 ? 0 : index * 0.4 + 0.4}s`}} key={index} className={styles.circleBox}>
+                    <CircleSVG offset={index == 0 ? '-50' : '265'} delay={index == 0 ? '0s' : `${index * 0.4 + 0.4}s`}/>
+                    <div><img style={{animationDelay: `${index * 0.4 + 1.6}s`}} className={styles.imageBox} src={elem}/></div>
                 </div>
             )
         }
