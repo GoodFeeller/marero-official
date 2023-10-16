@@ -205,9 +205,9 @@
 
 
 .open
-  animation: openImg 0.5s ease forwards
+  animation: openImg 1s ease forwards
 .close
-  animation: close 0.5s ease forwards
+  animation: close 0.8s ease forwards
 
 @keyframes openImg
   from
@@ -224,7 +224,9 @@
     transform: translateX(0) rotateY(0)
   99%
     opacity: 1
-    transform: translateX(50%) rotateY(-90deg)
+    transform: translateX(50%) rotateY(90deg)
   to
     opacity: 0
+    transform: translateX(50%) rotateY(90deg)
+
 
