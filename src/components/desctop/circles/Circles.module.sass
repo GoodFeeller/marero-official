@@ -32,6 +32,8 @@
   transform: translateY(-5vw)
 
 .circleSVG
+  height: 100%
+  width: 100%
   stroke-width: 1
   fill: transparent
   stroke-dasharray: 0 628
@@ -44,6 +46,16 @@
   margin: auto
   left: -5.5vw
   right: -5.5vw
+
+@supports (-webkit-appearance: none)
+  .svgBody
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto
+    left: -5.5vw
+    right: -5.5vw
+
 
 @keyframes draw
   from
