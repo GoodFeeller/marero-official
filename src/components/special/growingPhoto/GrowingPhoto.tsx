@@ -8,7 +8,7 @@ interface IProps {
     smallSrc: string,
     height: number,
     addDelay?: number
-    threshold: number
+    threshold?: number
 }
 const GrowingPhoto: FunctionComponent<IProps> = ({src, smallSrc, height, addDelay= 0, threshold= 0.5}) => {
     const {ref, inView} = useInView({
