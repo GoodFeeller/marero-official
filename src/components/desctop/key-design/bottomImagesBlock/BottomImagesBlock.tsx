@@ -7,7 +7,7 @@ const BottomImagesBlock: FunctionComponent<{page: string}> = ({page}) => {
         <div className={page == 'design' ? styles.keyDesignBottomPhotosDesign : styles.keyDesignBottomPhotos}>
             <div>
                 {page === 'main-page' || page === 'branding'
-                    ? <GrowingPhoto height={44.1} src={'/assets/keyDesign/keyDesign4.png'} smallSrc={'/assets/keyDesign/keyDesign4-small.png'}/> :
+                    ? <GrowingPhoto threshold={0.397} height={44.1} src={'/assets/keyDesign/keyDesign4.png'} smallSrc={'/assets/keyDesign/keyDesign4-small.png'}/> :
                     <GrowingPhoto height={30.6} src={'/assets/keyDesign/keyDesign6.png'} smallSrc={'/assets/keyDesign/keyDesign6-small.png'}/>
                 }
             </div>

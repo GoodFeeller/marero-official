@@ -147,6 +147,7 @@
   height: 21.77vw
   user-select: none
 
+
 .categoryImgWorkingPage
   position: absolute
   transition: all 0.5s ease
@@ -201,3 +202,29 @@
     border: solid 1px $main-green-color
     background-color: #000000
     transition: all ease 0.25s
+
+
+.open
+  animation: openImg 0.5s ease forwards
+.close
+  animation: close 0.5s ease forwards
+
+@keyframes openImg
+  from
+    opacity: 1
+    transform: translateX(-50%) rotateY(90deg)
+  to
+    opacity: 1
+    transform: translateX(0) rotateY(0)
+
+
+@keyframes close
+  from
+    opacity: 1
+    transform: translateX(0) rotateY(0)
+  99%
+    opacity: 1
+    transform: translateX(50%) rotateY(-90deg)
+  to
+    opacity: 0
+
