@@ -45,7 +45,11 @@
   height: 21.56vw
   border-radius: 0.989vw
   transition: 0.5s ease all
+  opacity: 0.5
   &:hover
+    opacity: 1
+    ~ .advantageBlock
+      opacity: 0.3
     ~ .advantageText
       opacity: 1
     & div img

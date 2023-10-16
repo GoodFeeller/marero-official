@@ -21,7 +21,7 @@ const MarseroAdvantages: FunctionComponent<{page: string}> = ({page}) => {
                 <div key={index}
                      className={styles.advantageBlock}
                      onMouseEnter={() => setText(a.text)}
-                     style={text !== '' ?  text == a.text ? {opacity: '1'} : { opacity: '0.3'} : {opacity: '0.5'}}>
+                    >
                         <div><img src={a.src}/><img src={a.hoverSrc}/></div>
                         <span className={styles.advantageBlockText}>{a.title}</span>
                 </div>)

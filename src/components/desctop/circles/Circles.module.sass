@@ -5,6 +5,14 @@
   align-items: center
   height: 26.25vw
 
+.animate
+  & .circleBox
+    animation: moveLeft forwards 2s ease
+  & .circleSVG
+    animation: forwards 3s draw ease
+  & .imageBox
+    animation: forwards imgShow 2s
+
 
 .circleBox
   height: 26.25vw
@@ -14,18 +22,45 @@
   justify-content: center
 
 
-.circle
-  position: absolute
-  width: 26.4vw
-  height: 26.4vw
-  margin: 0 auto
-  top: 0
-  bottom: 0
-  left: -6.354vw
-
 
 
 
 .imageBox
   width: 13.54vw
   height: 13.54vw
+  opacity: 0
+  transform: translateY(-5vw)
+
+.circleSVG
+  stroke-width: 1
+  fill: transparent
+  stroke-dasharray: 0 628
+
+
+.svgBody
+  position: absolute
+  top: 0
+  bottom: 0
+  margin: auto
+  left: -5.5vw
+  right: -5.5vw
+
+@keyframes draw
+  from
+    stroke-dasharray: 0 628
+  to
+    stroke-dasharray: 628 0
+
+@keyframes imgShow
+  from
+    opacity: 0
+    transform: translateY(-5vw)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes moveLeft
+  from
+    transform: translateX(100vw)
+  to
+    transform: translateX(0)
