@@ -19,7 +19,7 @@ const CategoryPhotos: FunctionComponent<IProps> = ({page, category}) => {
                     />)
                 :
                 categoriesListWorkingPage.map( e =>
-                    <Photo className={styles.categoryImgWorkingPage}
+                    <Photo className={category.src == e.src ? styles.categoryImgWorkingPage + ' ' + styles.open : styles.categoryImgWorkingPage + ' ' + styles.close}
                            smallSrc={e.smallSrc}
                            src={e.src}
                            style={category.src == e.src ? {opacity: '1'} : {opacity: '0'}} />)
