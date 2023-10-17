@@ -4,7 +4,7 @@ import {useInView} from "react-intersection-observer";
 
 const EndingLines: FunctionComponent<{isMobile: boolean}> = ({isMobile}) => {
     const {ref, inView} = useInView({
-        threshold: 0.2
+        threshold: 0.4
     })
     return <div ref={ref} className={inView ? styles.back + ' ' + styles.animateBack : styles.back}>
         <div className={styles.firstLine}/>

@@ -17,8 +17,12 @@ const BuisnessActivity: FunctionComponent<{isMobile: boolean}> = ({isMobile}) =>
                 ?
                 <div className={styles.infoBox}>
                     <div className={styles.infoBlock}>
-                        <PopUpText str={'Дизайн логотипа'} addDelay={0.02} threshold={0.5}/>
-                        <PopUpText str={'Дизайн упаковки'} addDelay={0.02} threshold={0.5}/>
+                        <div>
+                            <PopUpText str={'Дизайн логотипа'} addDelay={0.02} threshold={0.5}/>
+                        </div>
+                        <div>
+                            <PopUpText str={'Дизайн упаковки'} addDelay={0.02} threshold={0.5}/>
+                        </div>
                         <div>
                             <div>
                                 <PopUpText str={'Разработка'} addDelay={0.02} threshold={0.5}/>
@@ -46,8 +50,12 @@ const BuisnessActivity: FunctionComponent<{isMobile: boolean}> = ({isMobile}) =>
                         </div>
                     </div>
                     <div className={styles.infoBlock}>
-                        <PopUpText str={'Дизайн этикетки'} addDelay={0.02} threshold={0.5}/>
-                        <PopUpText str={'Ребрендинг'} addDelay={0.02} threshold={0.5}/>
+                        <div>
+                            <PopUpText str={'Дизайн этикетки'} addDelay={0.02} threshold={0.5}/>
+                        </div>
+                        <div>
+                            <PopUpText str={'Ребрендинг'} addDelay={0.02} threshold={0.5}/>
+                        </div>
                         <div>
                             <div>
                                 <PopUpText str={'Инфографика'} addDelay={0.02} threshold={0.5}/>

@@ -26,7 +26,7 @@ const AboutPageMobile: FunctionComponent<IProps> = ({nowPage, setNowPage, setPos
                 <GrowingPhoto height={111} smallSrc={'/assets/big-photos/aboutMobilePhoto-small.png'} src={'/assets/big-photos/aboutMobilePhoto.png'}/>
                 <div className={styles.stickyBody}>
                     <div className={styles.stickyBlock}>
-                        <Steps stepList={valuesList} cef={5.5} isMobile={isMobile} page={'about-mobile'}/>
+                        <Steps stepList={valuesList} cef={4.8} isMobile={isMobile} page={'about-mobile'}/>
                         <div style={{margin: '-66.6vw 0 0 0'}}>
                             <Ending setPosition={setPosition} isMobile={isMobile} setNowPage={setNowPage} page={'about'}/>
                         </div>
